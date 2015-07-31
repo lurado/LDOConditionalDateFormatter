@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+@import SLConditionalDateFormatter;
+
 @interface SLViewController : UIViewController
 
 @end
