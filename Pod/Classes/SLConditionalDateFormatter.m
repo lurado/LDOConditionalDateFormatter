@@ -30,26 +30,6 @@
 #define TTTDateComponentUndefined NSUndefinedDateComponent
 #endif
 
-static inline NSCalendarUnit NSCalendarUnitFromString(NSString *string) {       // TODO: get rid of this
-    if ([string isEqualToString:@"year"]) {
-        return TTTCalendarUnitYear;
-    } else if ([string isEqualToString:@"month"]) {
-        return TTTCalendarUnitMonth;
-    } else if ([string isEqualToString:@"weekOfYear"]) {
-        return TTTCalendarUnitWeek;
-    } else if ([string isEqualToString:@"day"]) {
-        return TTTCalendarUnitDay;
-    } else if ([string isEqualToString:@"hour"]) {
-        return TTTCalendarUnitHour;
-    } else if ([string isEqualToString:@"minute"]) {
-        return TTTCalendarUnitMinute;
-    } else if ([string isEqualToString:@"second"]) {
-        return TTTCalendarUnitSecond;
-    }
-    
-    return TTTDateComponentUndefined;
-}
-
 static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b) {
     if ((a == TTTCalendarUnitWeek) ^ (b == TTTCalendarUnitWeek)) {
         if (b == TTTCalendarUnitWeek) {
@@ -109,6 +89,28 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     return self;
 }
 
+- (NSInteger)extractComponent:(NSCalendarUnit)unit from:(NSDateComponents *)components
+{
+    switch (unit) {
+        case TTTCalendarUnitYear:
+            return components.year;
+        case TTTCalendarUnitMonth:
+            return components.month;
+        case TTTCalendarUnitWeek:
+            return components.weekOfYear;
+        case TTTCalendarUnitDay:
+            return components.day;
+        case TTTCalendarUnitHour:
+            return components.hour;
+        case TTTCalendarUnitMinute:
+            return components.minute;
+        case TTTCalendarUnitSecond:
+            return components.second;
+        default:
+            return 0;
+    }
+}
+
 - (BOOL)shouldUseUnit:(NSCalendarUnit)unit
 {
     return (self.significantUnits & unit) && NSCalendarUnitCompareSignificance(self.leastSignificantUnit, unit) != NSOrderedDescending;
@@ -151,15 +153,16 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
         }
     }
     
+    
     NSDateComponents *components = [self.calendar components:self.significantUnits fromDate:startingDate toDate:endingDate options:0];
     NSString *string = nil;
     BOOL isApproximate = NO;
     NSUInteger numberOfUnits = 0;
-    for (NSString *unitName in @[@"year", @"month", @"weekOfYear", @"day", @"hour", @"minute", @"second"]) {
-        NSCalendarUnit unit = NSCalendarUnitFromString(unitName);
+    for (NSNumber *unitWrapper in @[@(TTTCalendarUnitYear), @(TTTCalendarUnitMonth), @(TTTCalendarUnitWeek), @(TTTCalendarUnitDay), @(TTTCalendarUnitHour), @(TTTCalendarUnitMinute), @(TTTCalendarUnitSecond)]) {
+        NSCalendarUnit unit = [unitWrapper unsignedLongValue];
         if ([self shouldUseUnit:unit]) {
             BOOL reportOnlyDays = unit == TTTCalendarUnitDay && self.numberOfSignificantUnits == 1;
-            NSInteger value = reportOnlyDays ? [self numberOfDaysFrom:startingDate to:endingDate] : [[components valueForKey:unitName] integerValue];
+            NSInteger value = reportOnlyDays ? [self numberOfDaysFrom:startingDate to:endingDate] : [self extractComponent:unit from:components];
             if (value) {
                 NSNumber *number = @(abs((int)value));
                 NSString *suffix = [NSString stringWithFormat:self.suffixExpressionFormat, number, [self localizedStringForNumber:[number unsignedIntegerValue] ofCalendarUnit:unit]];
