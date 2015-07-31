@@ -1,0 +1,14 @@
+PODS:
+  - SLConditionalDateFormatter (0.1.0)
+
+DEPENDENCIES:
+  - SLConditionalDateFormatter (from `../`)
+
+EXTERNAL SOURCES:
+  SLConditionalDateFormatter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SLConditionalDateFormatter: 17b13b662d5eb9c51edf912f79f2a16106ca91b1
+
+COCOAPODS: 0.37.2

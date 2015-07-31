@@ -1,0 +1,6 @@
+framework module SLConditionalDateFormatter {
+  umbrella header "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h"
+
+  export *
+  module * { export * }
+}
