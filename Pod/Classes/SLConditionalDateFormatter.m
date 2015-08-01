@@ -61,6 +61,9 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
 }
 
 @implementation SLConditionalDateFormatter
+{
+    NSMutableArray *formats;
+}
 
 - (id)init
 {
@@ -69,6 +72,7 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
         return nil;
     }
     
+    formats = [NSMutableArray array];
     self.locale = [NSLocale currentLocale];
     self.calendar = [NSCalendar currentCalendar];
     
@@ -83,7 +87,6 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     self.presentTimeIntervalMargin = 1;
     
     self.significantUnits = TTTCalendarUnitYear | TTTCalendarUnitMonth | TTTCalendarUnitWeek | TTTCalendarUnitDay | TTTCalendarUnitHour | TTTCalendarUnitMinute | TTTCalendarUnitSecond;
-    self.numberOfSignificantUnits = 1;
     self.leastSignificantUnit = TTTCalendarUnitSecond;
     
     return self;
@@ -132,28 +135,38 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     return [self.calendar components:TTTCalendarUnitDay fromDate:fromDate toDate:toDate options:0].day;
 }
 
+#pragma mark - Formats
+
+- (void)addFormat:(NSString *)format forTimeInterval:(NSTimeInterval)timeInterval
+{
+    [formats addObject:format];
+}
+
+- (void)addFormat:(NSString *)format for:(SLTimeUnit)unit
+{
+    
+}
+
+- (void)addFormat:(NSString *)format forLast:(NSUInteger)count unit:(SLTimeUnit)unit
+{
+    
+}
+
+- (void)addFormat:(NSString *)format forNext:(NSUInteger)count unit:(SLTimeUnit)unit
+{
+    
+}
+
+#pragma mark - other
+
 - (NSString *)stringForTimeInterval:(NSTimeInterval)seconds
 {
     NSDate *date = [NSDate date];
     return [self stringForTimeIntervalFromDate:date toDate:[NSDate dateWithTimeInterval:seconds sinceDate:date]];
 }
 
-- (NSString *)stringForTimeIntervalFromDate:(NSDate *)startingDate
-                                     toDate:(NSDate *)endingDate
+- (NSString *)relativeExpressionForStarting:(NSDate *)startingDate endingDate:(NSDate *)endingDate numberOfSignificantUnits:(NSUInteger)numberOfSignificantUnits
 {
-    NSTimeInterval seconds = [startingDate timeIntervalSinceDate:endingDate];
-    if (fabs(seconds) < self.presentTimeIntervalMargin) {
-        return self.presentDeicticExpression;
-    }
-    
-    if (self.usesIdiomaticDeicticExpressions) {
-        NSString *idiomaticDeicticExpression = [self idiomaticDeicticExpressionForStartingDate:startingDate endingDate:endingDate];
-        if (idiomaticDeicticExpression) {
-            return idiomaticDeicticExpression;
-        }
-    }
-    
-    
     NSDateComponents *components = [self.calendar components:self.significantUnits fromDate:startingDate toDate:endingDate options:0];
     NSString *string = nil;
     BOOL isApproximate = NO;
@@ -161,26 +174,26 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     for (NSNumber *unitWrapper in @[@(TTTCalendarUnitYear), @(TTTCalendarUnitMonth), @(TTTCalendarUnitWeek), @(TTTCalendarUnitDay), @(TTTCalendarUnitHour), @(TTTCalendarUnitMinute), @(TTTCalendarUnitSecond)]) {
         NSCalendarUnit unit = [unitWrapper unsignedLongValue];
         if ([self shouldUseUnit:unit]) {
-            BOOL reportOnlyDays = unit == TTTCalendarUnitDay && self.numberOfSignificantUnits == 1;
+            BOOL reportOnlyDays = unit == TTTCalendarUnitDay && numberOfSignificantUnits == 1;
             NSInteger value = reportOnlyDays ? [self numberOfDaysFrom:startingDate to:endingDate] : [self extractComponent:unit from:components];
             if (value) {
                 NSNumber *number = @(abs((int)value));
                 NSString *suffix = [NSString stringWithFormat:self.suffixExpressionFormat, number, [self localizedStringForNumber:[number unsignedIntegerValue] ofCalendarUnit:unit]];
                 if (!string) {
                     string = suffix;
-                } else if (self.numberOfSignificantUnits == 0 || numberOfUnits < self.numberOfSignificantUnits) {
+                } else if (numberOfSignificantUnits == 0 || numberOfUnits < numberOfSignificantUnits) {
                     string = [string stringByAppendingFormat:@" %@", suffix];
                 } else {
                     isApproximate = YES;
                 }
                 
-                numberOfUnits++;
+                numberOfUnits++;    // TODO: break
             }
         }
     }
     
     if (string) {
-        if (seconds > 0) {
+        if ([startingDate timeIntervalSinceDate:endingDate] > 0) {
             if ([self.pastDeicticExpression length]) {
                 string = [NSString stringWithFormat:self.deicticExpressionFormat, string, self.pastDeicticExpression];
             }
@@ -198,6 +211,58 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     }
     
     return string;
+}
+
+- (NSRegularExpression *)boundaryCharacterWrappedRegexp:(NSString *)regexp
+{
+    NSString *boundaryCharacters = @"\\s,\\.";
+    NSString *pattern = [NSString stringWithFormat:@"(?:^|[%@])(%@)(?:$|[%@])", boundaryCharacters, regexp, boundaryCharacters];
+    return [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+}
+
+- (NSString *)applyFormat:(NSString *)format startingDate:(NSDate *)startingDate endingDate:(NSDate *)endingDate
+{
+    if (!format) {
+        return nil;
+    }
+    
+    NSRegularExpression *relativeRegex = [self boundaryCharacterWrappedRegexp:@"R{1,8}"];
+    NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:format options:0 range:NSMakeRange(0, self.defaultFormat.length)];
+    
+    NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
+    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, self.defaultFormat.length)];
+    
+    if (relativeResult && relativeResult.range.location != NSNotFound) {
+        NSString *replacement = [self relativeExpressionForStarting:startingDate endingDate:endingDate numberOfSignificantUnits:relativeResult.range.length];
+        if (replacement) {
+            return [format stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
+        }
+    } else if (idiomaticResult && idiomaticResult.range.location != NSNotFound) {
+        NSString *replacement = [self idiomaticDeicticExpressionForStartingDate:startingDate endingDate:endingDate];
+        if (replacement) {
+            return [format stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
+        }
+    }
+    
+    return nil;
+}
+
+- (NSString *)stringForTimeIntervalFromDate:(NSDate *)startingDate
+                                     toDate:(NSDate *)endingDate
+{
+    NSTimeInterval seconds = [startingDate timeIntervalSinceDate:endingDate];
+    if (fabs(seconds) < self.presentTimeIntervalMargin) {
+        return self.presentDeicticExpression;       // move to idiomaticDeicticExpression
+    }
+    
+    for (NSString *format in [formats arrayByAddingObject:self.defaultFormat]) {
+        NSString *result = [self applyFormat:format startingDate:startingDate endingDate:endingDate];
+        if (result) {
+            return result;
+        }
+    }
+    
+    return nil;
 }
 
 - (NSString *)localizedStringForNumber:(NSUInteger)number ofCalendarUnit:(NSCalendarUnit)unit
@@ -410,7 +475,6 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     formatter.presentTimeIntervalMargin = self.presentTimeIntervalMargin;
     formatter.usesAbbreviatedCalendarUnits = self.usesAbbreviatedCalendarUnits;
     formatter.usesApproximateQualifier = self.usesApproximateQualifier;
-    formatter.usesIdiomaticDeicticExpressions = self.usesIdiomaticDeicticExpressions;
     
     return formatter;
 }
@@ -430,7 +494,6 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     self.presentTimeIntervalMargin = [aDecoder decodeDoubleForKey:NSStringFromSelector(@selector(presentTimeIntervalMargin))];
     self.usesAbbreviatedCalendarUnits = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(usesAbbreviatedCalendarUnits))];
     self.usesApproximateQualifier = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(usesApproximateQualifier))];
-    self.usesIdiomaticDeicticExpressions = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(usesIdiomaticDeicticExpressions))];
     
     return self;
 }
@@ -448,7 +511,6 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     [aCoder encodeDouble:self.presentTimeIntervalMargin forKey:NSStringFromSelector(@selector(presentTimeIntervalMargin))];
     [aCoder encodeBool:self.usesAbbreviatedCalendarUnits forKey:NSStringFromSelector(@selector(usesAbbreviatedCalendarUnits))];
     [aCoder encodeBool:self.usesApproximateQualifier forKey:NSStringFromSelector(@selector(usesApproximateQualifier))];
-    [aCoder encodeBool:self.usesIdiomaticDeicticExpressions forKey:NSStringFromSelector(@selector(usesIdiomaticDeicticExpressions))];
 }
 
 @end

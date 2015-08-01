@@ -8,6 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    SLTimeUnitDays,
+    SLTimeUnitWeeks,
+    SLTimeUnitMonths,
+    SLTimeUnitYears,
+    
+    SLTimeUnitToday,
+    SLTimeUnitYesterday,
+    SLTimeUnitTomorrow,
+    
+    SLTimeUnitThisWeek,
+    SLTimeUnitLastWeek,
+    SLTimeUnitNextWeek,
+    
+    SLTimeUnitThisMonth,
+    SLTimeUnitLastMonth,
+    SLTimeUnitNextMonth,
+    
+    SLTimeUnitThisYear,
+    SLTimeUnitLastYear,
+    SLTimeUnitNextYear,
+} SLTimeUnit;
+
 @interface SLConditionalDateFormatter : NSFormatter
 
 /**
@@ -54,13 +77,6 @@
  */
 @property NSTimeInterval presentTimeIntervalMargin;
 
-/**
- Specifies whether to use idiomatic deictic expressions when available, such as "last week" instead of "1 week ago". Defaults to `NO`.
- 
- @discussion This implementation is entirely separate from the equivalent behavior used by `NSDateFormatter`.
- */
-@property BOOL usesIdiomaticDeicticExpressions;
-
 ///-----------------------------------------
 /// @name Configuring Approximate Qualifiers
 ///-----------------------------------------
@@ -85,11 +101,6 @@
 @property NSCalendarUnit significantUnits;
 
 /**
- Specifies the number of units that should be displayed before approximating. `0` to show all units. `1` by default.
- */
-@property NSUInteger numberOfSignificantUnits;
-
-/**
  Specifies the least significant unit that should be displayed when not approximating. Defaults to `NSCalendarUnitSeconds`.
  */
 @property NSCalendarUnit leastSignificantUnit;
@@ -102,6 +113,14 @@
  Specifies whether to use abbreviated calendar units to describe time intervals, for instance "wks" instead of "weeks" in English. Defaults to `NO`.
  */
 @property BOOL usesAbbreviatedCalendarUnits;
+
+
+@property (copy) NSString *defaultFormat;
+- (void)addFormat:(NSString *)format forTimeInterval:(NSTimeInterval)timeInterval;
+- (void)addFormat:(NSString *)format for:(SLTimeUnit)unit;
+- (void)addFormat:(NSString *)format forLast:(NSUInteger)count unit:(SLTimeUnit)unit;
+- (void)addFormat:(NSString *)format forNext:(NSUInteger)count unit:(SLTimeUnit)unit;
+
 
 ///-------------------------
 /// @name Converting Objects

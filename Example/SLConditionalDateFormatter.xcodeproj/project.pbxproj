@@ -20,8 +20,11 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* RelativeDateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* RelativeDateTests.m */; };
+		6003F5BC195388D20070C39A /* IdiomaticExpressionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* IdiomaticExpressionTests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		9E806E831B6BE13B0051DE06 /* FormatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E821B6BE13B0051DE06 /* FormatTests.m */; };
+		9E806E881B6BE1C90051DE06 /* TestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E871B6BE1C90051DE06 /* TestCase.m */; };
+		9E806E8A1B6BE5360051DE06 /* RelativeExpressionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E891B6BE5360051DE06 /* RelativeExpressionsTests.m */; };
 		A0A670BBDD6B652CBBD74059 /* Pods_SLConditionalDateFormatter_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E281E07F9CCFCA704139CFE /* Pods_SLConditionalDateFormatter_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -57,11 +60,15 @@
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* RelativeDateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelativeDateTests.m; sourceTree = "<group>"; };
+		6003F5BB195388D20070C39A /* IdiomaticExpressionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdiomaticExpressionTests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6B6F3BDB8B393EDB9E2AFC90 /* Pods-SLConditionalDateFormatter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLConditionalDateFormatter_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLConditionalDateFormatter_Tests/Pods-SLConditionalDateFormatter_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		77A3D43E60837B1E0A15634D /* Pods_SLConditionalDateFormatter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLConditionalDateFormatter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9E806E821B6BE13B0051DE06 /* FormatTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatTests.m; sourceTree = "<group>"; };
+		9E806E861B6BE1C90051DE06 /* TestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCase.h; sourceTree = "<group>"; };
+		9E806E871B6BE1C90051DE06 /* TestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCase.m; sourceTree = "<group>"; };
+		9E806E891B6BE5360051DE06 /* RelativeExpressionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelativeExpressionsTests.m; sourceTree = "<group>"; };
 		BF7106AB6A8931B8D5DBCA7D /* Pods-SLConditionalDateFormatter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLConditionalDateFormatter_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLConditionalDateFormatter_Tests/Pods-SLConditionalDateFormatter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA7921F6CEE56A2012991ECE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F9294B37628BA704CFE4DCF0 /* Pods-SLConditionalDateFormatter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLConditionalDateFormatter_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLConditionalDateFormatter_Example/Pods-SLConditionalDateFormatter_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +163,11 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* RelativeDateTests.m */,
+				9E806E861B6BE1C90051DE06 /* TestCase.h */,
+				9E806E871B6BE1C90051DE06 /* TestCase.m */,
+				9E806E821B6BE13B0051DE06 /* FormatTests.m */,
+				6003F5BB195388D20070C39A /* IdiomaticExpressionTests.m */,
+				9E806E891B6BE5360051DE06 /* RelativeExpressionsTests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -400,7 +411,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* RelativeDateTests.m in Sources */,
+				9E806E831B6BE13B0051DE06 /* FormatTests.m in Sources */,
+				9E806E881B6BE1C90051DE06 /* TestCase.m in Sources */,
+				6003F5BC195388D20070C39A /* IdiomaticExpressionTests.m in Sources */,
+				9E806E8A1B6BE5360051DE06 /* RelativeExpressionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
