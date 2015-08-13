@@ -147,4 +147,6 @@ typedef enum : NSUInteger {
  */
 - (NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate;
 
+- (NSString *)stringForTimeIntervalSinceDate:(NSDate *)date;
+
 @end

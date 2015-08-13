@@ -321,6 +321,11 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     return [self stringForTimeIntervalFromDate:[now dateByAddingTimeInterval:seconds] toReferenceDate:now];
 }
 
+- (NSString *)stringForTimeIntervalSinceDate:(NSDate *)date
+{
+    return [self stringForTimeIntervalFromDate:date toReferenceDate:[NSDate date]];
+}
+
 - (NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate
 {
     SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:date referenceDate:referenceDate calendar:self.calendar];
