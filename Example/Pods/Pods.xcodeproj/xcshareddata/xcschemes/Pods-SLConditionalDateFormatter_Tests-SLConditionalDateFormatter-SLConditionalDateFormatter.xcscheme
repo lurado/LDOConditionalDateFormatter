@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8F72A1D597CFD4ACE7C2FCBA"
+               BlueprintIdentifier = "FF5559450EB30832932EAA4F"
                BuildableName = "SLConditionalDateFormatter.bundle"
                BlueprintName = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter"
                ReferencedContainer = "container:Pods.xcodeproj">
