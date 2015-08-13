@@ -41,6 +41,9 @@
 @property (readonly) BOOL isInFuture;
 
 @property (readonly) NSInteger daysDifference;
+@property (readonly) NSInteger weeksDifference;
+@property (readonly) NSInteger monthsDifference;
+@property (readonly) NSInteger yearsDifference;
 
 @property (readonly) BOOL sameDay;
 @property (readonly) BOOL perviousDay;
@@ -70,39 +73,35 @@
     return [calendar components:units fromDate:date];
 }
 
-+ (NSInteger)numberOfDaysFrom:(NSDate *)fromDate to:(NSDate *)toDate calendar:(NSCalendar *)calendar
-{
-    NSDateComponents *fromComponents = [self componentsWithoutTime:fromDate calendar:calendar];
-    NSDateComponents *toComponents = [self componentsWithoutTime:toDate calendar:calendar];
-    fromDate = [calendar dateFromComponents:fromComponents];
-    toDate = [calendar dateFromComponents:toComponents];
-    
-    return [calendar components:TTTCalendarUnitDay fromDate:fromDate toDate:toDate options:0].day;
-}
-
 - (instancetype)initWithDate:(NSDate *)date referenceDate:(NSDate *)referenceDate calendar:(NSCalendar *)calendar
 {
     if (self = [super init]) {
-        _referenceDate = referenceDate;
-        _date = date;
+        _referenceDate = [referenceDate copy];
+        _date = [date copy];
         
-        NSDateComponents *startingComponents = [self.class componentsWithoutTime:referenceDate calendar:calendar];
-        NSDateComponents *endingComponents = [self.class componentsWithoutTime:date calendar:calendar];
+        NSDateComponents *referenceComponents = [self.class componentsWithoutTime:referenceDate calendar:calendar];
+        NSDateComponents *dateComponents = [self.class componentsWithoutTime:date calendar:calendar];
         
-        _daysDifference = [self.class numberOfDaysFrom:referenceDate to:date calendar:calendar];
+        // same dates without time
+        referenceDate = [calendar dateFromComponents:referenceComponents];
+        date = [calendar dateFromComponents:dateComponents];
+        _daysDifference = [calendar components:TTTCalendarUnitDay fromDate:referenceDate toDate:date options:0].day;
+        _weeksDifference = [calendar components:TTTCalendarUnitWeek fromDate:referenceDate toDate:date options:0].weekOfYear;
+        _monthsDifference = [calendar components:TTTCalendarUnitMonth fromDate:referenceDate toDate:date options:0].month;
+        _yearsDifference = [calendar components:TTTCalendarUnitYear fromDate:referenceDate toDate:date options:0].year;
         
-        _sameYear = startingComponents.year == endingComponents.year;
-        _previousYear = startingComponents.year - 1 == endingComponents.year;
-        _nextYear = startingComponents.year + 1 == endingComponents.year;
+        _sameYear = referenceComponents.year == dateComponents.year;
+        _previousYear = referenceComponents.year - 1 == dateComponents.year;
+        _nextYear = referenceComponents.year + 1 == dateComponents.year;
         
-        _sameMonth = _sameYear && startingComponents.month == endingComponents.month;
-        _previousMonth = (_sameYear && startingComponents.month - 1 == endingComponents.month) || (_previousYear && startingComponents.month == 1 && endingComponents.month == 12);
-        _nextMonth = (_sameYear && startingComponents.month + 1 == endingComponents.month) || (_nextYear && startingComponents.month == 12 && endingComponents.month == 1);
+        _sameMonth = _sameYear && referenceComponents.month == dateComponents.month;
+        _previousMonth = (_sameYear && referenceComponents.month - 1 == dateComponents.month) || (_previousYear && referenceComponents.month == 1 && dateComponents.month == 12);
+        _nextMonth = (_sameYear && referenceComponents.month + 1 == dateComponents.month) || (_nextYear && referenceComponents.month == 12 && dateComponents.month == 1);
         
-        long numberOfWeeks = MAX(MAX(startingComponents.weekOfYear, endingComponents.weekOfYear), 52);
-        BOOL sameWeekNumber = startingComponents.weekOfYear == endingComponents.weekOfYear;
-        BOOL precedingWeekNumber = (endingComponents.weekOfYear % numberOfWeeks) + 1 == startingComponents.weekOfYear;
-        BOOL succeedingWeekNumber = (startingComponents.weekOfYear % numberOfWeeks) + 1 == endingComponents.weekOfYear;
+        long numberOfWeeks = MAX(MAX(referenceComponents.weekOfYear, dateComponents.weekOfYear), 52);
+        BOOL sameWeekNumber = referenceComponents.weekOfYear == dateComponents.weekOfYear;
+        BOOL precedingWeekNumber = (dateComponents.weekOfYear % numberOfWeeks) + 1 == referenceComponents.weekOfYear;
+        BOOL succeedingWeekNumber = (referenceComponents.weekOfYear % numberOfWeeks) + 1 == dateComponents.weekOfYear;
         _sameWeek = sameWeekNumber && _sameMonth;
         _previousWeek = precedingWeekNumber && (_sameMonth || _previousMonth);
         _nextWeek = succeedingWeekNumber && (_sameMonth || _nextMonth);
@@ -305,12 +304,36 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 - (void)addFormat:(NSString *)format forLast:(NSUInteger)count unit:(SLTimeUnit)unit
 {
+    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
+        switch (unit) {
+            case SLTimeUnitDays: return relationship.daysDifference <= 0 && relationship.daysDifference <= -count;
+            case SLTimeUnitWeeks: return relationship.weeksDifference <= 0 && relationship.weeksDifference <= -count;
+            case SLTimeUnitMonths: return relationship.monthsDifference <= 0 && relationship.monthsDifference <= -count;
+            case SLTimeUnitYears: return relationship.yearsDifference <= 0 && relationship.yearsDifference <= -count;
+            default:
+                break;
+        }
+        return NO;
+    };
     
+    [self addFormat:format condition:check];
 }
 
 - (void)addFormat:(NSString *)format forNext:(NSUInteger)count unit:(SLTimeUnit)unit
 {
+    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
+        switch (unit) {
+            case SLTimeUnitDays: return relationship.daysDifference >= 0 && relationship.daysDifference <= count;
+            case SLTimeUnitWeeks: return relationship.weeksDifference >= 0 && relationship.weeksDifference <= count;
+            case SLTimeUnitMonths: return relationship.monthsDifference >= 0 && relationship.monthsDifference <= count;
+            case SLTimeUnitYears: return relationship.yearsDifference >= 0 && relationship.yearsDifference <= count;
+            default:
+                break;
+        }
+        return NO;
+    };
     
+    [self addFormat:format condition:check];
 }
 
 #pragma mark - interface methods

@@ -8,10 +8,10 @@
 
 #import "TestCase.h"
 
-static int hours = 60 * 60;
-static int day = 24 * 60 * 60;
-static int days = 24 * 60 * 60;
-
+#define HOURS * 60 * 60
+#define DAY * 24 * 60 * 60
+#define DAYS * 24 * 60 * 60
+#define WEEKS * 7 * 24 * 60 * 60
 
 @interface FormatTests : TestCase
 
@@ -128,23 +128,23 @@ static int days = 24 * 60 * 60;
 - (void)testAppliesAddedFormatFirst
 {
     self.formatter.defaultFormat = @"I";
-    [self.formatter addFormat:@"R" forTimeInterval:(-4 * days)];
-    NSString *result = [self.formatter stringForTimeInterval:(-1 * days)];
+    [self.formatter addFormat:@"R" forTimeInterval:(-4 DAYS)];
+    NSString *result = [self.formatter stringForTimeInterval:(-1 DAYS)];
     XCTAssertEqualObjects(result, @"1 day ago");
 }
 
 - (void)testChecksTimeIntervalForFormat
 {
     self.formatter.defaultFormat = @"I";
-    [self.formatter addFormat:@"R" forTimeInterval:(-3 * hours)];
-    NSString *result = [self.formatter stringForTimeInterval:(-1 * days)];
+    [self.formatter addFormat:@"R" forTimeInterval:(-3 HOURS)];
+    NSString *result = [self.formatter stringForTimeInterval:(-1 DAYS)];
     XCTAssertEqualObjects(result, @"yesterday");
 }
 
 - (void)testAppliesFormatsInOrder
 {
-    [self.formatter addFormat:@"R" forTimeInterval:(-4 * days)];
-    [self.formatter addFormat:@"RR" forTimeInterval:(-4 * days)];
+    [self.formatter addFormat:@"R" forTimeInterval:(-4 DAYS)];
+    [self.formatter addFormat:@"RR" forTimeInterval:(-4 DAYS)];
     
     NSString *result = [self expressionFromDate:@"2015-02-22 6:33:50 +0000" toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"2 days ago");
@@ -155,7 +155,7 @@ static int days = 24 * 60 * 60;
 - (void)testFormatForToday
 {
     [self.formatter addFormat:@"R" for:SLTimeUnitToday];
-    NSString *result = [self.formatter stringForTimeInterval:(-3 * hours)];
+    NSString *result = [self.formatter stringForTimeInterval:(-3 HOURS)];
     XCTAssertEqualObjects(result, @"3 hours ago");
 }
 
@@ -163,8 +163,21 @@ static int days = 24 * 60 * 60;
 {
     [self.formatter addFormat:@"R" for:SLTimeUnitToday];
     [self.formatter addFormat:@"I" for:SLTimeUnitYesterday];
-    NSString *result = [self.formatter stringForTimeInterval:(-1 * day)];
+    NSString *result = [self.formatter stringForTimeInterval:(-1 DAY)];
     XCTAssertEqualObjects(result, @"yesterday");
+}
+
+- (void)testFormatForLastTwoWeeks {
+    [self.formatter addFormat:@"R" forLast:2 unit:SLTimeUnitWeeks];
+    NSString *result = [self.formatter stringForTimeInterval:(-2 WEEKS)];
+    XCTAssertEqualObjects(result, @"2 weeks ago");
+}
+
+- (void)testFormatForNextTwoWeeks {
+    [self.formatter addFormat:@"I" forLast:2 unit:SLTimeUnitWeeks];
+    [self.formatter addFormat:@"R" forNext:2 unit:SLTimeUnitWeeks];
+    NSString *result = [self.formatter stringForTimeInterval:(2 WEEKS)];
+    XCTAssertEqualObjects(result, @"2 weeks from now");
 }
 
 //    [formatter addFormat:@"HH:mm" for:SLTimeUnitToday];
