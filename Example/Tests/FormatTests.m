@@ -9,6 +9,7 @@
 #import "TestCase.h"
 
 static int hours = 60 * 60;
+static int day = 24 * 60 * 60;
 static int days = 24 * 60 * 60;
 
 
@@ -151,11 +152,19 @@ static int days = 24 * 60 * 60;
 
 #pragma mark Logical intervals
 
-- (void)testTimeFormatForToday
+- (void)testFormatForToday
 {
     [self.formatter addFormat:@"R" for:SLTimeUnitToday];
     NSString *result = [self.formatter stringForTimeInterval:(-3 * hours)];
     XCTAssertEqualObjects(result, @"3 hours ago");
+}
+
+- (void)testFormatForYesterday
+{
+    [self.formatter addFormat:@"R" for:SLTimeUnitToday];
+    [self.formatter addFormat:@"I" for:SLTimeUnitYesterday];
+    NSString *result = [self.formatter stringForTimeInterval:(-1 * day)];
+    XCTAssertEqualObjects(result, @"yesterday");
 }
 
 //    [formatter addFormat:@"HH:mm" for:SLTimeUnitToday];
