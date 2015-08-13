@@ -46,6 +46,7 @@ static int days = 24 * 60 * 60;
     //    [formatter addFormat:@"R" forNext:2 unit:SLTimeUnitDays];
     
     //    formatter.defaultFormat:@"{yyyy-MM-dd} at {HH:mm}";
+    // {<anything with only template characters will be passed to dateFormatFromTemplate>}
     
     // Days
     // Weeks
@@ -74,8 +75,8 @@ static int days = 24 * 60 * 60;
 - (void)testHandlesNilDefault {
     self.formatter.defaultFormat = nil;
     
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-23 20:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqual(result, nil);
 }
 
@@ -84,16 +85,16 @@ static int days = 24 * 60 * 60;
 - (void)testUsesDefaultFormat
 {
     self.formatter.defaultFormat = @"R";
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-23 20:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"1 day ago");
 }
 
 - (void)testIdiomaticExpressionsFormat
 {
     self.formatter.defaultFormat = @"I";
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-23 20:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"yesterday");
 }
 
@@ -101,23 +102,23 @@ static int days = 24 * 60 * 60;
 {
     self.formatter.defaultFormat = @"RR";
     
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000" toDate:@"2015-02-22 6:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-22 6:33:50 +0000" toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"2 days 3 hours ago");
 }
 
 - (void)testOnlyChangesTemplateCharacters
 {
     self.formatter.defaultFormat = @"I, yo";
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-23 20:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"yesterday, yo");
 }
 
 - (void)testReplacesMultipleTemplates
 {
     self.formatter.defaultFormat = @"I / R";
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-23 20:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"yesterday / 13 hours 39 minutes ago");
 }
 
@@ -144,8 +145,22 @@ static int days = 24 * 60 * 60;
     [self.formatter addFormat:@"R" forTimeInterval:(-4 * days)];
     [self.formatter addFormat:@"RR" forTimeInterval:(-4 * days)];
     
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000" toDate:@"2015-02-22 6:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-22 6:33:50 +0000" toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"2 days ago");
 }
+
+#pragma mark Logical intervals
+
+- (void)testTimeFormatForToday
+{
+//    [self.formatter addFormat:@"R" for:SLTimeUnitToday];
+//    NSString *result = [self.formatter stringForTimeInterval:(-3 * hours)];
+//    XCTAssertEqualObjects(result, @"3 hours ago");
+}
+
+//    [formatter addFormat:@"HH:mm" for:SLTimeUnitToday];
+//    [formatter addFormat:@"R at {HH:mm}" for:SLTimeUnitYesterday];
+//    [formatter addFormat:@"R" forLast:2 unit:SLTimeUnitWeeks];
+//    [formatter addFormat:@"R" forNext:2 unit:SLTimeUnitDays];
 
 @end

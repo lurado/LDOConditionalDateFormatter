@@ -13,6 +13,6 @@
 
 @property SLConditionalDateFormatter *formatter;
 
-- (NSString *)expressionFromDate:(NSString *)from toDate:(NSString *)to;
+- (NSString *)expressionFromDate:(NSString *)from toReferenceDate:(NSString *)to;
 
 @end

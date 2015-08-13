@@ -19,8 +19,8 @@
 - (void)testTwoDaysAgo
 {
     self.formatter.defaultFormat = @"R";
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-22 15:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-22 15:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"2 days ago");
 }
 
@@ -28,8 +28,8 @@
 {
     self.formatter.defaultFormat = @"RR";
     
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-22 15:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-22 15:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"1 day 18 hours ago");
 }
 
@@ -37,8 +37,8 @@
 {
     self.formatter.defaultFormat = @"RR";
     
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-22 6:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-22 6:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"2 days 3 hours ago");
 }
 
@@ -48,8 +48,8 @@
 {
     self.formatter.defaultFormat = @"R";
     
-    NSString *result = [self expressionFromDate:@"2015-02-22 15:33:50 +0000"
-                                         toDate:@"2015-02-24 10:13:39 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
+                                toReferenceDate:@"2015-02-22 15:33:50 +0000"];
     XCTAssertEqualObjects(result, @"2 days from now");
 }
 
@@ -57,8 +57,8 @@
 {
     self.formatter.defaultFormat = @"RR";
     
-    NSString *result = [self expressionFromDate:@"2015-02-22 15:33:50 +0000"
-                                         toDate:@"2015-02-24 10:13:39 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
+                                toReferenceDate:@"2015-02-22 15:33:50 +0000"];
     XCTAssertEqualObjects(result, @"1 day 18 hours from now");
 }
 
@@ -66,8 +66,8 @@
 {
     self.formatter.defaultFormat = @"RR";
     
-    NSString *result = [self expressionFromDate:@"2015-02-22 6:33:50 +0000"
-                                         toDate:@"2015-02-24 10:13:39 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
+                                toReferenceDate:@"2015-02-22 6:33:50 +0000"];
     XCTAssertEqualObjects(result, @"2 days 3 hours from now");
 }
 
@@ -77,8 +77,8 @@
 {
     self.formatter.defaultFormat = @"R";
     
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-24 00:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-24 00:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"9 hours ago");
 }
 

@@ -26,7 +26,7 @@
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:count];
     for (NSUInteger i = 0; i < count; ++i) {
         NSDate *nextStep = [self.formatter.calendar dateByAddingComponents:interval toDate:date options:0];
-        NSString *expression = [self.formatter stringForTimeIntervalFromDate:date toDate:nextStep];
+        NSString *expression = [self.formatter stringForTimeIntervalFromDate:nextStep toReferenceDate:date];
         [result addObject:@{@"expression": expression, @"from": date, @"to": nextStep}];
         date = nextStep;
     }
@@ -38,29 +38,29 @@
 
 - (void)testYesterdayForLessThan24Hours
 {
-    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
-                                         toDate:@"2015-02-23 20:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"yesterday");
 }
 
 - (void)testYesterdayForMoreThan24Hours
 {
-    NSString *result = [self expressionFromDate:@"2015-02-24 20:13:39 +0000"
-                                         toDate:@"2015-02-23 10:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-23 10:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 20:13:39 +0000"];
     XCTAssertEqualObjects(result, @"yesterday");
 }
 
 - (void)testYesterdayAroundMidnight
 {
-    NSString *result = [self expressionFromDate:@"2015-02-24 01:00:00 +0000"
-                                         toDate:@"2015-02-23 23:30:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-23 23:30:00 +0000"
+                                toReferenceDate:@"2015-02-24 01:00:00 +0000"];
     XCTAssertEqualObjects(result, @"yesterday");
 }
 
 - (void)testYesterdayAroundMidnightTight
 {
-    NSString *result = [self expressionFromDate:@"2015-02-24 00:00:01 +0000"
-                                         toDate:@"2015-02-23 23:59:59 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-23 23:59:59 +0000"
+                                toReferenceDate:@"2015-02-24 00:00:01 +0000"];
     XCTAssertEqualObjects(result, @"yesterday");
 }
 
@@ -80,8 +80,8 @@
 {
     self.formatter.significantUnits = self.formatter.significantUnits ^ NSCalendarUnitDay;
     
-    NSString *result = [self expressionFromDate:@"2015-07-31 23:00:00 +0000"
-                                         toDate:@"2015-07-30 10:30:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-07-30 10:30:00 +0000"
+                                toReferenceDate:@"2015-07-31 23:00:00 +0000"];
     XCTAssertNotEqualObjects(result, @"yesterday");
 }
 
@@ -89,29 +89,29 @@
 
 - (void)testTomorrowForLessThan24Hours
 {
-    NSString *result = [self expressionFromDate:@"2015-02-23 15:13:39 +0000"
-                                         toDate:@"2015-02-24 10:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-24 10:33:50 +0000"
+                                toReferenceDate:@"2015-02-23 15:13:39 +0000"];
     XCTAssertEqualObjects(result, @"tomorrow");
 }
 
 - (void)testTomorrowForMoreThan24Hours
 {
-    NSString *result = [self expressionFromDate:@"2015-02-23 10:13:39 +0000"
-                                         toDate:@"2015-02-24 15:33:50 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-24 15:33:50 +0000"
+                                toReferenceDate:@"2015-02-23 10:13:39 +0000"];
     XCTAssertEqualObjects(result, @"tomorrow");
 }
 
 - (void)testTomrrowAroundMidnight
 {
-    NSString *result = [self expressionFromDate:@"2015-02-23 23:30:00 +0000"
-                                         toDate:@"2015-02-24 01:00:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-02-24 01:00:00 +0000"
+                                toReferenceDate:@"2015-02-23 23:30:00 +0000"];
     XCTAssertEqualObjects(result, @"tomorrow");
 }
 
 - (void)testTomrrowOverMonthSpan
 {
-    NSString *result = [self expressionFromDate:@"2015-02-17 13:30:00 +0000"
-                                         toDate:@"2015-03-18 11:00:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-03-18 11:00:00 +0000"
+                                toReferenceDate:@"2015-02-17 13:30:00 +0000"];
     XCTAssertNotEqualObjects(result, @"tomorrow");
 }
 
@@ -131,50 +131,50 @@
 
 - (void)testLastWeekForMoreThan7Days
 {
-    NSString *result = [self expressionFromDate:@"2015-07-23 10:13:00 +0000"
-                                         toDate:@"2015-07-14 10:13:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-07-14 10:13:00 +0000"
+                                toReferenceDate:@"2015-07-23 10:13:00 +0000"];
     XCTAssertEqualObjects(result, @"last week");
 }
 
 - (void)testLastWeekForLessThan7Days
 {
-    NSString *result = [self expressionFromDate:@"2015-07-23 10:13:00 +0000"
-                                         toDate:@"2015-07-17 10:13:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-07-17 10:13:00 +0000"
+                                toReferenceDate:@"2015-07-23 10:13:00 +0000"];
     XCTAssertEqualObjects(result, @"last week");
 }
 
 - (void)testLastWeekAroundWeekStart
 {
-    NSString *result = [self expressionFromDate:@"2015-07-19 10:13:00 +0000"
-                                         toDate:@"2015-07-17 10:13:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-07-17 10:13:00 +0000"
+                                toReferenceDate:@"2015-07-19 10:13:00 +0000"];
     XCTAssertEqualObjects(result, @"last week");
 }
 
 - (void)testLastWeekWithYearChangeFromFirstWeekToLastWeek
 {
-    NSString *result = [self expressionFromDate:@"2015-01-02 10:13:00 +0000"        // wk  1 2015
-                                         toDate:@"2014-12-27 10:13:00 +0000"];      // wk 52 2014
+    NSString *result = [self expressionFromDate:@"2014-12-27 10:13:00 +0000"        // wk  1 2015
+                                toReferenceDate:@"2015-01-02 10:13:00 +0000"];      // wk 52 2014
     XCTAssertEqualObjects(result, @"last week");
 }
 
 - (void)testLastWeekWithYearChangeFromSecondWeekToFirstWeek
 {
-    NSString *result = [self expressionFromDate:@"2015-01-06 07:16:25 +0000"        // wk 2 2015
-                                         toDate:@"2014-12-30 07:16:25 +0000"];      // wk 1 2015
+    NSString *result = [self expressionFromDate:@"2014-12-30 07:16:25 +0000"        // wk 2 2015
+                                toReferenceDate:@"2015-01-06 07:16:25 +0000"];      // wk 1 2015
     XCTAssertEqualObjects(result, @"last week");
 }
 
 - (void)testLastWeekWith53WeeksWithYearWrap
 {
-    NSString *result = [self expressionFromDate:@"2012-01-03 07:52:00 +0000"        // wk  1 2012
-                                         toDate:@"2011-12-27 07:52:00 +0000"];      // wk 53 2011
+    NSString *result = [self expressionFromDate:@"2011-12-27 07:52:00 +0000"        // wk  1 2012
+                                toReferenceDate:@"2012-01-03 07:52:00 +0000"];      // wk 53 2011
     XCTAssertEqualObjects(result, @"last week");
 }
 
 - (void)testLastWeekWith53Weeks
 {
-    NSString *result = [self expressionFromDate:@"2011-12-27 21:55:47 +0000"        // wk 53 2011
-                                         toDate:@"2011-12-20 21:55:47 +0000"];      // wk 52 2011
+    NSString *result = [self expressionFromDate:@"2011-12-20 21:55:47 +0000"        // wk 53 2011
+                                toReferenceDate:@"2011-12-27 21:55:47 +0000"];      // wk 52 2011
     XCTAssertEqualObjects(result, @"last week");
 }
 
@@ -194,8 +194,8 @@
 
 - (void)testNextWeek
 {
-    NSString *result = [self expressionFromDate:@"2015-07-17 10:13:00 +0000"
-                                         toDate:@"2015-07-19 10:13:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-07-19 10:13:00 +0000"
+                                toReferenceDate:@"2015-07-17 10:13:00 +0000"];
     XCTAssertEqualObjects(result, @"next week");
 }
 
@@ -215,8 +215,8 @@
 
 - (void)testLastMonth
 {
-    NSString *result = [self expressionFromDate:@"2015-07-07 10:13:00 +0000"
-                                         toDate:@"2015-06-19 10:13:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-06-19 10:13:00 +0000"
+                                toReferenceDate:@"2015-07-07 10:13:00 +0000"];
     XCTAssertEqualObjects(result, @"last month");
 }
 
@@ -236,8 +236,8 @@
 
 - (void)testNextMonth
 {
-    NSString *result = [self expressionFromDate:@"2015-06-17 10:13:00 +0000"
-                                         toDate:@"2015-07-09 10:13:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2015-07-09 10:13:00 +0000"
+                                toReferenceDate:@"2015-06-17 10:13:00 +0000"];
     XCTAssertEqualObjects(result, @"next month");
 }
 
@@ -257,8 +257,8 @@
 
 - (void)testLastYear
 {
-    NSString *result = [self expressionFromDate:@"2015-07-17 10:13:00 +0000"
-                                         toDate:@"2014-10-19 10:13:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2014-10-19 10:13:00 +0000"
+                                toReferenceDate:@"2015-07-17 10:13:00 +0000"];
     XCTAssertEqualObjects(result, @"last year");
 }
 
@@ -278,8 +278,8 @@
 
 - (void)testNextYear
 {
-    NSString *result = [self expressionFromDate:@"2015-06-17 10:13:00 +0000"
-                                         toDate:@"2016-02-19 10:13:00 +0000"];
+    NSString *result = [self expressionFromDate:@"2016-02-19 10:13:00 +0000"
+                                toReferenceDate:@"2015-06-17 10:13:00 +0000"];
     XCTAssertEqualObjects(result, @"next year");
 }
 

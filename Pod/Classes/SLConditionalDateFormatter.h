@@ -137,10 +137,9 @@ typedef enum : NSUInteger {
 /**
  Returns a string representation of the time interval between two specified dates formatted using the receiver’s current settings.
  
- @param startingDate The starting date
- @param endingDate The ending date
+ @param date The date
+ @param referenceDate The reference date
  */
-- (NSString *)stringForTimeIntervalFromDate:(NSDate *)startingDate
-                                     toDate:(NSDate *)endingDate;
+- (NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate;
 
 @end

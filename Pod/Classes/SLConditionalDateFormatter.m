@@ -269,12 +269,12 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 - (NSString *)stringForTimeInterval:(NSTimeInterval)seconds
 {
-    NSDate *date = [NSDate date];
-    return [self stringForTimeIntervalFromDate:date toDate:[NSDate dateWithTimeInterval:seconds sinceDate:date]];
+    NSDate *now = [NSDate date];
+    return [self stringForTimeIntervalFromDate:[now dateByAddingTimeInterval:seconds] toReferenceDate:now];
 }
 
-- (NSString *)stringForTimeIntervalFromDate:(NSDate *)startingDate toDate:(NSDate *)endingDate {
-    SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:endingDate referenceDate:startingDate calendar:self.calendar];
+- (NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate {
+    SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:date referenceDate:referenceDate calendar:self.calendar];
     
     if (fabs(dateRelationship.timeIntervalSinceReferenceDate) < self.presentTimeIntervalMargin) {
         return self.presentDeicticExpression;       // move to idiomaticDeicticExpression

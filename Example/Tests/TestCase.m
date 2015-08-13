@@ -17,15 +17,15 @@
     self.formatter.calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
 }
 
-- (NSString *)expressionFromDate:(NSString *)from toDate:(NSString *)to
+- (NSString *)expressionFromDate:(NSString *)from toReferenceDate:(NSString *)reference
 {
     NSDateFormatter *parser = [[NSDateFormatter alloc] init];
     parser.dateFormat = @"yyyy-MM-dd HH:mm:ss Z";
     
-    NSDate *fromDate = [parser dateFromString:from];
-    NSDate *toDate = [parser dateFromString:to];
+    NSDate *referenceDate = [parser dateFromString:reference];
+    NSDate *date = [parser dateFromString:from];
     
-    return [self.formatter stringForTimeIntervalFromDate:fromDate toDate:toDate];
+    return [self.formatter stringForTimeIntervalFromDate:date toReferenceDate:referenceDate];
 }
 
 @end
