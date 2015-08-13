@@ -8,6 +8,7 @@
 
 #import "SLConditionalDateFormatter.h"
 
+
 #if (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090)
 #define TTTCalendarUnitYear NSCalendarUnitYear
 #define TTTCalendarUnitMonth NSCalendarUnitMonth
@@ -29,6 +30,108 @@
 #define TTTCalendarUnitWeekday NSWeekdayCalendarUnit
 #define TTTDateComponentUndefined NSUndefinedDateComponent
 #endif
+
+@interface SLDateRelationship : NSObject
+
+@property (readonly, copy) NSDate *date;
+@property (readonly, copy) NSDate *referenceDate;
+
+@property (readonly) NSTimeInterval timeIntervalSinceReferenceDate;
+@property (readonly) BOOL isInPast;
+@property (readonly) BOOL isInFuture;
+
+@property (readonly) NSInteger daysDifference;
+
+@property (readonly) BOOL sameDay;
+@property (readonly) BOOL perviousDay;
+@property (readonly) BOOL nextDay;
+
+@property (readonly) BOOL sameYear;
+@property (readonly) BOOL previousYear;
+@property (readonly) BOOL nextYear;
+
+@property (readonly) BOOL sameMonth;
+@property (readonly) BOOL previousMonth;
+@property (readonly) BOOL nextMonth;
+
+@property (readonly) BOOL previousWeek;
+@property (readonly) BOOL nextWeek;
+
+- (instancetype)initWithDate:(NSDate *)date referenceDate:(NSDate *)referenceDate calendar:(NSCalendar *)calendar;
+
+@end
+
+@implementation SLDateRelationship
+
++ (NSDateComponents *)componentsWithoutTime:(NSDate *)date calendar:(NSCalendar *)calendar
+{
+    NSCalendarUnit units = TTTCalendarUnitYear | TTTCalendarUnitMonth | TTTCalendarUnitWeek | TTTCalendarUnitDay | TTTCalendarUnitWeekday;
+    return [calendar components:units fromDate:date];
+}
+
++ (NSInteger)numberOfDaysFrom:(NSDate *)fromDate to:(NSDate *)toDate calendar:(NSCalendar *)calendar
+{
+    NSDateComponents *fromComponents = [self componentsWithoutTime:fromDate calendar:calendar];
+    NSDateComponents *toComponents = [self componentsWithoutTime:toDate calendar:calendar];
+    fromDate = [calendar dateFromComponents:fromComponents];
+    toDate = [calendar dateFromComponents:toComponents];
+    
+    return [calendar components:TTTCalendarUnitDay fromDate:fromDate toDate:toDate options:0].day;
+}
+
+- (instancetype)initWithDate:(NSDate *)date referenceDate:(NSDate *)referenceDate calendar:(NSCalendar *)calendar {
+    if (self = [super init]) {
+        _referenceDate = referenceDate;
+        _date = date;
+        
+        NSDateComponents *startingComponents = [self.class componentsWithoutTime:referenceDate calendar:calendar];
+        NSDateComponents *endingComponents = [self.class componentsWithoutTime:date calendar:calendar];
+        
+        _daysDifference = [self.class numberOfDaysFrom:referenceDate to:date calendar:calendar];
+        
+        _sameYear = startingComponents.year == endingComponents.year;
+        _previousYear = startingComponents.year - 1 == endingComponents.year;
+        _nextYear = startingComponents.year + 1 == endingComponents.year;
+        
+        _sameMonth = _sameYear && startingComponents.month == endingComponents.month;
+        _previousMonth = (_sameYear && startingComponents.month - 1 == endingComponents.month) || (_previousYear && startingComponents.month == 1 && endingComponents.month == 12);
+        _nextMonth = (_sameYear && startingComponents.month + 1 == endingComponents.month) || (_nextYear && startingComponents.month == 12 && endingComponents.month == 1);
+        
+        long numberOfWeeks = MAX(MAX(startingComponents.weekOfYear, endingComponents.weekOfYear), 52);
+        BOOL precedingWeekNumber = (endingComponents.weekOfYear % numberOfWeeks) + 1 == startingComponents.weekOfYear;
+        BOOL succeedingWeekNumber = (startingComponents.weekOfYear % numberOfWeeks) + 1 == endingComponents.weekOfYear;
+        _previousWeek = precedingWeekNumber && (_sameMonth || _previousMonth);
+        _nextWeek = succeedingWeekNumber && (_sameMonth || _nextMonth);
+    }
+    return self;
+}
+
+- (BOOL)sameDay {
+    return _daysDifference == 0;
+}
+
+- (BOOL)previousDay {
+    return _daysDifference == -1;
+}
+
+- (BOOL)nextDay {
+    return _daysDifference == 1;
+}
+
+- (NSTimeInterval)timeIntervalSinceReferenceDate {
+    return [self.date timeIntervalSinceDate:self.referenceDate];
+}
+
+- (BOOL)isInPast {
+    return self.timeIntervalSinceReferenceDate < 0;
+}
+
+- (BOOL)isInFuture {
+    return self.timeIntervalSinceReferenceDate > 0;
+}
+
+@end
+
 
 static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b) {
     if ((a == TTTCalendarUnitWeek) ^ (b == TTTCalendarUnitWeek)) {
@@ -122,22 +225,6 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     return (self.significantUnits & unit) && NSCalendarUnitCompareSignificance(self.leastSignificantUnit, unit) != NSOrderedDescending;
 }
 
-- (NSDateComponents *)componentsWithoutTime:(NSDate *)date
-{
-    NSCalendarUnit units = TTTCalendarUnitYear | TTTCalendarUnitMonth | TTTCalendarUnitWeek | TTTCalendarUnitDay | TTTCalendarUnitWeekday;
-    return [self.calendar components:units fromDate:date];
-}
-
-- (NSInteger)numberOfDaysFrom:(NSDate *)fromDate to:(NSDate *)toDate
-{
-    NSDateComponents *fromComponents = [self componentsWithoutTime:fromDate];
-    NSDateComponents *toComponents = [self componentsWithoutTime:toDate];
-    fromDate = [self.calendar dateFromComponents:fromComponents];
-    toDate = [self.calendar dateFromComponents:toComponents];
-    
-    return [self.calendar components:TTTCalendarUnitDay fromDate:fromDate toDate:toDate options:0].day;
-}
-
 #pragma mark - Formats
 
 - (NSString *)defaultForamt
@@ -150,7 +237,7 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     RuleCondition check = ^BOOL(NSDate *startingDate, NSDate *endingDate) {
         return YES;
     };
-    defaultFormat = @{@"format": [format copy], @"condtion": check};
+    defaultFormat = format == nil ? nil : @{@"format": [format copy], @"condtion": check};
 }
 
 - (void)addFormat:(NSString *)format forTimeInterval:(NSTimeInterval)timeInterval
@@ -186,9 +273,9 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     return [self stringForTimeIntervalFromDate:date toDate:[NSDate dateWithTimeInterval:seconds sinceDate:date]];
 }
 
-- (NSString *)relativeExpressionForStarting:(NSDate *)startingDate endingDate:(NSDate *)endingDate numberOfSignificantUnits:(NSUInteger)numberOfSignificantUnits
+- (NSString *)relativeExpressionForDateRelationship:(SLDateRelationship *)relationship numberOfSignificantUnits:(NSUInteger)numberOfSignificantUnits
 {
-    NSDateComponents *components = [self.calendar components:self.significantUnits fromDate:startingDate toDate:endingDate options:0];
+    NSDateComponents *components = [self.calendar components:self.significantUnits fromDate:relationship.referenceDate toDate:relationship.date options:0];
     NSString *string = nil;
     BOOL isApproximate = NO;
     NSUInteger numberOfUnits = 0;
@@ -196,7 +283,7 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
         NSCalendarUnit unit = [unitWrapper unsignedLongValue];
         if ([self shouldUseUnit:unit]) {
             BOOL reportOnlyDays = unit == TTTCalendarUnitDay && numberOfSignificantUnits == 1;
-            NSInteger value = reportOnlyDays ? [self numberOfDaysFrom:startingDate to:endingDate] : [self extractComponent:unit from:components];
+            NSInteger value = reportOnlyDays ? relationship.daysDifference : [self extractComponent:unit from:components];
             if (value) {
                 NSNumber *number = @(abs((int)value));
                 NSString *suffix = [NSString stringWithFormat:self.suffixExpressionFormat, number, [self localizedStringForNumber:[number unsignedIntegerValue] ofCalendarUnit:unit]];
@@ -214,7 +301,7 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     }
     
     if (string) {
-        if ([startingDate timeIntervalSinceDate:endingDate] > 0) {
+        if (relationship.isInPast) {
             if ([self.pastDeicticExpression length]) {
                 string = [NSString stringWithFormat:self.deicticExpressionFormat, string, self.pastDeicticExpression];
             }
@@ -253,15 +340,17 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
     NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
     
+    SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:endingDate referenceDate:startingDate calendar:self.calendar];
+    
     NSString *result = [format copy];
     if (relativeResult && relativeResult.range.location != NSNotFound) {
-        NSString *replacement = [self relativeExpressionForStarting:startingDate endingDate:endingDate numberOfSignificantUnits:relativeResult.range.length];
+        NSString *replacement = [self relativeExpressionForDateRelationship:dateRelationship numberOfSignificantUnits:relativeResult.range.length];
         if (replacement) {
             result = [result stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
         }
     }
     if (idiomaticResult && idiomaticResult.range.location != NSNotFound) {
-        NSString *replacement = [self idiomaticDeicticExpressionForStartingDate:startingDate endingDate:endingDate];
+        NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:dateRelationship];
         if (replacement) {
             result = [result stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
         }
@@ -278,7 +367,8 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
         return self.presentDeicticExpression;       // move to idiomaticDeicticExpression
     }
     
-    for (NSDictionary *rule in [rules arrayByAddingObject:defaultFormat]) {
+    NSArray *applicableRules = defaultFormat ? [rules arrayByAddingObject:defaultFormat] : rules;
+    for (NSDictionary *rule in applicableRules ) {
         RuleCondition check = rule[@"condtion"];
         if (!check(startingDate, endingDate)) {
             continue;
@@ -339,51 +429,33 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
 
 #pragma mark -
 
-- (NSString *)idiomaticDeicticExpressionForStartingDate:(NSDate *)startingDate endingDate:(NSDate *)endingDate
+- (NSString *)idiomaticDeicticExpressionForDateRelationship:(SLDateRelationship *)relationship
 {
-    NSDateComponents *startingComponents = [self componentsWithoutTime:startingDate];
-    NSDateComponents *endingComponents = [self componentsWithoutTime:endingDate];
-    
-    NSInteger dayDifference = [self numberOfDaysFrom:startingDate to:endingDate];
-    if ([self shouldUseUnit:TTTCalendarUnitDay] && dayDifference == -1) {
+    if ([self shouldUseUnit:TTTCalendarUnitDay] && relationship.previousDay) {
         return NSLocalizedStringFromTable(@"yesterday", @"FormatterKit", @"yesterday");
     }
-    if ([self shouldUseUnit:TTTCalendarUnitDay] && dayDifference == 1) {
+    if ([self shouldUseUnit:TTTCalendarUnitDay] && relationship.nextDay) {
         return NSLocalizedStringFromTable(@"tomorrow", @"FormatterKit", @"tomorrow");
     }
     
-    BOOL sameYear = startingComponents.year == endingComponents.year;
-    BOOL previousYear = startingComponents.year - 1 == endingComponents.year;
-    BOOL nextYear = startingComponents.year + 1 == endingComponents.year;
-    
-    BOOL sameMonth = sameYear && startingComponents.month == endingComponents.month;
-    BOOL previousMonth = (sameYear && startingComponents.month - 1 == endingComponents.month) || (previousYear && startingComponents.month == 1 && endingComponents.month == 12);
-    BOOL nextMonth = (sameYear && startingComponents.month + 1 == endingComponents.month) || (nextYear && startingComponents.month == 12 && endingComponents.month == 1);
-    
-    long numberOfWeeks = MAX(MAX(startingComponents.weekOfYear, endingComponents.weekOfYear), 52);
-    BOOL precedingWeekNumber = (endingComponents.weekOfYear % numberOfWeeks) + 1 == startingComponents.weekOfYear;
-    BOOL succeedingWeekNumber = (startingComponents.weekOfYear % numberOfWeeks) + 1 == endingComponents.weekOfYear;
-    BOOL previousWeek = precedingWeekNumber && (sameMonth || previousMonth);
-    BOOL nextWeek = succeedingWeekNumber && (sameMonth || nextMonth);
-    
-    if ([self shouldUseUnit:TTTCalendarUnitWeek] && previousWeek) {
+    if ([self shouldUseUnit:TTTCalendarUnitWeek] && relationship.previousWeek) {
         return NSLocalizedStringFromTable(@"last week", @"FormatterKit", @"last week");
     }
-    if ([self shouldUseUnit:TTTCalendarUnitWeek] && nextWeek) {
+    if ([self shouldUseUnit:TTTCalendarUnitWeek] && relationship.nextWeek) {
         return NSLocalizedStringFromTable(@"next week", @"FormatterKit", @"next week");
     }
     
-    if ([self shouldUseUnit:TTTCalendarUnitMonth] && previousMonth) {
+    if ([self shouldUseUnit:TTTCalendarUnitMonth] && relationship.previousMonth) {
         return NSLocalizedStringFromTable(@"last month", @"FormatterKit", @"last month");
     }
-    if ([self shouldUseUnit:TTTCalendarUnitMonth] && nextMonth) {
+    if ([self shouldUseUnit:TTTCalendarUnitMonth] && relationship.nextMonth) {
         return NSLocalizedStringFromTable(@"next month", @"FormatterKit", @"next month");
     }
     
-    if ([self shouldUseUnit:TTTCalendarUnitYear] && previousYear) {
+    if ([self shouldUseUnit:TTTCalendarUnitYear] && relationship.previousYear) {
         return NSLocalizedStringFromTable(@"last year", @"FormatterKit", @"last year");
     }
-    if ([self shouldUseUnit:TTTCalendarUnitYear] && nextYear) {
+    if ([self shouldUseUnit:TTTCalendarUnitYear] && relationship.nextYear) {
         return NSLocalizedStringFromTable(@"next year", @"FormatterKit", @"next year");
     }
     
