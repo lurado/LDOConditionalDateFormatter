@@ -8,6 +8,10 @@
 
 #import "TestCase.h"
 
+static int hours = 60 * 60;
+static int days = 24 * 60 * 60;
+
+
 @interface FormatTests : TestCase
 
 @end
@@ -99,17 +103,38 @@
     XCTAssertEqualObjects(result, @"yesterday, yo");
 }
 
+- (void)testReplacesMultipleTemplates
+{
+    self.formatter.defaultFormat = @"I / R";
+    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
+                                         toDate:@"2015-02-23 20:33:50 +0000"];
+    XCTAssertEqualObjects(result, @"yesterday / 13 hours 39 minutes ago");
+}
+
 - (void)testAppliesAddedFormatFirst
 {
     self.formatter.defaultFormat = @"I";
-    [self.formatter addFormat:@"R" forTimeInterval:(-4 * 24 * 60 * 60)];
-    NSString *result = [self.formatter stringForTimeInterval:(-1 * 24 * 60 * 60)];
+    [self.formatter addFormat:@"R" forTimeInterval:(-4 * days)];
+    NSString *result = [self.formatter stringForTimeInterval:(-1 * days)];
     XCTAssertEqualObjects(result, @"1 day ago");
 }
 
 - (void)testChecksTimeIntervalForFormat
 {
-    // expected fallback to defaultForamt
+    self.formatter.defaultFormat = @"I";
+    [self.formatter addFormat:@"R" forTimeInterval:(-3 * hours)];
+    NSString *result = [self.formatter stringForTimeInterval:(-1 * days)];
+    XCTAssertEqualObjects(result, @"yesterday");
+}
+
+- (void)testAppliesFormatsInOrder
+{
+    self.formatter.defaultFormat = @"I";
+    [self.formatter addFormat:@"R" forTimeInterval:(-4 * days)];
+    [self.formatter addFormat:@"RR" forTimeInterval:(-4 * days)];
+    
+    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000" toDate:@"2015-02-22 6:33:50 +0000"];
+    XCTAssertEqualObjects(result, @"2 days ago");
 }
 
 @end

@@ -115,7 +115,8 @@ typedef enum : NSUInteger {
 @property BOOL usesAbbreviatedCalendarUnits;
 
 
-@property (copy) NSString *defaultFormat;
+- (NSString *)defaultForamt;
+- (void)setDefaultFormat:(NSString *)defaultForamt;
 - (void)addFormat:(NSString *)format forTimeInterval:(NSTimeInterval)timeInterval;
 - (void)addFormat:(NSString *)format for:(SLTimeUnit)unit;
 - (void)addFormat:(NSString *)format forLast:(NSUInteger)count unit:(SLTimeUnit)unit;

@@ -32,7 +32,7 @@
 
 static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b) {
     if ((a == TTTCalendarUnitWeek) ^ (b == TTTCalendarUnitWeek)) {
-        if (b == TTTCalendarUnitWeek) {
+        if (b == TTTCalendarUnitWeek) {     // TODO: check https://github.com/mattt/FormatterKit/pull/186
             switch (a) {
                 case TTTCalendarUnitYear:
                 case TTTCalendarUnitMonth:
@@ -60,9 +60,12 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     }
 }
 
+typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
+
 @implementation SLConditionalDateFormatter
 {
-    NSMutableArray *formats;
+    NSMutableArray *rules;
+    NSDictionary *defaultFormat;
 }
 
 - (id)init
@@ -72,7 +75,7 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
         return nil;
     }
     
-    formats = [NSMutableArray array];
+    rules = [NSMutableArray array];
     self.locale = [NSLocale currentLocale];
     self.calendar = [NSCalendar currentCalendar];
     
@@ -137,9 +140,27 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
 
 #pragma mark - Formats
 
+- (NSString *)defaultForamt
+{
+    return defaultFormat[@"foramt"];
+}
+
+- (void)setDefaultFormat:(NSString *)format
+{
+    RuleCondition check = ^BOOL(NSDate *startingDate, NSDate *endingDate) {
+        return YES;
+    };
+    defaultFormat = @{@"format": [format copy], @"condtion": check};
+}
+
 - (void)addFormat:(NSString *)format forTimeInterval:(NSTimeInterval)timeInterval
 {
-    [formats addObject:format];
+    RuleCondition check = ^BOOL(NSDate *startingDate, NSDate *endingDate) {
+        NSTimeInterval difference = -[startingDate timeIntervalSinceDate:endingDate];
+        BOOL sameSign = (difference <= 0 && timeInterval <= 0) || (difference > 0 && timeInterval >= 0);
+        return sameSign && ABS(difference) <= ABS(timeInterval);
+    };
+    [rules addObject:@{@"format": format, @"condtion": check}];
 }
 
 - (void)addFormat:(NSString *)format for:(SLTimeUnit)unit
@@ -227,24 +248,26 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     }
     
     NSRegularExpression *relativeRegex = [self boundaryCharacterWrappedRegexp:@"R{1,8}"];
-    NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:format options:0 range:NSMakeRange(0, self.defaultFormat.length)];
+    NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
     
     NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
-    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, self.defaultFormat.length)];
+    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
     
+    NSString *result = [format copy];
     if (relativeResult && relativeResult.range.location != NSNotFound) {
         NSString *replacement = [self relativeExpressionForStarting:startingDate endingDate:endingDate numberOfSignificantUnits:relativeResult.range.length];
         if (replacement) {
-            return [format stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
+            result = [result stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
         }
-    } else if (idiomaticResult && idiomaticResult.range.location != NSNotFound) {
+    }
+    if (idiomaticResult && idiomaticResult.range.location != NSNotFound) {
         NSString *replacement = [self idiomaticDeicticExpressionForStartingDate:startingDate endingDate:endingDate];
         if (replacement) {
-            return [format stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
+            result = [result stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
         }
     }
     
-    return nil;
+    return [result isEqualToString:format] ? nil : result;
 }
 
 - (NSString *)stringForTimeIntervalFromDate:(NSDate *)startingDate
@@ -255,8 +278,12 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
         return self.presentDeicticExpression;       // move to idiomaticDeicticExpression
     }
     
-    for (NSString *format in [formats arrayByAddingObject:self.defaultFormat]) {
-        NSString *result = [self applyFormat:format startingDate:startingDate endingDate:endingDate];
+    for (NSDictionary *rule in [rules arrayByAddingObject:defaultFormat]) {
+        RuleCondition check = rule[@"condtion"];
+        if (!check(startingDate, endingDate)) {
+            continue;
+        }
+        NSString *result = [self applyFormat:rule[@"format"] startingDate:startingDate endingDate:endingDate];
         if (result) {
             return result;
         }
