@@ -15,11 +15,16 @@ typedef enum : NSUInteger {
     SLTimeUnitYears,
     
     SLTimeUnitToday,
+    SLTimeUnitSameDay,
     SLTimeUnitYesterday,
+    SLTimeUnitPreviousDay,
     SLTimeUnitTomorrow,
+    SLTimeUnitNextDay,
     
     SLTimeUnitThisWeek,
+    SLTimeUnitSameWeek,
     SLTimeUnitLastWeek,
+    SLTimeUnitPreviousWeek,
     SLTimeUnitNextWeek,
     
     SLTimeUnitThisMonth,

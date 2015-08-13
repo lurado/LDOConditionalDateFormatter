@@ -153,9 +153,9 @@ static int days = 24 * 60 * 60;
 
 - (void)testTimeFormatForToday
 {
-//    [self.formatter addFormat:@"R" for:SLTimeUnitToday];
-//    NSString *result = [self.formatter stringForTimeInterval:(-3 * hours)];
-//    XCTAssertEqualObjects(result, @"3 hours ago");
+    [self.formatter addFormat:@"R" for:SLTimeUnitToday];
+    NSString *result = [self.formatter stringForTimeInterval:(-3 * hours)];
+    XCTAssertEqualObjects(result, @"3 hours ago");
 }
 
 //    [formatter addFormat:@"HH:mm" for:SLTimeUnitToday];

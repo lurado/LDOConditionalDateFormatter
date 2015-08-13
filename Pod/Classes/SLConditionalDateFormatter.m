@@ -54,6 +54,7 @@
 @property (readonly) BOOL previousMonth;
 @property (readonly) BOOL nextMonth;
 
+@property (readonly) BOOL sameWeek;
 @property (readonly) BOOL previousWeek;
 @property (readonly) BOOL nextWeek;
 
@@ -99,8 +100,10 @@
         _nextMonth = (_sameYear && startingComponents.month + 1 == endingComponents.month) || (_nextYear && startingComponents.month == 12 && endingComponents.month == 1);
         
         long numberOfWeeks = MAX(MAX(startingComponents.weekOfYear, endingComponents.weekOfYear), 52);
+        BOOL sameWeekNumber = startingComponents.weekOfYear == endingComponents.weekOfYear;
         BOOL precedingWeekNumber = (endingComponents.weekOfYear % numberOfWeeks) + 1 == startingComponents.weekOfYear;
         BOOL succeedingWeekNumber = (startingComponents.weekOfYear % numberOfWeeks) + 1 == endingComponents.weekOfYear;
+        _sameWeek = sameWeekNumber && _sameMonth;
         _previousWeek = precedingWeekNumber && (_sameMonth || _previousMonth);
         _nextWeek = succeedingWeekNumber && (_sameMonth || _nextMonth);
     }
@@ -247,6 +250,11 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     defaultFormat = format == nil ? nil : @{@"format": [format copy], @"condtion": check};
 }
 
+- (void)addFormat:(NSString *)format condition:(RuleCondition)condition
+{
+    [rules addObject:@{@"format": format, @"condtion": condition}];
+}
+
 - (void)addFormat:(NSString *)format forTimeInterval:(NSTimeInterval)timeInterval
 {
     RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
@@ -254,12 +262,45 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
         BOOL sameSign = (difference <= 0 && timeInterval <= 0) || (difference > 0 && timeInterval >= 0);
         return sameSign && ABS(difference) <= ABS(timeInterval);
     };
-    [rules addObject:@{@"format": format, @"condtion": check}];
+    [self addFormat:format condition:check];
 }
 
 - (void)addFormat:(NSString *)format for:(SLTimeUnit)unit
 {
+    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
+        switch (unit) {
+            case SLTimeUnitToday:
+            case SLTimeUnitSameDay:
+                return relationship.sameDay;
+            case SLTimeUnitYesterday:
+            case SLTimeUnitPreviousDay:
+                return relationship.previousDay;
+            case SLTimeUnitTomorrow:
+            case SLTimeUnitNextDay:
+                return relationship.nextDay;
+            
+            case SLTimeUnitThisWeek:
+            case SLTimeUnitSameWeek:
+                return relationship.sameWeek;
+            case SLTimeUnitLastWeek:
+            case SLTimeUnitPreviousWeek:
+                return relationship.previousWeek;
+            case SLTimeUnitNextWeek: return relationship.nextWeek;
+            
+            case SLTimeUnitThisMonth: return relationship.sameMonth;
+            case SLTimeUnitLastMonth: return relationship.previousMonth;
+            case SLTimeUnitNextMonth: return relationship.nextMonth;
+            
+            case SLTimeUnitThisYear: return relationship.sameYear;
+            case SLTimeUnitLastYear: return relationship.previousYear;
+            case SLTimeUnitNextYear: return relationship.nextYear;
+            default:
+                break;
+        }
+        return NO;
+    };
     
+    [self addFormat:format condition:check];
 }
 
 - (void)addFormat:(NSString *)format forLast:(NSUInteger)count unit:(SLTimeUnit)unit
@@ -276,7 +317,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 - (NSString *)stringForTimeInterval:(NSTimeInterval)seconds
 {
-    NSDate *now = [NSDate date];
+    NSDate *now = [NSDate date];    // use for offset calculation _and_ reference to ensure no second wrap occurs between two [NSDate date] calls
     return [self stringForTimeIntervalFromDate:[now dateByAddingTimeInterval:seconds] toReferenceDate:now];
 }
 
