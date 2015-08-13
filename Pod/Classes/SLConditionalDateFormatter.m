@@ -265,13 +265,78 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     
 }
 
-#pragma mark - other
+#pragma mark - interface methods
 
 - (NSString *)stringForTimeInterval:(NSTimeInterval)seconds
 {
     NSDate *date = [NSDate date];
     return [self stringForTimeIntervalFromDate:date toDate:[NSDate dateWithTimeInterval:seconds sinceDate:date]];
 }
+
+- (NSString *)stringForTimeIntervalFromDate:(NSDate *)startingDate
+                                     toDate:(NSDate *)endingDate
+{
+    NSTimeInterval seconds = [startingDate timeIntervalSinceDate:endingDate];
+    if (fabs(seconds) < self.presentTimeIntervalMargin) {
+        return self.presentDeicticExpression;       // move to idiomaticDeicticExpression
+    }
+    
+    NSArray *applicableRules = defaultFormat ? [rules arrayByAddingObject:defaultFormat] : rules;
+    for (NSDictionary *rule in applicableRules ) {
+        RuleCondition check = rule[@"condtion"];
+        if (!check(startingDate, endingDate)) {
+            continue;
+        }
+        NSString *result = [self applyFormat:rule[@"format"] startingDate:startingDate endingDate:endingDate];
+        if (result) {
+            return result;
+        }
+    }
+    
+    return nil;
+}
+
+#pragma mark Helper
+
+- (NSRegularExpression *)boundaryCharacterWrappedRegexp:(NSString *)regexp
+{
+    NSString *boundaryCharacters = @"\\s,\\.";
+    NSString *pattern = [NSString stringWithFormat:@"(?:^|[%@])(%@)(?:$|[%@])", boundaryCharacters, regexp, boundaryCharacters];
+    return [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+}
+
+- (NSString *)applyFormat:(NSString *)format startingDate:(NSDate *)startingDate endingDate:(NSDate *)endingDate
+{
+    if (!format) {
+        return nil;
+    }
+    
+    NSRegularExpression *relativeRegex = [self boundaryCharacterWrappedRegexp:@"R{1,8}"];
+    NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
+    
+    NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
+    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
+    
+    SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:endingDate referenceDate:startingDate calendar:self.calendar];
+    
+    NSString *result = [format copy];
+    if (relativeResult && relativeResult.range.location != NSNotFound) {
+        NSString *replacement = [self relativeExpressionForDateRelationship:dateRelationship numberOfSignificantUnits:relativeResult.range.length];
+        if (replacement) {
+            result = [result stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
+        }
+    }
+    if (idiomaticResult && idiomaticResult.range.location != NSNotFound) {
+        NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:dateRelationship];
+        if (replacement) {
+            result = [result stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
+        }
+    }
+    
+    return [result isEqualToString:format] ? nil : result;
+}
+
+#pragma mark - Transformations
 
 - (NSString *)relativeExpressionForDateRelationship:(SLDateRelationship *)relationship numberOfSignificantUnits:(NSUInteger)numberOfSignificantUnits
 {
@@ -319,67 +384,6 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     }
     
     return string;
-}
-
-- (NSRegularExpression *)boundaryCharacterWrappedRegexp:(NSString *)regexp
-{
-    NSString *boundaryCharacters = @"\\s,\\.";
-    NSString *pattern = [NSString stringWithFormat:@"(?:^|[%@])(%@)(?:$|[%@])", boundaryCharacters, regexp, boundaryCharacters];
-    return [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
-}
-
-- (NSString *)applyFormat:(NSString *)format startingDate:(NSDate *)startingDate endingDate:(NSDate *)endingDate
-{
-    if (!format) {
-        return nil;
-    }
-    
-    NSRegularExpression *relativeRegex = [self boundaryCharacterWrappedRegexp:@"R{1,8}"];
-    NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
-    
-    NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
-    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
-    
-    SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:endingDate referenceDate:startingDate calendar:self.calendar];
-    
-    NSString *result = [format copy];
-    if (relativeResult && relativeResult.range.location != NSNotFound) {
-        NSString *replacement = [self relativeExpressionForDateRelationship:dateRelationship numberOfSignificantUnits:relativeResult.range.length];
-        if (replacement) {
-            result = [result stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
-        }
-    }
-    if (idiomaticResult && idiomaticResult.range.location != NSNotFound) {
-        NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:dateRelationship];
-        if (replacement) {
-            result = [result stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
-        }
-    }
-    
-    return [result isEqualToString:format] ? nil : result;
-}
-
-- (NSString *)stringForTimeIntervalFromDate:(NSDate *)startingDate
-                                     toDate:(NSDate *)endingDate
-{
-    NSTimeInterval seconds = [startingDate timeIntervalSinceDate:endingDate];
-    if (fabs(seconds) < self.presentTimeIntervalMargin) {
-        return self.presentDeicticExpression;       // move to idiomaticDeicticExpression
-    }
-    
-    NSArray *applicableRules = defaultFormat ? [rules arrayByAddingObject:defaultFormat] : rules;
-    for (NSDictionary *rule in applicableRules ) {
-        RuleCondition check = rule[@"condtion"];
-        if (!check(startingDate, endingDate)) {
-            continue;
-        }
-        NSString *result = [self applyFormat:rule[@"format"] startingDate:startingDate endingDate:endingDate];
-        if (result) {
-            return result;
-        }
-    }
-    
-    return nil;
 }
 
 - (NSString *)localizedStringForNumber:(NSUInteger)number ofCalendarUnit:(NSCalendarUnit)unit
@@ -461,6 +465,8 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     
     return nil;
 }
+
+#pragma mark - Not used atm
 
 - (NSString *)caRelativeDateStringForComponents:(NSDateComponents *)components
 {
