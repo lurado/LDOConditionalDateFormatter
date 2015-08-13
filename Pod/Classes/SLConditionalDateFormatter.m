@@ -163,7 +163,7 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     }
 }
 
-typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
+typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 @implementation SLConditionalDateFormatter
 {
@@ -234,7 +234,7 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
 
 - (void)setDefaultFormat:(NSString *)format
 {
-    RuleCondition check = ^BOOL(NSDate *startingDate, NSDate *endingDate) {
+    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
         return YES;
     };
     defaultFormat = format == nil ? nil : @{@"format": [format copy], @"condtion": check};
@@ -242,8 +242,8 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
 
 - (void)addFormat:(NSString *)format forTimeInterval:(NSTimeInterval)timeInterval
 {
-    RuleCondition check = ^BOOL(NSDate *startingDate, NSDate *endingDate) {
-        NSTimeInterval difference = -[startingDate timeIntervalSinceDate:endingDate];
+    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
+        NSTimeInterval difference = relationship.timeIntervalSinceReferenceDate;
         BOOL sameSign = (difference <= 0 && timeInterval <= 0) || (difference > 0 && timeInterval >= 0);
         return sameSign && ABS(difference) <= ABS(timeInterval);
     };
@@ -273,21 +273,20 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     return [self stringForTimeIntervalFromDate:date toDate:[NSDate dateWithTimeInterval:seconds sinceDate:date]];
 }
 
-- (NSString *)stringForTimeIntervalFromDate:(NSDate *)startingDate
-                                     toDate:(NSDate *)endingDate
-{
-    NSTimeInterval seconds = [startingDate timeIntervalSinceDate:endingDate];
-    if (fabs(seconds) < self.presentTimeIntervalMargin) {
+- (NSString *)stringForTimeIntervalFromDate:(NSDate *)startingDate toDate:(NSDate *)endingDate {
+    SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:endingDate referenceDate:startingDate calendar:self.calendar];
+    
+    if (fabs(dateRelationship.timeIntervalSinceReferenceDate) < self.presentTimeIntervalMargin) {
         return self.presentDeicticExpression;       // move to idiomaticDeicticExpression
     }
     
     NSArray *applicableRules = defaultFormat ? [rules arrayByAddingObject:defaultFormat] : rules;
     for (NSDictionary *rule in applicableRules ) {
         RuleCondition check = rule[@"condtion"];
-        if (!check(startingDate, endingDate)) {
+        if (!check(dateRelationship)) {
             continue;
         }
-        NSString *result = [self applyFormat:rule[@"format"] startingDate:startingDate endingDate:endingDate];
+        NSString *result = [self applyFormat:rule[@"format"] toDateRelationship:dateRelationship];
         if (result) {
             return result;
         }
@@ -305,7 +304,7 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     return [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
 }
 
-- (NSString *)applyFormat:(NSString *)format startingDate:(NSDate *)startingDate endingDate:(NSDate *)endingDate
+- (NSString *)applyFormat:(NSString *)format toDateRelationship:(SLDateRelationship *)relationship
 {
     if (!format) {
         return nil;
@@ -317,17 +316,16 @@ typedef BOOL (^RuleCondition)(NSDate *staringDate, NSDate *endingDate);
     NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
     NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
     
-    SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:endingDate referenceDate:startingDate calendar:self.calendar];
     
     NSString *result = [format copy];
     if (relativeResult && relativeResult.range.location != NSNotFound) {
-        NSString *replacement = [self relativeExpressionForDateRelationship:dateRelationship numberOfSignificantUnits:relativeResult.range.length];
+        NSString *replacement = [self relativeExpressionForDateRelationship:relationship numberOfSignificantUnits:relativeResult.range.length];
         if (replacement) {
             result = [result stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
         }
     }
     if (idiomaticResult && idiomaticResult.range.location != NSNotFound) {
-        NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:dateRelationship];
+        NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:relationship];
         if (replacement) {
             result = [result stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
         }
