@@ -79,7 +79,8 @@
     return [calendar components:TTTCalendarUnitDay fromDate:fromDate toDate:toDate options:0].day;
 }
 
-- (instancetype)initWithDate:(NSDate *)date referenceDate:(NSDate *)referenceDate calendar:(NSCalendar *)calendar {
+- (instancetype)initWithDate:(NSDate *)date referenceDate:(NSDate *)referenceDate calendar:(NSCalendar *)calendar
+{
     if (self = [super init]) {
         _referenceDate = referenceDate;
         _date = date;
@@ -106,15 +107,18 @@
     return self;
 }
 
-- (BOOL)sameDay {
+- (BOOL)sameDay
+{
     return _daysDifference == 0;
 }
 
-- (BOOL)previousDay {
+- (BOOL)previousDay
+{
     return _daysDifference == -1;
 }
 
-- (BOOL)nextDay {
+- (BOOL)nextDay
+{
     return _daysDifference == 1;
 }
 
@@ -122,18 +126,21 @@
     return [self.date timeIntervalSinceDate:self.referenceDate];
 }
 
-- (BOOL)isInPast {
+- (BOOL)isInPast
+{
     return self.timeIntervalSinceReferenceDate < 0;
 }
 
-- (BOOL)isInFuture {
+- (BOOL)isInFuture
+{
     return self.timeIntervalSinceReferenceDate > 0;
 }
 
 @end
 
 
-static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b) {
+static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b)
+{
     if ((a == TTTCalendarUnitWeek) ^ (b == TTTCalendarUnitWeek)) {
         if (b == TTTCalendarUnitWeek) {     // TODO: check https://github.com/mattt/FormatterKit/pull/186
             switch (a) {
@@ -273,7 +280,8 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     return [self stringForTimeIntervalFromDate:[now dateByAddingTimeInterval:seconds] toReferenceDate:now];
 }
 
-- (NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate {
+- (NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate
+{
     SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:date referenceDate:referenceDate calendar:self.calendar];
     
     if (fabs(dateRelationship.timeIntervalSinceReferenceDate) < self.presentTimeIntervalMargin) {
