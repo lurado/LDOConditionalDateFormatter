@@ -71,6 +71,16 @@ static int days = 24 * 60 * 60;
     // TODO: should default "I" fall back to "R"?
 }
 
+- (void)testHandlesNilDefault {
+    self.formatter.defaultFormat = nil;
+    
+    NSString *result = [self expressionFromDate:@"2015-02-24 10:13:39 +0000"
+                                         toDate:@"2015-02-23 20:33:50 +0000"];
+    XCTAssertEqual(result, nil);
+}
+
+#pragma mark Formats I and R
+
 - (void)testUsesDefaultFormat
 {
     self.formatter.defaultFormat = @"R";
@@ -111,6 +121,8 @@ static int days = 24 * 60 * 60;
     XCTAssertEqualObjects(result, @"yesterday / 13 hours 39 minutes ago");
 }
 
+#pragma mark Precedence
+
 - (void)testAppliesAddedFormatFirst
 {
     self.formatter.defaultFormat = @"I";
@@ -129,7 +141,6 @@ static int days = 24 * 60 * 60;
 
 - (void)testAppliesFormatsInOrder
 {
-    self.formatter.defaultFormat = @"I";
     [self.formatter addFormat:@"R" forTimeInterval:(-4 * days)];
     [self.formatter addFormat:@"RR" forTimeInterval:(-4 * days)];
     
