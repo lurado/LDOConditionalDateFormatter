@@ -419,10 +419,10 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     
     NSString *result = [format copy];
     
-    NSRegularExpression *relativeRegex = [self boundaryCharacterWrappedRegexp:@"R{1,8}"];
+    NSRegularExpression *relativeRegex = [self boundaryCharacterWrappedRegexp:@"(R{1,8})"];
     NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
     if (relativeResult && relativeResult.range.location != NSNotFound) {
-        NSString *replacement = [self relativeExpressionForDateRelationship:relationship numberOfSignificantUnits:relativeResult.range.length];
+        NSString *replacement = [self relativeExpressionForDateRelationship:relationship numberOfSignificantUnits:[relativeResult rangeAtIndex:2].length];
         if (replacement) {
             result = [result stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
         }
