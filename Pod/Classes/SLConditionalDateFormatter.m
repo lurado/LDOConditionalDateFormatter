@@ -172,7 +172,7 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     }
 }
 
-typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
+typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 
 @implementation SLConditionalDateFormatter
 {
@@ -273,20 +273,20 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 - (void)setDefaultFormat:(NSString *)format
 {
-    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
+    FormatCondition check = ^BOOL(SLDateRelationship *relationship) {
         return YES;
     };
     defaultFormat = format == nil ? nil : @{@"format": [format copy], @"condtion": check};
 }
 
-- (void)addFormat:(NSString *)format condition:(RuleCondition)condition
+- (void)addFormat:(NSString *)format condition:(FormatCondition)condition
 {
     [rules addObject:@{@"format": format, @"condtion": condition}];
 }
 
 - (void)addFormat:(NSString *)format forTimeInterval:(NSTimeInterval)timeInterval
 {
-    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
+    FormatCondition check = ^BOOL(SLDateRelationship *relationship) {
         NSTimeInterval difference = relationship.timeIntervalSinceReferenceDate;
         BOOL sameSign = (difference <= 0 && timeInterval <= 0) || (difference > 0 && timeInterval >= 0);
         return sameSign && ABS(difference) <= ABS(timeInterval);
@@ -296,7 +296,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 - (void)addFormat:(NSString *)format for:(SLTimeUnit)unit
 {
-    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
+    FormatCondition check = ^BOOL(SLDateRelationship *relationship) {
         switch (unit) {
             case SLTimeUnitToday:
             case SLTimeUnitSameDay:
@@ -334,7 +334,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 - (void)addFormat:(NSString *)format forLast:(NSUInteger)count unit:(SLTimeUnit)unit
 {
-    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
+    FormatCondition check = ^BOOL(SLDateRelationship *relationship) {
         switch (unit) {
             case SLTimeUnitDays: return relationship.daysDifference <= 0 && relationship.daysDifference <= -count;
             case SLTimeUnitWeeks: return relationship.weeksDifference <= 0 && relationship.weeksDifference <= -count;
@@ -351,7 +351,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 - (void)addFormat:(NSString *)format forNext:(NSUInteger)count unit:(SLTimeUnit)unit
 {
-    RuleCondition check = ^BOOL(SLDateRelationship *relationship) {
+    FormatCondition check = ^BOOL(SLDateRelationship *relationship) {
         switch (unit) {
             case SLTimeUnitDays: return relationship.daysDifference >= 0 && relationship.daysDifference <= count;
             case SLTimeUnitWeeks: return relationship.weeksDifference >= 0 && relationship.weeksDifference <= count;
@@ -385,7 +385,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     
     NSArray *applicableRules = defaultFormat ? [rules arrayByAddingObject:defaultFormat] : rules;
     for (NSDictionary *rule in applicableRules ) {
-        RuleCondition check = rule[@"condtion"];
+        FormatCondition check = rule[@"condtion"];
         if (!check(dateRelationship)) {
             continue;
         }
