@@ -505,8 +505,6 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
         if (isApproximate && approximate) {
             string = [NSString stringWithFormat:self.approximateQualifierFormat, string];
         }
-    } else {
-        string = self.presentDeicticExpression;     // TODO: this default is wrong - rather raise an error or return nil
     }
     
     return string;
