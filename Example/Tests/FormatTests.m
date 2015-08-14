@@ -123,6 +123,13 @@
     XCTAssertEqualObjects(result, @"yesterday / 13 hours 39 minutes ago");
 }
 
+- (void)testMultipleTemplateInvariance {
+    self.formatter.defaultFormat = @"R / I";   // opposite order as previous test
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
+    XCTAssertEqualObjects(result, @"13 hours 39 minutes ago / yesterday");
+}
+
 #pragma mark Precedence
 
 - (void)testAppliesAddedFormatFirst

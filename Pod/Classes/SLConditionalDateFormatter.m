@@ -417,29 +417,28 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
         return nil;
     }
     
-    NSRegularExpression *relativeRegex = [self boundaryCharacterWrappedRegexp:@"R{1,8}"];
-    NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
-    
-    NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
-    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];    // TODO: construct error due to premature matching
-    
-    NSRegularExpression *dateFormatRegex = [NSRegularExpression regularExpressionWithPattern:@"\\{(.*?)\\}" options:0 error:nil];
-    NSTextCheckingResult *dateFormatResult = [dateFormatRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
-    
-    
     NSString *result = [format copy];
+    
+    NSRegularExpression *relativeRegex = [self boundaryCharacterWrappedRegexp:@"R{1,8}"];
+    NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
     if (relativeResult && relativeResult.range.location != NSNotFound) {
         NSString *replacement = [self relativeExpressionForDateRelationship:relationship numberOfSignificantUnits:relativeResult.range.length];
         if (replacement) {
             result = [result stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
         }
     }
+    
+    NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
+    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
     if (idiomaticResult && idiomaticResult.range.location != NSNotFound) {
         NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:relationship];
         if (replacement) {
             result = [result stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
         }
     }
+    
+    NSRegularExpression *dateFormatRegex = [NSRegularExpression regularExpressionWithPattern:@"\\{(.*?)\\}" options:0 error:nil];
+    NSTextCheckingResult *dateFormatResult = [dateFormatRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
     if (dateFormatResult && dateFormatResult.range.location != NSNotFound) {
         dateFormatter.locale = self.locale;
         dateFormatter.dateFormat = [format substringWithRange:[dateFormatResult rangeAtIndex:1]];
