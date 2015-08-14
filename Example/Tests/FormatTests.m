@@ -107,6 +107,13 @@
     XCTAssertEqualObjects(result, @"2 days 3 hours ago");
 }
 
+- (void)testApproximateQualifier {
+    self.formatter.defaultFormat = @"~R";
+    
+    NSString *result = [self expressionFromDate:@"2015-02-24 6:33:50 +0000" toReferenceDate:@"2015-02-24 10:13:39 +0000"];
+    XCTAssertEqualObjects(result, @"about 3 hours ago");
+}
+
 - (void)testOnlyChangesTemplateCharacters
 {
     self.formatter.defaultFormat = @"I, yo";
@@ -120,14 +127,31 @@
     self.formatter.defaultFormat = @"I / R";
     NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
                                 toReferenceDate:@"2015-02-24 10:13:39 +0000"];
-    XCTAssertEqualObjects(result, @"yesterday / 13 hours 39 minutes ago");
+    XCTAssertEqualObjects(result, @"yesterday / 1 day ago");
 }
 
-- (void)testMultipleTemplateInvariance {
+- (void)testMultipleTemplateInvariance
+{
     self.formatter.defaultFormat = @"R / I";   // opposite order as previous test
     NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
                                 toReferenceDate:@"2015-02-24 10:13:39 +0000"];
-    XCTAssertEqualObjects(result, @"13 hours 39 minutes ago / yesterday");
+    XCTAssertEqualObjects(result, @"1 day ago / yesterday");
+}
+
+- (void)testRelativeRepetition
+{
+    self.formatter.defaultFormat = @"R - R";
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
+    XCTAssertEqualObjects(result, @"1 day ago - 1 day ago");
+}
+
+- (void)testIdiomaticRepetition
+{
+    self.formatter.defaultFormat = @"I - I";
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-24 10:13:39 +0000"];
+    XCTAssertEqualObjects(result, @"yesterday - yesterday");
 }
 
 #pragma mark Precedence
@@ -191,23 +215,26 @@
 
 - (void)testReplacesTimePattern {
     self.formatter.defaultFormat = @"{HH:mm}";
-    NSString *result = [self expressionFromDate:@"2015-02-22 6:33:50 +0000" toReferenceDate:@"2015-02-22 10:13:39 +0000"];
+    NSString *result = [self.formatter stringForTimeIntervalSinceDate:[self parseDate:@"2015-02-22 06:33:50 +0000"]];
     XCTAssertEqualObjects(result, @"06:33");
 }
 
 - (void)testSubstitutesTemplate {
-    [self.formatter addFormat:@"{hm}" for:SLTimeUnitToday];
-    NSString *result = [self expressionFromDate:@"2015-02-22 16:33:50 +0000" toReferenceDate:@"2015-02-22 10:13:39 +0000"];
+    self.formatter.defaultFormat = @"{hm}";
+    NSString *result = [self.formatter stringForTimeIntervalSinceDate:[self parseDate:@"2015-02-22 16:33:50 +0000"]];
     XCTAssertEqualObjects(result, @"4:33 PM");
 }
 
-- (void)testDoesNotSubstituteTemplateWithNonPatternCharacter {
-//    [formatter addFormat:@"{p}" for:SLTimeUnitToday];
+- (void)testMultipleTimeFormatOccurances {
+    self.formatter.defaultFormat = @"{yyyy-MM-dd} at {HH:mm}";
+    NSString *result = [self.formatter stringForTimeIntervalSinceDate:[self parseDate:@"2015-02-22 16:33:50 +0000"]];
+    XCTAssertEqualObjects(result, @"2015-02-22 at 16:33");
 }
 
-//    [formatter addFormat:@"HH:mm" for:SLTimeUnitToday];
-//    [formatter addFormat:@"R at {HH:mm}" for:SLTimeUnitYesterday];
-//    [formatter addFormat:@"R" forLast:2 unit:SLTimeUnitWeeks];
-//    [formatter addFormat:@"R" forNext:2 unit:SLTimeUnitDays];
+- (void)testMultipleTemplateOccurances {
+    self.formatter.defaultFormat = @"{yMd} at {Hm}";
+    NSString *result = [self.formatter stringForTimeIntervalSinceDate:[self parseDate:@"2015-02-22 16:33:50 +0000"]];
+    XCTAssertEqualObjects(result, @"2/22/2015 at 16:33");
+}
 
 @end

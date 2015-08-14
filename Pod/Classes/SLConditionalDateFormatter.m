@@ -404,11 +404,10 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 #pragma mark Helper
 
-- (NSRegularExpression *)boundaryCharacterWrappedRegexp:(NSString *)regexp
+- (NSString *)boundaryCharacterWrappedPattern:(NSString *)pattern
 {
     NSString *boundaryCharacters = @"\\s,\\.";
-    NSString *pattern = [NSString stringWithFormat:@"(?:^|[%@])(%@)(?:$|[%@])", boundaryCharacters, regexp, boundaryCharacters];
-    return [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+    return [NSString stringWithFormat:@"(?:^|[%@])(%@)(?:$|[%@])", boundaryCharacters, pattern, boundaryCharacters];
 }
 
 - (NSString *)applyFormat:(NSString *)format toDateRelationship:(SLDateRelationship *)relationship
@@ -419,51 +418,57 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     
     NSString *result = [format copy];
     
-    NSRegularExpression *relativeRegex = [self boundaryCharacterWrappedRegexp:@"(R{1,8})"];
-    NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
-    if (relativeResult && relativeResult.range.location != NSNotFound) {
-        NSString *replacement = [self relativeExpressionForDateRelationship:relationship numberOfSignificantUnits:[relativeResult rangeAtIndex:2].length];
+    result = [self replaceMatchesOfRegex:[self boundaryCharacterWrappedPattern:@"(~?)(R{1,8})"] inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
+        BOOL approximate = [match rangeAtIndex:2].length == 1;
+        NSString *replacement = [self relativeExpressionForDateRelationship:relationship numberOfSignificantUnits:[match rangeAtIndex:3].length approximate:approximate];
         if (replacement) {
-            result = [result stringByReplacingCharactersInRange:[relativeResult rangeAtIndex:1] withString:replacement];
+            input = [input stringByReplacingCharactersInRange:[match rangeAtIndex:1] withString:replacement];
         }
-    }
+        return input;
+    }];
     
-    NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
-    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
-    if (idiomaticResult && idiomaticResult.range.location != NSNotFound) {
+    result = [self replaceMatchesOfRegex:[self boundaryCharacterWrappedPattern:@"I"] inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
         NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:relationship];
         if (replacement) {
-            result = [result stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
+            input = [input stringByReplacingCharactersInRange:[match rangeAtIndex:1] withString:replacement];
         }
-    }
-
-    NSRegularExpression *dateTemplateRegex = [NSRegularExpression regularExpressionWithPattern:@"\\{([cdeghjklmqrsuvwxyzADEFGHJKLMOQSUVWXYZ]*?)\\}" options:0 error:nil];
-    NSTextCheckingResult *dateTemplateResult = [dateTemplateRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
-    if (dateTemplateResult && dateTemplateResult.range.location != NSNotFound) {
-        NSRange templateRange = [dateTemplateResult rangeAtIndex:1];
-        NSString *template = [result substringWithRange:templateRange];
-        NSString *replacement = [NSDateFormatter dateFormatFromTemplate:template options:0 locale: self.locale];
-        if (replacement) {
-            result = [result stringByReplacingCharactersInRange:templateRange withString:replacement];
-        }
-    }
+        return input;
+    }];
     
-    NSRegularExpression *dateFormatRegex = [NSRegularExpression regularExpressionWithPattern:@"\\{(.*?)\\}" options:0 error:nil];
-    NSTextCheckingResult *dateFormatResult = [dateFormatRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
-    if (dateFormatResult && dateFormatResult.range.location != NSNotFound) {
-        dateFormatter.dateFormat = [result substringWithRange:[dateFormatResult rangeAtIndex:1]];
+    result = [self replaceMatchesOfRegex:@"\\{([cdeghjklmqrsuvwxyzADEFGHJKLMOQSUVWXYZ]*?)\\}" inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
+        NSRange templateRange = [match rangeAtIndex:1];
+        NSString *template = [input substringWithRange:templateRange];
+        NSString *replacement = [NSDateFormatter dateFormatFromTemplate:template options:0 locale:self.locale];
+        if (replacement) {
+            input = [input stringByReplacingCharactersInRange:templateRange withString:replacement];
+        }
+        return input;
+    }];
+    
+    result = [self replaceMatchesOfRegex:@"\\{(.*?)\\}" inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
+        dateFormatter.dateFormat = [input substringWithRange:[match rangeAtIndex:1]];
         NSString *replacement = [dateFormatter stringFromDate:relationship.date];
         if (replacement) {
-            result = [result stringByReplacingCharactersInRange:dateFormatResult.range withString:replacement];
+            input = [input stringByReplacingCharactersInRange:match.range withString:replacement];
         }
-    }
+        return input;
+    }];
     
     return [result isEqualToString:format] ? nil : result;
 }
 
+- (NSString *)replaceMatchesOfRegex:(NSString *)pattern inString:(NSString *)string usingBlock:(NSString* (^)(NSString *input, NSTextCheckingResult* match))block {
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+    NSArray *matches = [regex matchesInString:string options:0 range:NSMakeRange(0, string.length)];
+    for (NSTextCheckingResult *match in [matches reverseObjectEnumerator]) {
+        string = block(string, match);
+    }
+    return string;
+}
+
 #pragma mark - Transformations
 
-- (NSString *)relativeExpressionForDateRelationship:(SLDateRelationship *)relationship numberOfSignificantUnits:(NSUInteger)numberOfSignificantUnits
+- (NSString *)relativeExpressionForDateRelationship:(SLDateRelationship *)relationship numberOfSignificantUnits:(NSUInteger)numberOfSignificantUnits approximate:(BOOL)approximate
 {
     NSDateComponents *components = [self.calendar components:self.significantUnits fromDate:relationship.referenceDate toDate:relationship.date options:0];
     NSString *string = nil;
@@ -501,7 +506,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
             }
         }
         
-        if (isApproximate && self.usesApproximateQualifier) {
+        if (isApproximate && approximate) {
             string = [NSString stringWithFormat:self.approximateQualifierFormat, string];
         }
     } else {
@@ -704,7 +709,6 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     formatter.approximateQualifierFormat = [self.approximateQualifierFormat copyWithZone:zone];
     formatter.presentTimeIntervalMargin = self.presentTimeIntervalMargin;
     formatter.usesAbbreviatedCalendarUnits = self.usesAbbreviatedCalendarUnits;
-    formatter.usesApproximateQualifier = self.usesApproximateQualifier;
     
     return formatter;
 }
@@ -723,7 +727,6 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     self.approximateQualifierFormat = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(approximateQualifierFormat))];
     self.presentTimeIntervalMargin = [aDecoder decodeDoubleForKey:NSStringFromSelector(@selector(presentTimeIntervalMargin))];
     self.usesAbbreviatedCalendarUnits = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(usesAbbreviatedCalendarUnits))];
-    self.usesApproximateQualifier = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(usesApproximateQualifier))];
     
     return self;
 }
@@ -740,7 +743,6 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     [aCoder encodeObject:self.approximateQualifierFormat forKey:NSStringFromSelector(@selector(approximateQualifierFormat))];
     [aCoder encodeDouble:self.presentTimeIntervalMargin forKey:NSStringFromSelector(@selector(presentTimeIntervalMargin))];
     [aCoder encodeBool:self.usesAbbreviatedCalendarUnits forKey:NSStringFromSelector(@selector(usesAbbreviatedCalendarUnits))];
-    [aCoder encodeBool:self.usesApproximateQualifier forKey:NSStringFromSelector(@selector(usesApproximateQualifier))];
 }
 
 @end

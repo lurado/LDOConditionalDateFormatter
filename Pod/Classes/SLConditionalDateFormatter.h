@@ -100,11 +100,6 @@ typedef enum : NSUInteger {
  */
 @property (copy) NSString *approximateQualifierFormat;
 
-/**
- Specifies whether to use an approximate qualifier when the described interval is not exact. `NO` by default.
- */
-@property BOOL usesApproximateQualifier;
-
 ///------------------------------------
 /// @name Configuring Significant Units
 ///------------------------------------
