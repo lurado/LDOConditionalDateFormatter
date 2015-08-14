@@ -14,6 +14,8 @@
 
 @implementation RelativeExpressionsTests
 
+#pragma mark - significant units
+
 - (void)testSignificantUnitExclusion
 {
     self.formatter.defaultFormat = @"R";
@@ -21,6 +23,14 @@
     NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
                                 toReferenceDate:@"2015-02-23 20:33:51 +0000"];
     XCTAssertEqualObjects(result, nil);
+}
+
+- (void)testAllSignificantUnits
+{
+    self.formatter.defaultFormat = @"~RRRRRRR";
+    NSString *result = [self expressionFromDate:@"2013-06-21 14:13:50 +0000"
+                                toReferenceDate:@"2015-02-23 20:33:51 +0000"];
+    XCTAssertEqualObjects(result, @"1 year 8 months 2 days 6 hours 20 minutes 1 second ago");
 }
 
 #pragma mark - seconds ago

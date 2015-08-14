@@ -484,9 +484,10 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
                     string = [string stringByAppendingFormat:@" %@", suffix];
                 } else {
                     isApproximate = YES;
+                    break;
                 }
                 
-                numberOfUnits++;    // TODO: break
+                numberOfUnits++;
             }
         }
     }
