@@ -436,12 +436,22 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
             result = [result stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
         }
     }
+
+    NSRegularExpression *dateTemplateRegex = [NSRegularExpression regularExpressionWithPattern:@"\\{([cdeghjklmqrsuvwxyzADEFGHJKLMOQSUVWXYZ]*?)\\}" options:0 error:nil];
+    NSTextCheckingResult *dateTemplateResult = [dateTemplateRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
+    if (dateTemplateResult && dateTemplateResult.range.location != NSNotFound) {
+        NSRange templateRange = [dateTemplateResult rangeAtIndex:1];
+        NSString *template = [result substringWithRange:templateRange];
+        NSString *replacement = [NSDateFormatter dateFormatFromTemplate:template options:0 locale: self.locale];
+        if (replacement) {
+            result = [result stringByReplacingCharactersInRange:templateRange withString:replacement];
+        }
+    }
     
     NSRegularExpression *dateFormatRegex = [NSRegularExpression regularExpressionWithPattern:@"\\{(.*?)\\}" options:0 error:nil];
     NSTextCheckingResult *dateFormatResult = [dateFormatRegex firstMatchInString:result options:0 range:NSMakeRange(0, result.length)];
     if (dateFormatResult && dateFormatResult.range.location != NSNotFound) {
-        dateFormatter.locale = self.locale;
-        dateFormatter.dateFormat = [format substringWithRange:[dateFormatResult rangeAtIndex:1]];
+        dateFormatter.dateFormat = [result substringWithRange:[dateFormatResult rangeAtIndex:1]];
         NSString *replacement = [dateFormatter stringFromDate:relationship.date];
         if (replacement) {
             result = [result stringByReplacingCharactersInRange:dateFormatResult.range withString:replacement];

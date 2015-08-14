@@ -15,6 +15,7 @@
     [super setUp];
     self.formatter = [SLConditionalDateFormatter new];
     self.formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    self.formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
 }
 
 - (NSString *)expressionFromDate:(NSString *)from toReferenceDate:(NSString *)reference

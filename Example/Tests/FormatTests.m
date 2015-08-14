@@ -196,7 +196,9 @@
 }
 
 - (void)testSubstitutesTemplate {
-//    [formatter addFormat:@"{Hm}" for:SLTimeUnitToday];
+    [self.formatter addFormat:@"{hm}" for:SLTimeUnitToday];
+    NSString *result = [self expressionFromDate:@"2015-02-22 16:33:50 +0000" toReferenceDate:@"2015-02-22 10:13:39 +0000"];
+    XCTAssertEqualObjects(result, @"4:33 PM");
 }
 
 - (void)testDoesNotSubstituteTemplateWithNonPatternCharacter {
