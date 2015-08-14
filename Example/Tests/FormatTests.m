@@ -114,6 +114,13 @@
     XCTAssertEqualObjects(result, @"about 3 hours ago");
 }
 
+- (void)testOmitsApproximateQualifier {
+    self.formatter.defaultFormat = @"~R";
+    
+    NSString *result = [self expressionFromDate:@"2015-02-24 6:33:50 +0000" toReferenceDate:@"2015-02-24 9:33:50 +0000"];
+    XCTAssertEqualObjects(result, @"3 hours ago");
+}
+
 - (void)testOnlyChangesTemplateCharacters
 {
     self.formatter.defaultFormat = @"I, yo";
