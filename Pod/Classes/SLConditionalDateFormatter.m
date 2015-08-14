@@ -188,8 +188,11 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     }
     
     rules = [NSMutableArray array];
-    self.locale = [NSLocale currentLocale];
-    self.calendar = [NSCalendar currentCalendar];
+    _locale = [NSLocale currentLocale];
+    _timeZone = [NSTimeZone localTimeZone];
+    _calendar = [NSCalendar currentCalendar];
+    _calendar.locale = _locale;
+    _calendar.timeZone = _timeZone;
     
     self.pastDeicticExpression = NSLocalizedStringFromTable(@"ago", @"FormatterKit", @"Past Deictic Expression");
     self.presentDeicticExpression = NSLocalizedStringFromTable(@"just now", @"FormatterKit", @"Present Deictic Expression");
@@ -205,6 +208,25 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     self.leastSignificantUnit = TTTCalendarUnitSecond;
     
     return self;
+}
+
+- (void)setTimeZone:(NSTimeZone *)timeZone
+{
+    _timeZone = [timeZone copy];
+    self.calendar.timeZone = _timeZone;
+}
+
+- (void)setLocale:(NSLocale *)locale
+{
+    _locale = [locale copy];
+    self.calendar.locale = locale;
+}
+
+- (void)setCalendar:(NSCalendar *)calendar
+{
+    _calendar = [calendar copy];
+    _calendar.timeZone = self.timeZone;
+    _calendar.locale = self.locale;
 }
 
 - (NSInteger)extractComponent:(NSCalendarUnit)unit from:(NSDateComponents *)components

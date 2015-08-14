@@ -39,14 +39,23 @@ typedef enum : NSUInteger {
 @interface SLConditionalDateFormatter : NSFormatter
 
 /**
- Specifies the locale used to format strings. Defaults to the current system locale.
+ Specifies the locale used to format strings. Defaults to the current system locale. 
+ Setting a locale also sets the locale of the used `calendar`.
  */
-@property NSLocale *locale;
+@property (copy, nonatomic) NSLocale *locale;
+
+/**
+ Specifies the time zone used to format strings. Defaults to the local time zone.
+ Setting a time zone also sets the time zone of the used `calendar`.
+ */
+@property (copy, nonatomic) NSTimeZone *timeZone;
 
 /**
  Specifies the calendar used in date calculation. Defaults to the current system calendar.
+ If set, the locale and the time zone of the calendar will be set to the values of the 
+ formatter.
  */
-@property NSCalendar *calendar;
+@property (copy, nonatomic) NSCalendar *calendar;
 
 ///--------------------------------------
 /// @name Configuring Deictic Expressions
@@ -118,6 +127,7 @@ typedef enum : NSUInteger {
  Specifies whether to use abbreviated calendar units to describe time intervals, for instance "wks" instead of "weeks" in English. Defaults to `NO`.
  */
 @property BOOL usesAbbreviatedCalendarUnits;
+
 
 
 - (NSString *)defaultForamt;

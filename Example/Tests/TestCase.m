@@ -14,7 +14,7 @@
 {
     [super setUp];
     self.formatter = [SLConditionalDateFormatter new];
-    self.formatter.calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    self.formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
 }
 
 - (NSString *)expressionFromDate:(NSString *)from toReferenceDate:(NSString *)reference
