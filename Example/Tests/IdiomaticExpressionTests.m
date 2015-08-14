@@ -34,6 +34,15 @@
     return result;
 }
 
+#pragma mark - just now
+
+- (void)testJustNow
+{
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-23 20:33:51 +0000"];
+    XCTAssertEqualObjects(result, @"just now");
+}
+
 #pragma mark - yesterday
 
 - (void)testYesterdayForLessThan24Hours

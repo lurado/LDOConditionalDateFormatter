@@ -14,6 +14,16 @@
 
 @implementation RelativeExpressionsTests
 
+#pragma mark - seconds ago
+
+- (void)testOneSecondAgo
+{
+    self.formatter.defaultFormat = @"R";
+    NSString *result = [self expressionFromDate:@"2015-02-23 20:33:50 +0000"
+                                toReferenceDate:@"2015-02-23 20:33:51 +0000"];
+    XCTAssertEqualObjects(result, @"1 second ago");
+}
+
 #pragma mark - days ago
 
 - (void)testTwoDaysAgo

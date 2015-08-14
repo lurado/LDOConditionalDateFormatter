@@ -366,7 +366,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     [self addFormat:format condition:check];
 }
 
-#pragma mark - interface methods
+#pragma mark - Transformations
 
 - (NSString *)stringForTimeInterval:(NSTimeInterval)seconds
 {
@@ -382,10 +382,6 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 - (NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate
 {
     SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:date referenceDate:referenceDate calendar:self.calendar];
-    
-    if (fabs(dateRelationship.timeIntervalSinceReferenceDate) < self.presentTimeIntervalMargin) {
-        return self.presentDeicticExpression;       // move to idiomaticDeicticExpression
-    }
     
     NSArray *applicableRules = defaultFormat ? [rules arrayByAddingObject:defaultFormat] : rules;
     for (NSDictionary *rule in applicableRules ) {
@@ -466,7 +462,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     return string;
 }
 
-#pragma mark - Transformations
+#pragma mark - Relative and idiomatic
 
 - (NSString *)relativeExpressionForDateRelationship:(SLDateRelationship *)relationship numberOfSignificantUnits:(NSUInteger)numberOfSignificantUnits approximate:(BOOL)approximate
 {
@@ -510,7 +506,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
             string = [NSString stringWithFormat:self.approximateQualifierFormat, string];
         }
     } else {
-        string = self.presentDeicticExpression;     // this default is wrong - rather raise an error or return nil
+        string = self.presentDeicticExpression;     // TODO: this default is wrong - rather raise an error or return nil
     }
     
     return string;
@@ -565,6 +561,10 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 - (NSString *)idiomaticDeicticExpressionForDateRelationship:(SLDateRelationship *)relationship
 {
+    if (fabs(relationship.timeIntervalSinceReferenceDate) <= self.presentTimeIntervalMargin) {
+        return self.presentDeicticExpression;
+    }
+    
     if ([self shouldUseUnit:TTTCalendarUnitDay] && relationship.previousDay) {
         return NSLocalizedStringFromTable(@"yesterday", @"FormatterKit", @"yesterday");
     }
