@@ -176,6 +176,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 
 @implementation SLConditionalDateFormatter
 {
+    NSDateFormatter *dateFormatter;
     NSMutableArray *rules;
     NSDictionary *defaultFormat;
 }
@@ -193,6 +194,10 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     _calendar = [NSCalendar currentCalendar];
     _calendar.locale = _locale;
     _calendar.timeZone = _timeZone;
+    dateFormatter = [NSDateFormatter new];
+    dateFormatter.calendar = _calendar;
+    dateFormatter.locale = _locale;
+    dateFormatter.timeZone = _timeZone;
     
     _pastDeicticExpression = NSLocalizedStringFromTable(@"ago", @"FormatterKit", @"Past Deictic Expression");
     _presentDeicticExpression = NSLocalizedStringFromTable(@"just now", @"FormatterKit", @"Present Deictic Expression");
@@ -213,12 +218,14 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
 - (void)setTimeZone:(NSTimeZone *)timeZone
 {
     _timeZone = [timeZone copy];
+    dateFormatter.timeZone = _timeZone;
     self.calendar.timeZone = _timeZone;
 }
 
 - (void)setLocale:(NSLocale *)locale
 {
     _locale = [locale copy];
+    dateFormatter.locale = locale;
     self.calendar.locale = locale;
 }
 
@@ -227,6 +234,7 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     _calendar = [calendar copy];
     _calendar.timeZone = self.timeZone;
     _calendar.locale = self.locale;
+    dateFormatter.calendar = _calendar;
 }
 
 - (NSInteger)extractComponent:(NSCalendarUnit)unit from:(NSDateComponents *)components
@@ -413,7 +421,10 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
     NSTextCheckingResult *relativeResult = [relativeRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
     
     NSRegularExpression *idiomaticRegex = [self boundaryCharacterWrappedRegexp:@"I"];
-    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
+    NSTextCheckingResult *idiomaticResult = [idiomaticRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];    // TODO: construct error due to premature matching
+    
+    NSRegularExpression *dateFormatRegex = [NSRegularExpression regularExpressionWithPattern:@"\\{(.*?)\\}" options:0 error:nil];
+    NSTextCheckingResult *dateFormatResult = [dateFormatRegex firstMatchInString:format options:0 range:NSMakeRange(0, format.length)];
     
     
     NSString *result = [format copy];
@@ -427,6 +438,14 @@ typedef BOOL (^RuleCondition)(SLDateRelationship *relationship);
         NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:relationship];
         if (replacement) {
             result = [result stringByReplacingCharactersInRange:[idiomaticResult rangeAtIndex:1] withString:replacement];
+        }
+    }
+    if (dateFormatResult && dateFormatResult.range.location != NSNotFound) {
+        dateFormatter.locale = self.locale;
+        dateFormatter.dateFormat = [format substringWithRange:[dateFormatResult rangeAtIndex:1]];
+        NSString *replacement = [dateFormatter stringFromDate:relationship.date];
+        if (replacement) {
+            result = [result stringByReplacingCharactersInRange:dateFormatResult.range withString:replacement];
         }
     }
     

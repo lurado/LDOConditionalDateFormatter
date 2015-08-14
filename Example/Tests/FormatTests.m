@@ -180,6 +180,22 @@
     XCTAssertEqualObjects(result, @"2 weeks from now");
 }
 
+#pragma mark - Regular formatting
+
+- (void)testReplacesTimePattern {
+    self.formatter.defaultFormat = @"{HH:mm}";
+    NSString *result = [self expressionFromDate:@"2015-02-22 6:33:50 +0000" toReferenceDate:@"2015-02-22 10:13:39 +0000"];
+    XCTAssertEqualObjects(result, @"06:33");
+}
+
+- (void)testSubstitutesTemplate {
+//    [formatter addFormat:@"{Hm}" for:SLTimeUnitToday];
+}
+
+- (void)testDoesNotSubstituteTemplateWithNonPatternCharacter {
+//    [formatter addFormat:@"{p}" for:SLTimeUnitToday];
+}
+
 //    [formatter addFormat:@"HH:mm" for:SLTimeUnitToday];
 //    [formatter addFormat:@"R at {HH:mm}" for:SLTimeUnitYesterday];
 //    [formatter addFormat:@"R" forLast:2 unit:SLTimeUnitWeeks];
