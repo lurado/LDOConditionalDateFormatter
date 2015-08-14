@@ -7,421 +7,383 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		044657640C708F6410A29684 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B70CD1F66B312DBB423ED6 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m */; };
-		2E769911FC417A6E28CB3001 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4064FD644BDC14C520EBE291 /* Foundation.framework */; };
-		4E6A715F35FE85FE5A9FAB9A /* Pods-SLConditionalDateFormatter_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55FC676050D1CB3F7C12D850 /* Pods-SLConditionalDateFormatter_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B987221A19FB70E8C7D5EF6 /* SLConditionalDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 182702C71A6F97510FC287B4 /* SLConditionalDateFormatter.m */; };
-		5C88A22FA569BB56137E68A8 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9084D41F882EB6FBF866B5 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		659B2D85ED7FF8E68F1D6B97 /* Pods-SLConditionalDateFormatter_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 615A0A20842B51B999FAAD53 /* Pods-SLConditionalDateFormatter_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D77F766FE8C364E6BA52BCB /* SLConditionalDateFormatter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 662079620520A00B49B708D7 /* SLConditionalDateFormatter.bundle */; };
-		94D42738E3FFE703D72976C4 /* Pods-SLConditionalDateFormatter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 210C9F648CEC9F0A70ABE5E1 /* Pods-SLConditionalDateFormatter_Example-dummy.m */; };
-		98A43F00F7ACB9349C5C9876 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4064FD644BDC14C520EBE291 /* Foundation.framework */; };
-		A1466C784C4748B9994812BD /* SLConditionalDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = F6564ED7D6592AEE2FDBF017 /* SLConditionalDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BEA76DF8F1C21177811E7A82 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 918766894FE40BAF42D4A407 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CEF60FB1E3CCDB219F4FD8DC /* Pods-SLConditionalDateFormatter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD230E58DF1D47582DD2693 /* Pods-SLConditionalDateFormatter_Tests-dummy.m */; };
-		DF4A5AF996B5DD7C625B74C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4064FD644BDC14C520EBE291 /* Foundation.framework */; };
-		E3A4117A57D6E155A5218377 /* SLConditionalDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = F6564ED7D6592AEE2FDBF017 /* SLConditionalDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E931450F32B23E0BE548D76F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4064FD644BDC14C520EBE291 /* Foundation.framework */; };
-		EAB01D99D574E2BBFB44B18C /* SLConditionalDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 182702C71A6F97510FC287B4 /* SLConditionalDateFormatter.m */; };
-		F612905593D746D9505D8602 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F100A72AFB08D98D1D1D7E54 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m */; };
-		FD3A26A3BA30B4C573CFDD8E /* SLConditionalDateFormatter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09D4B3620B9BEB30CDD462A /* SLConditionalDateFormatter.bundle */; };
+		1BB7486A0ECCB1F0CAAF8A01 /* SLConditionalDateFormatter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B08DB54480C9475CA9D8986B /* SLConditionalDateFormatter.bundle */; };
+		2D3420F2C384EF92934DE761 /* Pods-SLConditionalDateFormatter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0524AE3193205D8FF3DF02F /* Pods-SLConditionalDateFormatter_Tests-dummy.m */; };
+		350399D40303E78E47F9D4F7 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B53103BCD387F8E813B100 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m */; };
+		4147C4B983D19C89C5604652 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6AC5E2C1340B7C9EAD1B23 /* Foundation.framework */; };
+		461387C016B6764507E07A9F /* SLConditionalDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = D74EADD6F44F303D90F22FF9 /* SLConditionalDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DE070569C6A83CCA9B2930B /* Pods-SLConditionalDateFormatter_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59A9B64C47B7D6BF78B4B50C /* Pods-SLConditionalDateFormatter_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E72319D3B4ABA2ECF3289B8 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C12E9C93195697C6EFB3389 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m */; };
+		5A39399D3F5C1990F9EDA433 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6AC5E2C1340B7C9EAD1B23 /* Foundation.framework */; };
+		84F0CC8633C7588D61F9C44C /* SLConditionalDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = D74EADD6F44F303D90F22FF9 /* SLConditionalDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D8B2287D7B445473389D712 /* Pods-SLConditionalDateFormatter_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFFF60E1AECB0B6B1AA0A5A7 /* Pods-SLConditionalDateFormatter_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98754F6AA5B62BABDB533E9D /* SLConditionalDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0EDF5A9FD0AB2A71F4A0AB /* SLConditionalDateFormatter.m */; };
+		9DD8CABC9584A28B0A445D82 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EF6CED4874C3C6AEBAA49C /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A04142C4721109594EA38E55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6AC5E2C1340B7C9EAD1B23 /* Foundation.framework */; };
+		A3DAED277853BEAB305E28AF /* Pods-SLConditionalDateFormatter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CB90218A8BA7B665F5F14054 /* Pods-SLConditionalDateFormatter_Example-dummy.m */; };
+		A8091930638F916F29DD889C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6AC5E2C1340B7C9EAD1B23 /* Foundation.framework */; };
+		C8F03CDD93A5D584308EE50D /* SLConditionalDateFormatter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7D2DEEE739E78F4A4B07B69C /* SLConditionalDateFormatter.bundle */; };
+		CEFA572BD52B8F859D509FBB /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7708ECDB5629E34102FB973 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB90A0A91480357C53741AF6 /* SLConditionalDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0EDF5A9FD0AB2A71F4A0AB /* SLConditionalDateFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0283CD6C2DE6F4AB0E8B2B35 /* PBXContainerItemProxy */ = {
+		1AD45E82C02CAA9D2E43050D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 86AEECDA98656D05FC8C0DF8 /* Project object */;
+			containerPortal = 1E19195F408B74A3B4F0940A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D50AD3D9DC7B14AA6FB97325;
+			remoteGlobalIDString = 6C9B1A466C216EA53FF3F05C;
 			remoteInfo = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter";
 		};
-		2C47E619764C447944622CC7 /* PBXContainerItemProxy */ = {
+		25F62F7703183882511C2E87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 86AEECDA98656D05FC8C0DF8 /* Project object */;
+			containerPortal = 1E19195F408B74A3B4F0940A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DBCB715E2A79108CF6C49A1E;
+			remoteGlobalIDString = FA4E698F943771897C051B66;
+			remoteInfo = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter";
+		};
+		48AA2CADEA1FF1380497EFE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E19195F408B74A3B4F0940A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A89867C3C81F8A9476B0317;
 			remoteInfo = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter";
 		};
-		51F2D9044E0B00625FB7AFA2 /* PBXContainerItemProxy */ = {
+		50595250CDE3B957313719DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 86AEECDA98656D05FC8C0DF8 /* Project object */;
+			containerPortal = 1E19195F408B74A3B4F0940A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C690453F1A603B5FA18FC09D;
+			remoteGlobalIDString = B3BAB0FB91412307E4F54E64;
 			remoteInfo = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter";
-		};
-		EF647130E721ABFA57BF230D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 86AEECDA98656D05FC8C0DF8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FF5559450EB30832932EAA4F;
-			remoteInfo = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		026BF6B264B1746B58BBC918 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Info.plist"; sourceTree = "<group>"; };
-		05DD74B82280081D979BDD90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0CB8E933BB1BCF6746B964F3 /* Pods-SLConditionalDateFormatter_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLConditionalDateFormatter_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0D8EB94E069E1C0A614C0AAF /* SLConditionalDateFormatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SLConditionalDateFormatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		18228BE7079F35A753F5159C /* Pods-SLConditionalDateFormatter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		182702C71A6F97510FC287B4 /* SLConditionalDateFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SLConditionalDateFormatter.m; sourceTree = "<group>"; };
-		1CC40464A03FBCD5D5545EA4 /* Pods-SLConditionalDateFormatter_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLConditionalDateFormatter_Example-resources.sh"; sourceTree = "<group>"; };
-		210C9F648CEC9F0A70ABE5E1 /* Pods-SLConditionalDateFormatter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLConditionalDateFormatter_Example-dummy.m"; sourceTree = "<group>"; };
-		240BCC49BFF12530A8087F33 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch"; sourceTree = "<group>"; };
-		2837FF3D0DFED3D9B2379200 /* Pods-SLConditionalDateFormatter_Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Tests-environment.h"; sourceTree = "<group>"; };
-		2ED1A1ADF102282FBC5A5208 /* Pods_SLConditionalDateFormatter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLConditionalDateFormatter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AD87FF2D0A251997DC36745 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.modulemap"; sourceTree = "<group>"; };
-		3E9084D41F882EB6FBF866B5 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h"; sourceTree = "<group>"; };
-		4064FD644BDC14C520EBE291 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4A49D728A107ED28BA21805C /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap"; sourceTree = "<group>"; };
-		4DD1B1FAB8B88A7BDAB79B44 /* Pods-SLConditionalDateFormatter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5343D3B36278B23CEF896317 /* Pods-SLConditionalDateFormatter_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLConditionalDateFormatter_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		55BB12883ADEAEFC4E56FA01 /* Pods-SLConditionalDateFormatter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Example.release.xcconfig"; sourceTree = "<group>"; };
-		55FC676050D1CB3F7C12D850 /* Pods-SLConditionalDateFormatter_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Example-umbrella.h"; sourceTree = "<group>"; };
-		615A0A20842B51B999FAAD53 /* Pods-SLConditionalDateFormatter_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Tests-umbrella.h"; sourceTree = "<group>"; };
-		6170985682E7C1F153CA1B48 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.xcconfig"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.xcconfig"; sourceTree = "<group>"; };
-		61E20A5DF11ED40DEED2073C /* Pods-SLConditionalDateFormatter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		662079620520A00B49B708D7 /* SLConditionalDateFormatter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SLConditionalDateFormatter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		68087CC571A19DF18E3BADF7 /* Pods-SLConditionalDateFormatter_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLConditionalDateFormatter_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7973FCEFE40B737451848C64 /* Pods-SLConditionalDateFormatter_Example-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Example-environment.h"; sourceTree = "<group>"; };
-		79A0A4355F83792840F1ABC1 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig"; sourceTree = "<group>"; };
-		81AA1E79C1117DF23E240692 /* Pods-SLConditionalDateFormatter_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SLConditionalDateFormatter_Tests.modulemap"; sourceTree = "<group>"; };
-		8396925D6CFE1786984C9B9F /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.xcconfig"; sourceTree = "<group>"; };
-		84B70CD1F66B312DBB423ED6 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m"; sourceTree = "<group>"; };
-		918766894FE40BAF42D4A407 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h"; sourceTree = "<group>"; };
-		A09E4C81C69580D5FD7F3400 /* SLConditionalDateFormatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SLConditionalDateFormatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A39850B57B5B730C863E0EAD /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A90E616E7DFD02B0CE10B3E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB8270C389117272A761DE2C /* Pods_SLConditionalDateFormatter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLConditionalDateFormatter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC7CB1B99575FAE5553B96BE /* Pods-SLConditionalDateFormatter_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SLConditionalDateFormatter_Example.modulemap"; sourceTree = "<group>"; };
-		BDFC8F33743050D572DF197C /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-prefix.pch"; sourceTree = "<group>"; };
-		DFF5F2033FA9627B3152C651 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECA78FEB9640EC961CBA68C5 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig"; sourceTree = "<group>"; };
-		EE8962621811B652F1EB9F8F /* Pods-SLConditionalDateFormatter_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLConditionalDateFormatter_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		F09D4B3620B9BEB30CDD462A /* SLConditionalDateFormatter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SLConditionalDateFormatter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		F100A72AFB08D98D1D1D7E54 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m"; sourceTree = "<group>"; };
-		F6564ED7D6592AEE2FDBF017 /* SLConditionalDateFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLConditionalDateFormatter.h; sourceTree = "<group>"; };
-		F72213555AB4D637F43ECC37 /* Pods-SLConditionalDateFormatter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLConditionalDateFormatter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F873E63182FF93D806DC58E6 /* Pods-SLConditionalDateFormatter_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLConditionalDateFormatter_Example-frameworks.sh"; sourceTree = "<group>"; };
-		FBD230E58DF1D47582DD2693 /* Pods-SLConditionalDateFormatter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLConditionalDateFormatter_Tests-dummy.m"; sourceTree = "<group>"; };
-		FD2189E2A305A94DF448347B /* Pods-SLConditionalDateFormatter_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLConditionalDateFormatter_Tests-resources.sh"; sourceTree = "<group>"; };
+		0AF1350B45BC45B77BE15D1F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Info.plist"; sourceTree = "<group>"; };
+		1012BEEEA4AC712A0B6C8F52 /* Pods-SLConditionalDateFormatter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Example.release.xcconfig"; sourceTree = "<group>"; };
+		10DCEE9DFD5BFECBAADEB093 /* SLConditionalDateFormatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SLConditionalDateFormatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19EB3B46582C2311C423E24B /* Pods-SLConditionalDateFormatter_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLConditionalDateFormatter_Tests-resources.sh"; sourceTree = "<group>"; };
+		2ADEC359E0A7338C84654CB8 /* SLConditionalDateFormatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SLConditionalDateFormatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34CFA58D2AA91D1AAD80AA09 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch"; sourceTree = "<group>"; };
+		3911ADA12F33CD1909B8E49F /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap"; sourceTree = "<group>"; };
+		39B77A3EF1671E03822590FF /* Pods-SLConditionalDateFormatter_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLConditionalDateFormatter_Example-frameworks.sh"; sourceTree = "<group>"; };
+		3AE85FEEB5FB13961608F8C9 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-prefix.pch"; sourceTree = "<group>"; };
+		4D6AC5E2C1340B7C9EAD1B23 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4E3254B29EFD2D4A4619E5C2 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.xcconfig"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.xcconfig"; sourceTree = "<group>"; };
+		5309A2DDADF0D1FECD9EEBB1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55BB2421E058C8EAA20E7238 /* Pods-SLConditionalDateFormatter_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLConditionalDateFormatter_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		57CCFF964B491FE66D42C558 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig"; sourceTree = "<group>"; };
+		59A9B64C47B7D6BF78B4B50C /* Pods-SLConditionalDateFormatter_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Tests-umbrella.h"; sourceTree = "<group>"; };
+		74B53103BCD387F8E813B100 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m"; sourceTree = "<group>"; };
+		7D2DEEE739E78F4A4B07B69C /* SLConditionalDateFormatter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SLConditionalDateFormatter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		82787D526C5D9D8BF0F1F52B /* Pods-SLConditionalDateFormatter_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SLConditionalDateFormatter_Tests.modulemap"; sourceTree = "<group>"; };
+		82EF6CED4874C3C6AEBAA49C /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h"; sourceTree = "<group>"; };
+		8D2CE5AEB51D40E4F8F00F06 /* Pods-SLConditionalDateFormatter_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLConditionalDateFormatter_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		99F75E5BBD0CB4C44A458E86 /* Pods-SLConditionalDateFormatter_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLConditionalDateFormatter_Example-resources.sh"; sourceTree = "<group>"; };
+		9AF96FDFFD71B13DA51E9D26 /* Pods_SLConditionalDateFormatter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLConditionalDateFormatter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C12E9C93195697C6EFB3389 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m"; sourceTree = "<group>"; };
+		9F66F36B2F837BB83DC2261A /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.modulemap"; sourceTree = "<group>"; };
+		9FBEF04F2A50B6E85EFBE0DF /* Pods-SLConditionalDateFormatter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLConditionalDateFormatter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AFFF60E1AECB0B6B1AA0A5A7 /* Pods-SLConditionalDateFormatter_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Example-umbrella.h"; sourceTree = "<group>"; };
+		B08DB54480C9475CA9D8986B /* SLConditionalDateFormatter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SLConditionalDateFormatter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1C12985B9B88BE487EF5D4A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B38E81FB7569A1F55C06D905 /* Pods-SLConditionalDateFormatter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B4F005843AD27309B4E78B94 /* Pods-SLConditionalDateFormatter_Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Tests-environment.h"; sourceTree = "<group>"; };
+		B8CE075AFE1F64F75A70BDFF /* Pods_SLConditionalDateFormatter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLConditionalDateFormatter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD0EDF5A9FD0AB2A71F4A0AB /* SLConditionalDateFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SLConditionalDateFormatter.m; sourceTree = "<group>"; };
+		C0524AE3193205D8FF3DF02F /* Pods-SLConditionalDateFormatter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLConditionalDateFormatter_Tests-dummy.m"; sourceTree = "<group>"; };
+		CB90218A8BA7B665F5F14054 /* Pods-SLConditionalDateFormatter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLConditionalDateFormatter_Example-dummy.m"; sourceTree = "<group>"; };
+		CBDE7B04C6087EBD211EB560 /* Pods-SLConditionalDateFormatter_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SLConditionalDateFormatter_Example.modulemap"; sourceTree = "<group>"; };
+		CCA4ECC8DD78F56838703DF3 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.xcconfig"; sourceTree = "<group>"; };
+		CEFED90EB79D6983163235D2 /* Pods-SLConditionalDateFormatter_Example-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLConditionalDateFormatter_Example-environment.h"; sourceTree = "<group>"; };
+		D1CE063D82B0163AFD424318 /* Pods-SLConditionalDateFormatter_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLConditionalDateFormatter_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D51DA3066AA742C1CCBAD0C2 /* Pods-SLConditionalDateFormatter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D74EADD6F44F303D90F22FF9 /* SLConditionalDateFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLConditionalDateFormatter.h; sourceTree = "<group>"; };
+		DBE122F77E88F760F8307B47 /* Pods-SLConditionalDateFormatter_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLConditionalDateFormatter_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E0ACB61A8143BC993BDC2C70 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig"; sourceTree = "<group>"; };
+		E37EF186AA2DDBA8A2E7EB81 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E7708ECDB5629E34102FB973 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h"; path = "../Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h"; sourceTree = "<group>"; };
+		F9CE47703B2F2729D106D39A /* Pods-SLConditionalDateFormatter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLConditionalDateFormatter_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F9EA2A6BE4D3B5D3BCC88749 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1BE4BB1E2638B4FED38F6633 /* Frameworks */ = {
+		080345B011F1C9A8D79DE4FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		715B35F762C4B13BD5037E4A /* Frameworks */ = {
+		18FA7CD4F33DA2B190E612A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98A43F00F7ACB9349C5C9876 /* Foundation.framework in Frameworks */,
+				A04142C4721109594EA38E55 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AD7DBD345E620F933E20156 /* Frameworks */ = {
+		3D46A1751997A6B62F61C3A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E931450F32B23E0BE548D76F /* Foundation.framework in Frameworks */,
+				4147C4B983D19C89C5604652 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9763713B941D516BC03F3219 /* Frameworks */ = {
+		9D12FBB337D0A5F710B1B8F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E769911FC417A6E28CB3001 /* Foundation.framework in Frameworks */,
+				A8091930638F916F29DD889C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEC4ACD1807674298DB41BCB /* Frameworks */ = {
+		C7ABD352618BA9A2080DA8AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A39399D3F5C1990F9EDA433 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB59FB06328988F2108336E0 /* Frameworks */ = {
+		C8BEAA7F44C022F7C8D65E62 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF4A5AF996B5DD7C625B74C8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0745FC318AB11B850C5378E1 /* Classes */ = {
+		03CD96AC759C6DD2F752A411 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				F6564ED7D6592AEE2FDBF017 /* SLConditionalDateFormatter.h */,
-				182702C71A6F97510FC287B4 /* SLConditionalDateFormatter.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		1C205EEAEFAD8230E3D968BC = {
-			isa = PBXGroup;
-			children = (
-				A39850B57B5B730C863E0EAD /* Podfile */,
-				CADABACD05B9B39D3DDC8FC2 /* Development Pods */,
-				476CD18CC23297F85A71CADF /* Frameworks */,
-				2965A676AC71D0B7221551D3 /* Products */,
-				3967E0A681F40FB8A1F5960D /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		2965A676AC71D0B7221551D3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2ED1A1ADF102282FBC5A5208 /* Pods_SLConditionalDateFormatter_Example.framework */,
-				BB8270C389117272A761DE2C /* Pods_SLConditionalDateFormatter_Tests.framework */,
-				662079620520A00B49B708D7 /* SLConditionalDateFormatter.bundle */,
-				F09D4B3620B9BEB30CDD462A /* SLConditionalDateFormatter.bundle */,
-				0D8EB94E069E1C0A614C0AAF /* SLConditionalDateFormatter.framework */,
-				A09E4C81C69580D5FD7F3400 /* SLConditionalDateFormatter.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3967E0A681F40FB8A1F5960D /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BD5DBDD039E981FB9C908C7D /* Pods-SLConditionalDateFormatter_Example */,
-				EA584E93A28ACA527DB0EAA2 /* Pods-SLConditionalDateFormatter_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		476CD18CC23297F85A71CADF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				743C5A1621AFAD9C6EBA7425 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5F7676BB7844CF62C6469C0D /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				0745FC318AB11B850C5378E1 /* Classes */,
+				99E8B52BB078A202255E7910 /* Classes */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
 		};
-		743C5A1621AFAD9C6EBA7425 /* iOS */ = {
+		2A8865206373D278EE119599 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4064FD644BDC14C520EBE291 /* Foundation.framework */,
+				8AC84BACAC82D5BF3580D979 /* iOS */,
 			);
-			name = iOS;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		890BAF55CD1931CD39F26742 /* SLConditionalDateFormatter */ = {
+		3F8607E2DA0C20BFDC796E2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F7676BB7844CF62C6469C0D /* Pod */,
-				C38E0B584B91AE467DFD5274 /* Support Files */,
+				9AF96FDFFD71B13DA51E9D26 /* Pods_SLConditionalDateFormatter_Example.framework */,
+				B8CE075AFE1F64F75A70BDFF /* Pods_SLConditionalDateFormatter_Tests.framework */,
+				7D2DEEE739E78F4A4B07B69C /* SLConditionalDateFormatter.bundle */,
+				B08DB54480C9475CA9D8986B /* SLConditionalDateFormatter.bundle */,
+				2ADEC359E0A7338C84654CB8 /* SLConditionalDateFormatter.framework */,
+				10DCEE9DFD5BFECBAADEB093 /* SLConditionalDateFormatter.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DAF9394D626E38FE99B0149 = {
+			isa = PBXGroup;
+			children = (
+				E37EF186AA2DDBA8A2E7EB81 /* Podfile */,
+				612ED7ECB69A080195C17066 /* Development Pods */,
+				2A8865206373D278EE119599 /* Frameworks */,
+				3F8607E2DA0C20BFDC796E2A /* Products */,
+				80C686CAF717D9591CD73F54 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		612ED7ECB69A080195C17066 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83F9A962D5F3B3A097CB49E8 /* SLConditionalDateFormatter */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		80C686CAF717D9591CD73F54 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE698291A9CAAF8365C09F3C /* Pods-SLConditionalDateFormatter_Example */,
+				B35FA32393D01BDA9108DCD6 /* Pods-SLConditionalDateFormatter_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		83F9A962D5F3B3A097CB49E8 /* SLConditionalDateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				03CD96AC759C6DD2F752A411 /* Pod */,
+				E4413E3178F33756AAE33B6A /* Support Files */,
 			);
 			name = SLConditionalDateFormatter;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		BD5DBDD039E981FB9C908C7D /* Pods-SLConditionalDateFormatter_Example */ = {
+		8AC84BACAC82D5BF3580D979 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				05DD74B82280081D979BDD90 /* Info.plist */,
-				BC7CB1B99575FAE5553B96BE /* Pods-SLConditionalDateFormatter_Example.modulemap */,
-				68087CC571A19DF18E3BADF7 /* Pods-SLConditionalDateFormatter_Example-acknowledgements.markdown */,
-				5343D3B36278B23CEF896317 /* Pods-SLConditionalDateFormatter_Example-acknowledgements.plist */,
-				210C9F648CEC9F0A70ABE5E1 /* Pods-SLConditionalDateFormatter_Example-dummy.m */,
-				7973FCEFE40B737451848C64 /* Pods-SLConditionalDateFormatter_Example-environment.h */,
-				F873E63182FF93D806DC58E6 /* Pods-SLConditionalDateFormatter_Example-frameworks.sh */,
-				1CC40464A03FBCD5D5545EA4 /* Pods-SLConditionalDateFormatter_Example-resources.sh */,
-				55FC676050D1CB3F7C12D850 /* Pods-SLConditionalDateFormatter_Example-umbrella.h */,
-				61E20A5DF11ED40DEED2073C /* Pods-SLConditionalDateFormatter_Example.debug.xcconfig */,
-				55BB12883ADEAEFC4E56FA01 /* Pods-SLConditionalDateFormatter_Example.release.xcconfig */,
+				4D6AC5E2C1340B7C9EAD1B23 /* Foundation.framework */,
 			);
-			name = "Pods-SLConditionalDateFormatter_Example";
-			path = "Target Support Files/Pods-SLConditionalDateFormatter_Example";
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		C38E0B584B91AE467DFD5274 /* Support Files */ = {
+		99E8B52BB078A202255E7910 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A90E616E7DFD02B0CE10B3E9 /* Info.plist */,
-				026BF6B264B1746B58BBC918 /* Info.plist */,
-				3AD87FF2D0A251997DC36745 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.modulemap */,
-				8396925D6CFE1786984C9B9F /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.xcconfig */,
-				79A0A4355F83792840F1ABC1 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */,
-				F100A72AFB08D98D1D1D7E54 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m */,
-				BDFC8F33743050D572DF197C /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-prefix.pch */,
-				3E9084D41F882EB6FBF866B5 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h */,
-				4A49D728A107ED28BA21805C /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap */,
-				6170985682E7C1F153CA1B48 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.xcconfig */,
-				ECA78FEB9640EC961CBA68C5 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */,
-				84B70CD1F66B312DBB423ED6 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m */,
-				240BCC49BFF12530A8087F33 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch */,
-				918766894FE40BAF42D4A407 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h */,
+				D74EADD6F44F303D90F22FF9 /* SLConditionalDateFormatter.h */,
+				BD0EDF5A9FD0AB2A71F4A0AB /* SLConditionalDateFormatter.m */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter";
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		CADABACD05B9B39D3DDC8FC2 /* Development Pods */ = {
+		B35FA32393D01BDA9108DCD6 /* Pods-SLConditionalDateFormatter_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				890BAF55CD1931CD39F26742 /* SLConditionalDateFormatter */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		EA584E93A28ACA527DB0EAA2 /* Pods-SLConditionalDateFormatter_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				DFF5F2033FA9627B3152C651 /* Info.plist */,
-				81AA1E79C1117DF23E240692 /* Pods-SLConditionalDateFormatter_Tests.modulemap */,
-				F72213555AB4D637F43ECC37 /* Pods-SLConditionalDateFormatter_Tests-acknowledgements.markdown */,
-				0CB8E933BB1BCF6746B964F3 /* Pods-SLConditionalDateFormatter_Tests-acknowledgements.plist */,
-				FBD230E58DF1D47582DD2693 /* Pods-SLConditionalDateFormatter_Tests-dummy.m */,
-				2837FF3D0DFED3D9B2379200 /* Pods-SLConditionalDateFormatter_Tests-environment.h */,
-				EE8962621811B652F1EB9F8F /* Pods-SLConditionalDateFormatter_Tests-frameworks.sh */,
-				FD2189E2A305A94DF448347B /* Pods-SLConditionalDateFormatter_Tests-resources.sh */,
-				615A0A20842B51B999FAAD53 /* Pods-SLConditionalDateFormatter_Tests-umbrella.h */,
-				18228BE7079F35A753F5159C /* Pods-SLConditionalDateFormatter_Tests.debug.xcconfig */,
-				4DD1B1FAB8B88A7BDAB79B44 /* Pods-SLConditionalDateFormatter_Tests.release.xcconfig */,
+				5309A2DDADF0D1FECD9EEBB1 /* Info.plist */,
+				82787D526C5D9D8BF0F1F52B /* Pods-SLConditionalDateFormatter_Tests.modulemap */,
+				9FBEF04F2A50B6E85EFBE0DF /* Pods-SLConditionalDateFormatter_Tests-acknowledgements.markdown */,
+				DBE122F77E88F760F8307B47 /* Pods-SLConditionalDateFormatter_Tests-acknowledgements.plist */,
+				C0524AE3193205D8FF3DF02F /* Pods-SLConditionalDateFormatter_Tests-dummy.m */,
+				B4F005843AD27309B4E78B94 /* Pods-SLConditionalDateFormatter_Tests-environment.h */,
+				55BB2421E058C8EAA20E7238 /* Pods-SLConditionalDateFormatter_Tests-frameworks.sh */,
+				19EB3B46582C2311C423E24B /* Pods-SLConditionalDateFormatter_Tests-resources.sh */,
+				59A9B64C47B7D6BF78B4B50C /* Pods-SLConditionalDateFormatter_Tests-umbrella.h */,
+				D51DA3066AA742C1CCBAD0C2 /* Pods-SLConditionalDateFormatter_Tests.debug.xcconfig */,
+				B38E81FB7569A1F55C06D905 /* Pods-SLConditionalDateFormatter_Tests.release.xcconfig */,
 			);
 			name = "Pods-SLConditionalDateFormatter_Tests";
 			path = "Target Support Files/Pods-SLConditionalDateFormatter_Tests";
 			sourceTree = "<group>";
 		};
+		DE698291A9CAAF8365C09F3C /* Pods-SLConditionalDateFormatter_Example */ = {
+			isa = PBXGroup;
+			children = (
+				F9EA2A6BE4D3B5D3BCC88749 /* Info.plist */,
+				CBDE7B04C6087EBD211EB560 /* Pods-SLConditionalDateFormatter_Example.modulemap */,
+				D1CE063D82B0163AFD424318 /* Pods-SLConditionalDateFormatter_Example-acknowledgements.markdown */,
+				8D2CE5AEB51D40E4F8F00F06 /* Pods-SLConditionalDateFormatter_Example-acknowledgements.plist */,
+				CB90218A8BA7B665F5F14054 /* Pods-SLConditionalDateFormatter_Example-dummy.m */,
+				CEFED90EB79D6983163235D2 /* Pods-SLConditionalDateFormatter_Example-environment.h */,
+				39B77A3EF1671E03822590FF /* Pods-SLConditionalDateFormatter_Example-frameworks.sh */,
+				99F75E5BBD0CB4C44A458E86 /* Pods-SLConditionalDateFormatter_Example-resources.sh */,
+				AFFF60E1AECB0B6B1AA0A5A7 /* Pods-SLConditionalDateFormatter_Example-umbrella.h */,
+				F9CE47703B2F2729D106D39A /* Pods-SLConditionalDateFormatter_Example.debug.xcconfig */,
+				1012BEEEA4AC712A0B6C8F52 /* Pods-SLConditionalDateFormatter_Example.release.xcconfig */,
+			);
+			name = "Pods-SLConditionalDateFormatter_Example";
+			path = "Target Support Files/Pods-SLConditionalDateFormatter_Example";
+			sourceTree = "<group>";
+		};
+		E4413E3178F33756AAE33B6A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1C12985B9B88BE487EF5D4A /* Info.plist */,
+				0AF1350B45BC45B77BE15D1F /* Info.plist */,
+				9F66F36B2F837BB83DC2261A /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.modulemap */,
+				CCA4ECC8DD78F56838703DF3 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter.xcconfig */,
+				57CCFF964B491FE66D42C558 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */,
+				74B53103BCD387F8E813B100 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m */,
+				3AE85FEEB5FB13961608F8C9 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-prefix.pch */,
+				82EF6CED4874C3C6AEBAA49C /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h */,
+				3911ADA12F33CD1909B8E49F /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap */,
+				4E3254B29EFD2D4A4619E5C2 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.xcconfig */,
+				E0ACB61A8143BC993BDC2C70 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */,
+				9C12E9C93195697C6EFB3389 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m */,
+				34CFA58D2AA91D1AAD80AA09 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch */,
+				E7708ECDB5629E34102FB973 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4BBCEF57D2F101F050D176FF /* Headers */ = {
+		257E5CA00A8EC97A81A806A7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C88A22FA569BB56137E68A8 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h in Headers */,
-				A1466C784C4748B9994812BD /* SLConditionalDateFormatter.h in Headers */,
+				4DE070569C6A83CCA9B2930B /* Pods-SLConditionalDateFormatter_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6683506F59C36BAA09CE593 /* Headers */ = {
+		3644B4958C2978CEE8893570 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659B2D85ED7FF8E68F1D6B97 /* Pods-SLConditionalDateFormatter_Tests-umbrella.h in Headers */,
+				8D8B2287D7B445473389D712 /* Pods-SLConditionalDateFormatter_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E217367D2B2F8F3217D63F9F /* Headers */ = {
+		50A8020AD0DF3AC5B0E2AD49 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6A715F35FE85FE5A9FAB9A /* Pods-SLConditionalDateFormatter_Example-umbrella.h in Headers */,
+				CEFA572BD52B8F859D509FBB /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h in Headers */,
+				84F0CC8633C7588D61F9C44C /* SLConditionalDateFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEA74196EF07CFE44351B395 /* Headers */ = {
+		71D1E4752C14620DF0E39485 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA76DF8F1C21177811E7A82 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-umbrella.h in Headers */,
-				E3A4117A57D6E155A5218377 /* SLConditionalDateFormatter.h in Headers */,
+				9DD8CABC9584A28B0A445D82 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-umbrella.h in Headers */,
+				461387C016B6764507E07A9F /* SLConditionalDateFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7C48B4F60234FAF3676B4D2A /* Pods-SLConditionalDateFormatter_Tests */ = {
+		31ACB90E95D54DED2DBF14D9 /* Pods-SLConditionalDateFormatter_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E0F6FB83DA7D18112D1B4A29 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests" */;
+			buildConfigurationList = EC9D6C60A4D82EA42E102F55 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example" */;
 			buildPhases = (
-				A9C4B1F7956B8B65102E4C5C /* Sources */,
-				CB59FB06328988F2108336E0 /* Frameworks */,
-				D6683506F59C36BAA09CE593 /* Headers */,
+				D7B6D3DF5D2856F04F615347 /* Sources */,
+				C7ABD352618BA9A2080DA8AC /* Frameworks */,
+				3644B4958C2978CEE8893570 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				05E33A1F4A53006B2F03FD13 /* PBXTargetDependency */,
-			);
-			name = "Pods-SLConditionalDateFormatter_Tests";
-			productName = "Pods-SLConditionalDateFormatter_Tests";
-			productReference = BB8270C389117272A761DE2C /* Pods_SLConditionalDateFormatter_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		C0F345214C75934CB0DD8ECC /* Pods-SLConditionalDateFormatter_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2E6788BBD0C3213E12B1DF0C /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example" */;
-			buildPhases = (
-				6FFFBA16DE17A1A7ED0E89C2 /* Sources */,
-				715B35F762C4B13BD5037E4A /* Frameworks */,
-				E217367D2B2F8F3217D63F9F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CB277F5B16EACB5B3978AC66 /* PBXTargetDependency */,
+				92916C7B1926F33EDAF7D800 /* PBXTargetDependency */,
 			);
 			name = "Pods-SLConditionalDateFormatter_Example";
 			productName = "Pods-SLConditionalDateFormatter_Example";
-			productReference = 2ED1A1ADF102282FBC5A5208 /* Pods_SLConditionalDateFormatter_Example.framework */;
+			productReference = 9AF96FDFFD71B13DA51E9D26 /* Pods_SLConditionalDateFormatter_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C690453F1A603B5FA18FC09D /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter */ = {
+		58EB176B5A7CE1407DFD2506 /* Pods-SLConditionalDateFormatter_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56F6DE3E7BFCF1C1F05929B8 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter" */;
+			buildConfigurationList = DBEB327A032509E00EE0022A /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests" */;
 			buildPhases = (
-				81809A231539184AA5FB6536 /* Sources */,
-				9763713B941D516BC03F3219 /* Frameworks */,
-				61C109EF587724C86A813A7D /* Resources */,
-				EEA74196EF07CFE44351B395 /* Headers */,
+				D86A230E4EE9AA1FE5D52881 /* Sources */,
+				3D46A1751997A6B62F61C3A2 /* Frameworks */,
+				257E5CA00A8EC97A81A806A7 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				888731370D0C54F0464509F7 /* PBXTargetDependency */,
+				37440215A0B6CFD03034B937 /* PBXTargetDependency */,
 			);
-			name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter";
-			productName = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter";
-			productReference = 0D8EB94E069E1C0A614C0AAF /* SLConditionalDateFormatter.framework */;
+			name = "Pods-SLConditionalDateFormatter_Tests";
+			productName = "Pods-SLConditionalDateFormatter_Tests";
+			productReference = B8CE075AFE1F64F75A70BDFF /* Pods_SLConditionalDateFormatter_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D50AD3D9DC7B14AA6FB97325 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter */ = {
+		6A89867C3C81F8A9476B0317 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B944F94CF006C23251A1DBD6 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter" */;
+			buildConfigurationList = 8C04DAED0683BA5B80BD9206 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter" */;
 			buildPhases = (
-				CD654478DBFE0FA03562BEBD /* Sources */,
-				7AD7DBD345E620F933E20156 /* Frameworks */,
-				3ACAD102082FDD7FE45603BD /* Resources */,
-				4BBCEF57D2F101F050D176FF /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6DBA01FB7B4C6495EDCD8363 /* PBXTargetDependency */,
-			);
-			name = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter";
-			productName = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter";
-			productReference = A09E4C81C69580D5FD7F3400 /* SLConditionalDateFormatter.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		DBCB715E2A79108CF6C49A1E /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B4CD2420E8C69127C9309B8C /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter" */;
-			buildPhases = (
-				A7977C0F9B7FBDDC84B590BC /* Sources */,
-				AEC4ACD1807674298DB41BCB /* Frameworks */,
-				17792CCBE3A051779D8A665A /* Resources */,
+				1C245560150B8D8FF706AB3C /* Sources */,
+				080345B011F1C9A8D79DE4FD /* Frameworks */,
+				25AD261052CC695D11F2E456 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -429,16 +391,54 @@
 			);
 			name = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter";
 			productName = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter";
-			productReference = 662079620520A00B49B708D7 /* SLConditionalDateFormatter.bundle */;
+			productReference = 7D2DEEE739E78F4A4B07B69C /* SLConditionalDateFormatter.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		FF5559450EB30832932EAA4F /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter */ = {
+		6C9B1A466C216EA53FF3F05C /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 47BD393ED78F6CD4AA512857 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter" */;
+			buildConfigurationList = C60A6ADA95FEADB6A5F0B645 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter" */;
 			buildPhases = (
-				A7CE8A2E0740CA87A47988DE /* Sources */,
-				1BE4BB1E2638B4FED38F6633 /* Frameworks */,
-				CFAE63C305B57CB3325D0AB1 /* Resources */,
+				01944C073994B433E4322E1E /* Sources */,
+				18FA7CD4F33DA2B190E612A2 /* Frameworks */,
+				0A53A9BC38DCCEEAB3193CC5 /* Resources */,
+				71D1E4752C14620DF0E39485 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				332CAAB4D0BFD1852697D961 /* PBXTargetDependency */,
+			);
+			name = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter";
+			productName = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter";
+			productReference = 10DCEE9DFD5BFECBAADEB093 /* SLConditionalDateFormatter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3BAB0FB91412307E4F54E64 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB6DF9C4B6598B1075B970D5 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter" */;
+			buildPhases = (
+				2F3BC47F0077E68CE46F2401 /* Sources */,
+				9D12FBB337D0A5F710B1B8F0 /* Frameworks */,
+				8742E43F95A73CB9DBB4BE9A /* Resources */,
+				50A8020AD0DF3AC5B0E2AD49 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0763C9C1BA36BEC0A0898478 /* PBXTargetDependency */,
+			);
+			name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter";
+			productName = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter";
+			productReference = 2ADEC359E0A7338C84654CB8 /* SLConditionalDateFormatter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FA4E698F943771897C051B66 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D6B6516110144D2308478B3 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter" */;
+			buildPhases = (
+				7E443BC7DCA76B0619BE6C1B /* Sources */,
+				C8BEAA7F44C022F7C8D65E62 /* Frameworks */,
+				158BA2924F66704279620A8C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -446,183 +446,154 @@
 			);
 			name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter";
 			productName = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter";
-			productReference = F09D4B3620B9BEB30CDD462A /* SLConditionalDateFormatter.bundle */;
+			productReference = B08DB54480C9475CA9D8986B /* SLConditionalDateFormatter.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		86AEECDA98656D05FC8C0DF8 /* Project object */ = {
+		1E19195F408B74A3B4F0940A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 506E29609103C00685990B73 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 2F0B65EC4B06960C16A56676 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1C205EEAEFAD8230E3D968BC;
-			productRefGroup = 2965A676AC71D0B7221551D3 /* Products */;
+			mainGroup = 4DAF9394D626E38FE99B0149;
+			productRefGroup = 3F8607E2DA0C20BFDC796E2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C0F345214C75934CB0DD8ECC /* Pods-SLConditionalDateFormatter_Example */,
-				D50AD3D9DC7B14AA6FB97325 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter */,
-				DBCB715E2A79108CF6C49A1E /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter */,
-				7C48B4F60234FAF3676B4D2A /* Pods-SLConditionalDateFormatter_Tests */,
-				C690453F1A603B5FA18FC09D /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter */,
-				FF5559450EB30832932EAA4F /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter */,
+				31ACB90E95D54DED2DBF14D9 /* Pods-SLConditionalDateFormatter_Example */,
+				6C9B1A466C216EA53FF3F05C /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter */,
+				6A89867C3C81F8A9476B0317 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter */,
+				58EB176B5A7CE1407DFD2506 /* Pods-SLConditionalDateFormatter_Tests */,
+				B3BAB0FB91412307E4F54E64 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter */,
+				FA4E698F943771897C051B66 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		17792CCBE3A051779D8A665A /* Resources */ = {
+		0A53A9BC38DCCEEAB3193CC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8F03CDD93A5D584308EE50D /* SLConditionalDateFormatter.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158BA2924F66704279620A8C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3ACAD102082FDD7FE45603BD /* Resources */ = {
+		25AD261052CC695D11F2E456 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D77F766FE8C364E6BA52BCB /* SLConditionalDateFormatter.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61C109EF587724C86A813A7D /* Resources */ = {
+		8742E43F95A73CB9DBB4BE9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD3A26A3BA30B4C573CFDD8E /* SLConditionalDateFormatter.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CFAE63C305B57CB3325D0AB1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				1BB7486A0ECCB1F0CAAF8A01 /* SLConditionalDateFormatter.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6FFFBA16DE17A1A7ED0E89C2 /* Sources */ = {
+		01944C073994B433E4322E1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D42738E3FFE703D72976C4 /* Pods-SLConditionalDateFormatter_Example-dummy.m in Sources */,
+				350399D40303E78E47F9D4F7 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m in Sources */,
+				98754F6AA5B62BABDB533E9D /* SLConditionalDateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81809A231539184AA5FB6536 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				044657640C708F6410A29684 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m in Sources */,
-				5B987221A19FB70E8C7D5EF6 /* SLConditionalDateFormatter.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A7977C0F9B7FBDDC84B590BC /* Sources */ = {
+		1C245560150B8D8FF706AB3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A7CE8A2E0740CA87A47988DE /* Sources */ = {
+		2F3BC47F0077E68CE46F2401 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E72319D3B4ABA2ECF3289B8 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-dummy.m in Sources */,
+				FB90A0A91480357C53741AF6 /* SLConditionalDateFormatter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E443BC7DCA76B0619BE6C1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9C4B1F7956B8B65102E4C5C /* Sources */ = {
+		D7B6D3DF5D2856F04F615347 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF60FB1E3CCDB219F4FD8DC /* Pods-SLConditionalDateFormatter_Tests-dummy.m in Sources */,
+				A3DAED277853BEAB305E28AF /* Pods-SLConditionalDateFormatter_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD654478DBFE0FA03562BEBD /* Sources */ = {
+		D86A230E4EE9AA1FE5D52881 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F612905593D746D9505D8602 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-dummy.m in Sources */,
-				EAB01D99D574E2BBFB44B18C /* SLConditionalDateFormatter.m in Sources */,
+				2D3420F2C384EF92934DE761 /* Pods-SLConditionalDateFormatter_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		05E33A1F4A53006B2F03FD13 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter";
-			target = C690453F1A603B5FA18FC09D /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter */;
-			targetProxy = 51F2D9044E0B00625FB7AFA2 /* PBXContainerItemProxy */;
-		};
-		6DBA01FB7B4C6495EDCD8363 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter";
-			target = DBCB715E2A79108CF6C49A1E /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter */;
-			targetProxy = 2C47E619764C447944622CC7 /* PBXContainerItemProxy */;
-		};
-		888731370D0C54F0464509F7 /* PBXTargetDependency */ = {
+		0763C9C1BA36BEC0A0898478 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter";
-			target = FF5559450EB30832932EAA4F /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter */;
-			targetProxy = EF647130E721ABFA57BF230D /* PBXContainerItemProxy */;
+			target = FA4E698F943771897C051B66 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter */;
+			targetProxy = 25F62F7703183882511C2E87 /* PBXContainerItemProxy */;
 		};
-		CB277F5B16EACB5B3978AC66 /* PBXTargetDependency */ = {
+		332CAAB4D0BFD1852697D961 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter";
+			target = 6A89867C3C81F8A9476B0317 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter */;
+			targetProxy = 48AA2CADEA1FF1380497EFE0 /* PBXContainerItemProxy */;
+		};
+		37440215A0B6CFD03034B937 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter";
+			target = B3BAB0FB91412307E4F54E64 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter */;
+			targetProxy = 50595250CDE3B957313719DA /* PBXContainerItemProxy */;
+		};
+		92916C7B1926F33EDAF7D800 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter";
-			target = D50AD3D9DC7B14AA6FB97325 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter */;
-			targetProxy = 0283CD6C2DE6F4AB0E8B2B35 /* PBXContainerItemProxy */;
+			target = 6C9B1A466C216EA53FF3F05C /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter */;
+			targetProxy = 1AD45E82C02CAA9D2E43050D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0D77DA38BBD64FD87D3E234C /* Release */ = {
+		127A797CC0709F7891F6EC87 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55BB12883ADEAEFC4E56FA01 /* Pods-SLConditionalDateFormatter_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Example/Pods-SLConditionalDateFormatter_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_SLConditionalDateFormatter_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		15F5AB231759854F2451D32E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79A0A4355F83792840F1ABC1 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */;
+			baseConfigurationReference = 57CCFF964B491FE66D42C558 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -647,9 +618,22 @@
 			};
 			name = Debug;
 		};
-		39CF88E84E05181B6252F1E4 /* Release */ = {
+		193B8643393FDB42472CC3DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DD1B1FAB8B88A7BDAB79B44 /* Pods-SLConditionalDateFormatter_Tests.release.xcconfig */;
+			baseConfigurationReference = 57CCFF964B491FE66D42C558 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-SLConditionalDateFormatter_Example";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = SLConditionalDateFormatter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		36488574AED297C6CEDE49FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0ACB61A8143BC993BDC2C70 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -658,16 +642,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Tests/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Tests/Pods-SLConditionalDateFormatter_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_SLConditionalDateFormatter_Tests;
+				PRODUCT_NAME = SLConditionalDateFormatter;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -676,36 +658,41 @@
 			};
 			name = Release;
 		};
-		3D9097E14BF902CD75EBC492 /* Debug */ = {
+		3788BF8E4335833ADE9891A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61E20A5DF11ED40DEED2073C /* Pods-SLConditionalDateFormatter_Example.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Example/Pods-SLConditionalDateFormatter_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_SLConditionalDateFormatter_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		41AC295CF1DFB65D04324408 /* Debug */ = {
+		3BF138CC435DD9C6AC79519D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -744,9 +731,9 @@
 			};
 			name = Debug;
 		};
-		49E8871187CE77FD8C046EE6 /* Release */ = {
+		526CAAC7DF9A96E0E580BFF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECA78FEB9640EC961CBA68C5 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */;
+			baseConfigurationReference = B38E81FB7569A1F55C06D905 /* Pods-SLConditionalDateFormatter_Tests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -755,14 +742,16 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter/Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Tests/Pods-SLConditionalDateFormatter_Tests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SLConditionalDateFormatter;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_SLConditionalDateFormatter_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -771,9 +760,9 @@
 			};
 			name = Release;
 		};
-		558F0A177D688D8192A37BE3 /* Debug */ = {
+		AB7CA10845D313AF50DFDC22 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECA78FEB9640EC961CBA68C5 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */;
+			baseConfigurationReference = E0ACB61A8143BC993BDC2C70 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -798,9 +787,51 @@
 			};
 			name = Debug;
 		};
-		5F597AC08409A93EC1383271 /* Debug */ = {
+		C3CB7193D0A5CE546BE5B099 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECA78FEB9640EC961CBA68C5 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */;
+			baseConfigurationReference = 57CCFF964B491FE66D42C558 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-SLConditionalDateFormatter_Example";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = SLConditionalDateFormatter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		D1BED158EF5B98D4B3AD4F7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9CE47703B2F2729D106D39A /* Pods-SLConditionalDateFormatter_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Example/Pods-SLConditionalDateFormatter_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_SLConditionalDateFormatter_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D2FFD190FDACF937AFF9961C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0ACB61A8143BC993BDC2C70 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-SLConditionalDateFormatter_Tests";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -811,9 +842,9 @@
 			};
 			name = Debug;
 		};
-		623C5352E750E463850D265F /* Debug */ = {
+		DE5C88F1624F79CC4E395BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18228BE7079F35A753F5159C /* Pods-SLConditionalDateFormatter_Tests.debug.xcconfig */;
+			baseConfigurationReference = D51DA3066AA742C1CCBAD0C2 /* Pods-SLConditionalDateFormatter_Tests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -840,9 +871,38 @@
 			};
 			name = Debug;
 		};
-		678DDAD7194B6783B4B6C5EE /* Release */ = {
+		E29AD75CFF885DAC908A2130 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79A0A4355F83792840F1ABC1 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */;
+			baseConfigurationReference = 1012BEEEA4AC712A0B6C8F52 /* Pods-SLConditionalDateFormatter_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-SLConditionalDateFormatter_Example/Pods-SLConditionalDateFormatter_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_SLConditionalDateFormatter_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F0DA93D83E42F4D96B7E8656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57CCFF964B491FE66D42C558 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -867,9 +927,9 @@
 			};
 			name = Release;
 		};
-		834166BB2C63C995D1DBB8EB /* Release */ = {
+		F100AAD44641C420A0B4887A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECA78FEB9640EC961CBA68C5 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */;
+			baseConfigurationReference = E0ACB61A8143BC993BDC2C70 /* Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-Private.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-SLConditionalDateFormatter_Tests";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -880,133 +940,73 @@
 			};
 			name = Release;
 		};
-		B7F4825469FFC41D0D549DE5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79A0A4355F83792840F1ABC1 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-SLConditionalDateFormatter_Example";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = SLConditionalDateFormatter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		D3A733D2D635CDEE96F6529F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79A0A4355F83792840F1ABC1 /* Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-Private.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-SLConditionalDateFormatter_Example";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = SLConditionalDateFormatter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		E4192A4766EA48A08B8EA925 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E6788BBD0C3213E12B1DF0C /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example" */ = {
+		0D6B6516110144D2308478B3 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3D9097E14BF902CD75EBC492 /* Debug */,
-				0D77DA38BBD64FD87D3E234C /* Release */,
+				D2FFD190FDACF937AFF9961C /* Debug */,
+				F100AAD44641C420A0B4887A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		47BD393ED78F6CD4AA512857 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter-SLConditionalDateFormatter" */ = {
+		2F0B65EC4B06960C16A56676 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5F597AC08409A93EC1383271 /* Debug */,
-				834166BB2C63C995D1DBB8EB /* Release */,
+				3BF138CC435DD9C6AC79519D /* Debug */,
+				3788BF8E4335833ADE9891A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		506E29609103C00685990B73 /* Build configuration list for PBXProject "Pods" */ = {
+		8C04DAED0683BA5B80BD9206 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				41AC295CF1DFB65D04324408 /* Debug */,
-				E4192A4766EA48A08B8EA925 /* Release */,
+				C3CB7193D0A5CE546BE5B099 /* Debug */,
+				193B8643393FDB42472CC3DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		56F6DE3E7BFCF1C1F05929B8 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter" */ = {
+		C60A6ADA95FEADB6A5F0B645 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				558F0A177D688D8192A37BE3 /* Debug */,
-				49E8871187CE77FD8C046EE6 /* Release */,
+				127A797CC0709F7891F6EC87 /* Debug */,
+				F0DA93D83E42F4D96B7E8656 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B4CD2420E8C69127C9309B8C /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter-SLConditionalDateFormatter" */ = {
+		DB6DF9C4B6598B1075B970D5 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests-SLConditionalDateFormatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3A733D2D635CDEE96F6529F /* Debug */,
-				B7F4825469FFC41D0D549DE5 /* Release */,
+				AB7CA10845D313AF50DFDC22 /* Debug */,
+				36488574AED297C6CEDE49FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B944F94CF006C23251A1DBD6 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example-SLConditionalDateFormatter" */ = {
+		DBEB327A032509E00EE0022A /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				15F5AB231759854F2451D32E /* Debug */,
-				678DDAD7194B6783B4B6C5EE /* Release */,
+				DE5C88F1624F79CC4E395BDA /* Debug */,
+				526CAAC7DF9A96E0E580BFF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E0F6FB83DA7D18112D1B4A29 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Tests" */ = {
+		EC9D6C60A4D82EA42E102F55 /* Build configuration list for PBXNativeTarget "Pods-SLConditionalDateFormatter_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				623C5352E750E463850D265F /* Debug */,
-				39CF88E84E05181B6252F1E4 /* Release */,
+				D1BED158EF5B98D4B3AD4F7D /* Debug */,
+				E29AD75CFF885DAC908A2130 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 86AEECDA98656D05FC8C0DF8 /* Project object */;
+	rootObject = 1E19195F408B74A3B4F0940A /* Project object */;
 }
