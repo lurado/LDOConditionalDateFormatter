@@ -414,7 +414,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     
     NSString *result = [format copy];
     
-    result = [self replaceMatchesOfRegex:[self boundaryCharacterWrappedPattern:@"(~?)(R{1,8})"] inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
+    result = [self replaceMatchesOfRegex:[self boundaryCharacterWrappedPattern:@"(~?)(R{1,7})"] inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
         BOOL approximate = [match rangeAtIndex:2].length == 1;
         NSString *replacement = [self relativeExpressionForDateRelationship:relationship numberOfSignificantUnits:[match rangeAtIndex:3].length approximate:approximate];
         if (replacement) {
