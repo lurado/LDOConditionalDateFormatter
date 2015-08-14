@@ -19,10 +19,6 @@
 
 @implementation FormatTests
 
-- (void)setUp {
-    [super setUp];
-}
-
 - (void)testRules
 {
     //    [formatter addFormat:@"R" forTimeInterval:(-2 * 60 * 60)];    // 1 hour ago
