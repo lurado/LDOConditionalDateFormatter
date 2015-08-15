@@ -111,4 +111,14 @@
     XCTAssertEqualObjects(result, @"9 hours ago");
 }
 
+#pragma mark - weeks ago
+
+- (void)testWeeksAgo {
+    self.formatter.defaultFormat = @"RR";
+    
+    NSString *result = [self expressionFromDate:@"2015-08-05 00:33:50 +0000"
+                                toReferenceDate:@"2015-08-14 10:13:39 +0000"];
+    XCTAssertEqualObjects(result, @"1 week 2 days ago");
+}
+
 @end
