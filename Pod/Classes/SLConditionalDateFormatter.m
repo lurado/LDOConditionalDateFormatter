@@ -268,7 +268,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 
 - (NSString *)defaultForamt
 {
-    return defaultFormat[@"foramt"];
+    return [defaultFormat[@"foramt"] copy];
 }
 
 - (void)setDefaultFormat:(NSString *)format
@@ -374,7 +374,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     return [self stringForTimeIntervalFromDate:[now dateByAddingTimeInterval:seconds] toReferenceDate:now];
 }
 
-- (NSString *)stringForTimeIntervalSinceDate:(NSDate *)date
+- (NSString *)stringForTimeIntervalFromDate:(NSDate *)date
 {
     return [self stringForTimeIntervalFromDate:date toReferenceDate:[NSDate date]];
 }
