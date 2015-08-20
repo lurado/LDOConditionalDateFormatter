@@ -218,25 +218,25 @@
 
 - (void)testReplacesTimePattern {
     self.formatter.defaultFormat = @"{HH:mm}";
-    NSString *result = [self.formatter stringForTimeIntervalSinceDate:[self parseDate:@"2015-02-22 06:33:50 +0000"]];
+    NSString *result = [self.formatter stringForTimeIntervalFromDate:[self parseDate:@"2015-02-22 06:33:50 +0000"]];
     XCTAssertEqualObjects(result, @"06:33");
 }
 
 - (void)testSubstitutesTemplate {
     self.formatter.defaultFormat = @"{hm}";
-    NSString *result = [self.formatter stringForTimeIntervalSinceDate:[self parseDate:@"2015-02-22 16:33:50 +0000"]];
+    NSString *result = [self.formatter stringForTimeIntervalFromDate:[self parseDate:@"2015-02-22 16:33:50 +0000"]];
     XCTAssertEqualObjects(result, @"4:33 PM");
 }
 
 - (void)testMultipleTimeFormatOccurances {
     self.formatter.defaultFormat = @"{yyyy-MM-dd} at {HH:mm}";
-    NSString *result = [self.formatter stringForTimeIntervalSinceDate:[self parseDate:@"2015-02-22 16:33:50 +0000"]];
+    NSString *result = [self.formatter stringForTimeIntervalFromDate:[self parseDate:@"2015-02-22 16:33:50 +0000"]];
     XCTAssertEqualObjects(result, @"2015-02-22 at 16:33");
 }
 
 - (void)testMultipleTemplateOccurances {
     self.formatter.defaultFormat = @"{yMd} at {Hm}";
-    NSString *result = [self.formatter stringForTimeIntervalSinceDate:[self parseDate:@"2015-02-22 16:33:50 +0000"]];
+    NSString *result = [self.formatter stringForTimeIntervalFromDate:[self parseDate:@"2015-02-22 16:33:50 +0000"]];
     XCTAssertEqualObjects(result, @"2/22/2015 at 16:33");
 }
 
