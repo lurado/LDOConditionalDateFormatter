@@ -144,7 +144,7 @@
 static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b)
 {
     if ((a == SLCalendarUnitWeek) ^ (b == SLCalendarUnitWeek)) {
-        if (b == SLCalendarUnitWeek) {     // TODO: check https://github.com/mattt/FormatterKit/pull/186
+        if (b == SLCalendarUnitWeek) {
             switch (a) {
                 case SLCalendarUnitYear:
                 case SLCalendarUnitMonth:
