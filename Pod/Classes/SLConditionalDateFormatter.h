@@ -130,7 +130,7 @@ typedef enum : NSUInteger {
 /**
  Specifies the default format to be used if no other format applies. Defaults to `nil`.
  */
-@property (nonatomic, copy) NSString *defaultForamt;
+@property (nonatomic, copy) NSString *defaultFormat;
 
 /**
  Adds a format to be used if the difference between the date to be formatted and the reference date falls into the given format.

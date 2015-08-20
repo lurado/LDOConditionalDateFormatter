@@ -266,7 +266,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 
 #pragma mark - Formats
 
-- (NSString *)defaultForamt
+- (NSString *)defaultFormat
 {
     return [defaultFormat[@"foramt"] copy];
 }
