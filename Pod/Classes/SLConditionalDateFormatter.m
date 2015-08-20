@@ -45,21 +45,21 @@
 @property (readonly) NSInteger monthsDifference;
 @property (readonly) NSInteger yearsDifference;
 
-@property (readonly) BOOL sameDay;
-@property (readonly) BOOL perviousDay;
-@property (readonly) BOOL nextDay;
+@property (readonly, getter=isSameDay) BOOL sameDay;
+@property (readonly, getter=isPreviousDay) BOOL previousDay;
+@property (readonly, getter=isNextDay) BOOL nextDay;
 
-@property (readonly) BOOL sameYear;
-@property (readonly) BOOL previousYear;
-@property (readonly) BOOL nextYear;
+@property (readonly, getter=isSameYear) BOOL sameYear;
+@property (readonly, getter=isPreviousYear) BOOL previousYear;
+@property (readonly, getter=isNextYear) BOOL nextYear;
 
-@property (readonly) BOOL sameMonth;
-@property (readonly) BOOL previousMonth;
-@property (readonly) BOOL nextMonth;
+@property (readonly, getter=isSameMonth) BOOL sameMonth;
+@property (readonly, getter=isPreviousMonth) BOOL previousMonth;
+@property (readonly, getter=isNextMonth) BOOL nextMonth;
 
-@property (readonly) BOOL sameWeek;
-@property (readonly) BOOL previousWeek;
-@property (readonly) BOOL nextWeek;
+@property (readonly, getter=isSameWeek) BOOL sameWeek;
+@property (readonly, getter=isPreviousWeek) BOOL previousWeek;
+@property (readonly, getter=isNextWeek) BOOL nextWeek;
 
 - (instancetype)initWithDate:(NSDate *)date referenceDate:(NSDate *)referenceDate calendar:(NSCalendar *)calendar;
 
@@ -109,17 +109,17 @@
     return self;
 }
 
-- (BOOL)sameDay
+- (BOOL)isSameDay
 {
     return _daysDifference == 0;
 }
 
-- (BOOL)previousDay
+- (BOOL)isPreviousDay
 {
     return _daysDifference == -1;
 }
 
-- (BOOL)nextDay
+- (BOOL)isNextDay
 {
     return _daysDifference == 1;
 }
