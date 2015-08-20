@@ -14,11 +14,20 @@
 [formatter addFormat:@"R" forLast:7 unit:SLTimeUnitDays];
 formatter.defaultFormat = @"{yMd}";
 
-result = [self.formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];     // 42 minutes ago
-result = [self.formatter stringForTimeIntervalFromDate:earlierToday toReferenceDate:now];   // 13:37
-result = [self.formatter stringForTimeIntervalFromDate:yesterday toReferenceDate:now];      // yesterday
-result = [self.formatter stringForTimeIntervalFromDate:threeDaysAgo toReferenceDate:now];   // 3 days ago
-result = [self.formatter stringForTimeIntervalFromDate:longAgo toReferenceDate:now];        // 2/11/2015
+[self.formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];
+// = 42 minutes ago
+
+[self.formatter stringForTimeIntervalFromDate:earlierToday toReferenceDate:now];
+// = 13:37
+
+[self.formatter stringForTimeIntervalFromDate:yesterday toReferenceDate:now];
+// = yesterday
+
+[self.formatter stringForTimeIntervalFromDate:threeDaysAgo toReferenceDate:now];
+// = 3 days ago
+
+[self.formatter stringForTimeIntervalFromDate:longAgo toReferenceDate:now];
+// = 2/11/2015
 ```
 
 ## String generation
