@@ -62,56 +62,6 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
     }
 }
 
-- (void)testRules
-{
-    //    [formatter addFormat:@"R" forTimeInterval:(-2 * 60 * 60)];    // 1 hour ago
-    //    [formatter addFormat:@"RR" forTimeInterval:(-2 * 60 * 60 * 24)];    // 1 day 2 hours ago
-    //    [formatter addFormat:@"~R" forTimeInterval:(-2 * 60 * 60)];    // about 1 hour ago
-    //    [formatter addFormat:@"HH:mm" for:Today];
-    //    [formatter addFormat:@"R at {HH:mm}" for:Yesterday];
-    //    [formatter addFormat:@"HH:mm" for:Today];
-    //    [formatter addFormat:@"R at {HH:mm}" for:Yesterday];
-    //    [formatter addFormat:@"I" forLast:2 unit:Weeks];
-    //    [formatter addFormat:@"R" forNext:2 unit:Days];
-    
-    //    [formatter addFormat:@"HH:mm" for:SLRealtiveDateToday];
-    //    [formatter addFormat:@"R at {HH:mm}" for:SLRealtiveDateYesterday];
-    //    [formatter addFormat:@"R" forLast:2 unit:SLRealtiveDateWeeks];
-    //    [formatter addFormat:@"R" forNext:2 unit:SLRealtiveDateDays];
-    
-    
-    //    [formatter addFormat:@"HH:mm" for:SLTimeUnitToday];
-    //    [formatter addFormat:@"R at {HH:mm}" for:SLTimeUnitYesterday];
-    //    [formatter addFormat:@"R" forLast:2 unit:SLTimeUnitWeeks];
-    //    [formatter addFormat:@"R" forNext:2 unit:SLTimeUnitDays];
-    
-    //    formatter.defaultFormat:@"{yyyy-MM-dd} at {HH:mm}";
-    // {<anything with only template characters will be passed to dateFormatFromTemplate>}
-    
-    // Days
-    // Weeks
-    // Months
-    // Years
-    
-    // Today        // TODO: allow "I" only for the following?
-    // Yesterday
-    // Tomorrow
-    
-    // ThisWeek
-    // LastWeek
-    // NextWeek
-    
-    // ThisMonth
-    // LastMonth
-    // NextMonth
-    
-    // ThisYear
-    // LastYear
-    // NextYear
-    
-    // TODO: should default "I" fall back to "R"?
-}
-
 - (void)testHandlesNilDefault {
     self.formatter.defaultFormat = nil;
     
