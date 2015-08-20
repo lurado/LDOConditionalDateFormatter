@@ -12,12 +12,59 @@
 #define DAY * 24 * 60 * 60
 #define DAYS * 24 * 60 * 60
 #define WEEKS * 7 * 24 * 60 * 60
+static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b)
+{
+    if ((a == NSCalendarUnitWeekOfYear) ^ (b == NSCalendarUnitWeekOfYear)) {
+        if (b == NSCalendarUnitWeekOfYear) {
+            switch (a) {
+                case NSCalendarUnitYear:
+                case NSCalendarUnitMonth:
+                    return NSOrderedDescending;
+                default:
+                    return NSOrderedAscending;
+            }
+        } else {
+            switch (b) {
+                case NSCalendarUnitYear:
+                case NSCalendarUnitMonth:
+                    return NSOrderedAscending;
+                default:
+                    return NSOrderedDescending;
+            }
+        }
+    } else {
+        if (a > b) {
+            return NSOrderedAscending;
+        } else if (a < b) {
+            return NSOrderedDescending;
+        } else {
+            return NSOrderedSame;
+        }
+    }
+}
 
 @interface FormatTests : TestCase
 
 @end
 
 @implementation FormatTests
+
+- (void)testNSCalendarUnitCompareSignificance {
+    NSCalendarUnit units[] = {NSCalendarUnitSecond, NSCalendarUnitMinute, NSCalendarUnitHour, NSCalendarUnitDay, NSCalendarUnitWeekOfYear, NSCalendarUnitMonth, NSCalendarUnitYear};
+    
+    for (int o = 0; o < 7; ++o) {
+        NSCalendarUnit baseUnit = units[o];
+        NSComparisonResult expected = NSOrderedDescending;
+        for (int i = 0; i < 7; ++i) {
+            if (units[i] == baseUnit) {
+                XCTAssertEqual(NSCalendarUnitCompareSignificance(baseUnit, units[i]), NSOrderedSame);
+                expected = NSOrderedAscending;
+            } else if (NSCalendarUnitCompareSignificance(baseUnit, units[i]) != expected) {
+                XCTFail(@"mismatch");
+            }
+        }
+    }
+}
 
 - (void)testRules
 {
