@@ -25,15 +25,15 @@ result = [self.formatter stringForTimeIntervalFromDate:longAgo toReferenceDate:n
 
 - `(NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate`
 	
-	Formats the given date. For relative formats the time difference between the given date and the reference date is calculated and used.
+	Formats the given date. For relative and idiomatic formats the time difference between the given date and the reference date is used.
 
 - `(NSString *)stringForTimeIntervalFromDate:(NSDate *)date`
 
-	Also formats the given date. The current date is used as reference date for relative formats.
+	Also formats the given date. The current date is used as reference date.
 	
 - `(NSString *)stringForTimeInterval:(NSTimeInterval)seconds`
 
-	The given time interval is interpreted as offset from now. The calculated date is formatted. For relative formats the current date is used as reference date.
+	The given time interval is interpreted as offset from now. The calculated date is formatted. The current date is used as reference date.
 
 ## Supported Formats
 
