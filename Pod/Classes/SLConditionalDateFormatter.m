@@ -336,10 +336,10 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 {
     FormatCondition check = ^BOOL(SLDateRelationship *relationship) {
         switch (unit) {
-            case SLTimeUnitDays: return relationship.daysDifference <= 0 && relationship.daysDifference <= -count;
-            case SLTimeUnitWeeks: return relationship.weeksDifference <= 0 && relationship.weeksDifference <= -count;
-            case SLTimeUnitMonths: return relationship.monthsDifference <= 0 && relationship.monthsDifference <= -count;
-            case SLTimeUnitYears: return relationship.yearsDifference <= 0 && relationship.yearsDifference <= -count;
+            case SLTimeUnitDays: return relationship.daysDifference <= 0 && relationship.daysDifference >= -count;
+            case SLTimeUnitWeeks: return relationship.weeksDifference <= 0 && relationship.weeksDifference >= -count;
+            case SLTimeUnitMonths: return relationship.monthsDifference <= 0 && relationship.monthsDifference >= -count;
+            case SLTimeUnitYears: return relationship.yearsDifference <= 0 && relationship.yearsDifference >= -count;
             default:
                 break;
         }

@@ -202,7 +202,7 @@
 }
 
 - (void)testFormatForLastTwoWeeks {
-    [self.formatter addFormat:@"R" forLast:2 unit:SLTimeUnitWeeks];
+    [self.formatter addFormat:@"R" forLast:3 unit:SLTimeUnitWeeks];
     NSString *result = [self.formatter stringForTimeInterval:(-2 WEEKS)];
     XCTAssertEqualObjects(result, @"2 weeks ago");
 }
