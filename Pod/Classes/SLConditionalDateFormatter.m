@@ -563,7 +563,10 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     if (fabs(relationship.timeIntervalSinceReferenceDate) <= self.presentTimeIntervalMargin) {
         return self.presentDeicticExpression;
     }
-    
+
+    if ([self shouldUseUnit:SLCalendarUnitDay] && relationship.sameDay) {
+        return NSLocalizedStringFromTable(@"today", @"FormatterKit", @"today");
+    }
     if ([self shouldUseUnit:SLCalendarUnitDay] && relationship.previousDay) {
         return NSLocalizedStringFromTable(@"yesterday", @"FormatterKit", @"yesterday");
     }
@@ -571,6 +574,9 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         return NSLocalizedStringFromTable(@"tomorrow", @"FormatterKit", @"tomorrow");
     }
     
+    if ([self shouldUseUnit:SLCalendarUnitWeek] && relationship.sameWeek) {
+        return NSLocalizedStringFromTable(@"this week", @"FormatterKit", @"this week");
+    }
     if ([self shouldUseUnit:SLCalendarUnitWeek] && relationship.previousWeek) {
         return NSLocalizedStringFromTable(@"last week", @"FormatterKit", @"last week");
     }
@@ -578,6 +584,9 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         return NSLocalizedStringFromTable(@"next week", @"FormatterKit", @"next week");
     }
     
+    if ([self shouldUseUnit:SLCalendarUnitMonth] && relationship.sameMonth) {
+        return NSLocalizedStringFromTable(@"this month", @"FormatterKit", @"this month");
+    }
     if ([self shouldUseUnit:SLCalendarUnitMonth] && relationship.previousMonth) {
         return NSLocalizedStringFromTable(@"last month", @"FormatterKit", @"last month");
     }
@@ -585,6 +594,9 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         return NSLocalizedStringFromTable(@"next month", @"FormatterKit", @"next month");
     }
     
+    if ([self shouldUseUnit:SLCalendarUnitYear] && relationship.sameYear) {
+        return NSLocalizedStringFromTable(@"this year", @"FormatterKit", @"this year");
+    }
     if ([self shouldUseUnit:SLCalendarUnitYear] && relationship.previousYear) {
         return NSLocalizedStringFromTable(@"last year", @"FormatterKit", @"last year");
     }
