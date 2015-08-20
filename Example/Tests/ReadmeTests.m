@@ -38,21 +38,24 @@
     NSDate *threeDaysAgo = [self parseDate:@"2015-02-21 15:55:00 +0000"];
     NSDate *longAgo = [self parseDate:@"2015-02-11 15:55:00 +0000"];
     
-    [self.formatter addFormat:@"R" forTimeInterval:-3600];
-    [self.formatter addFormat:@"{HH:mm}" for:SLTimeUnitToday];
-    [self.formatter addFormat:@"I" for:SLTimeUnitYesterday];
-    [self.formatter addFormat:@"R" forLast:7 unit:SLTimeUnitDays];
-    self.formatter.defaultFormat = @"{yMd}";
+    SLConditionalDateFormatter *formatter = self.formatter;
+    NSString *result;
     
-    NSString *result = [self.formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];
+    [formatter addFormat:@"R" forTimeInterval:-3600];
+    [formatter addFormat:@"{HH:mm}" for:SLTimeUnitToday];
+    [formatter addFormat:@"I" for:SLTimeUnitYesterday];
+    [formatter addFormat:@"R" forLast:7 unit:SLTimeUnitDays];
+    formatter.defaultFormat = @"{yMd}";
+    
+    result = [self.formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];     // 42 minutes ago
     XCTAssertEqualObjects(result, @"42 minutes ago");
-    result = [self.formatter stringForTimeIntervalFromDate:earlierToday toReferenceDate:now];
+    result = [self.formatter stringForTimeIntervalFromDate:earlierToday toReferenceDate:now];   // 13:37
     XCTAssertEqualObjects(result, @"13:37");
-    result = [self.formatter stringForTimeIntervalFromDate:yesterday toReferenceDate:now];
+    result = [self.formatter stringForTimeIntervalFromDate:yesterday toReferenceDate:now];      // yesterday
     XCTAssertEqualObjects(result, @"yesterday");
-    result = [self.formatter stringForTimeIntervalFromDate:threeDaysAgo toReferenceDate:now];
+    result = [self.formatter stringForTimeIntervalFromDate:threeDaysAgo toReferenceDate:now];   // 3 days ago
     XCTAssertEqualObjects(result, @"3 days ago");
-    result = [self.formatter stringForTimeIntervalFromDate:longAgo toReferenceDate:now];
+    result = [self.formatter stringForTimeIntervalFromDate:longAgo toReferenceDate:now];        // 2/11/2015
     XCTAssertEqualObjects(result, @"2/11/2015");
 }
 
