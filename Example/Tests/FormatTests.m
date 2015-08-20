@@ -8,10 +8,6 @@
 
 #import "TestCase.h"
 
-#define HOURS * 60 * 60
-#define DAY * 24 * 60 * 60
-#define DAYS * 24 * 60 * 60
-#define WEEKS * 7 * 24 * 60 * 60
 static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b)
 {
     if ((a == NSCalendarUnitWeekOfYear) ^ (b == NSCalendarUnitWeekOfYear)) {

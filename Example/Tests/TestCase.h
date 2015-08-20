@@ -6,6 +6,11 @@
 //  Copyright (c) 2015 Sebastian Ludwig. All rights reserved.
 //
 
+#define HOURS * 60 * 60
+#define DAY * 24 * 60 * 60
+#define DAYS * 24 * 60 * 60
+#define WEEKS * 7 * 24 * 60 * 60
+
 @import XCTest;
 @import SLConditionalDateFormatter;
 
