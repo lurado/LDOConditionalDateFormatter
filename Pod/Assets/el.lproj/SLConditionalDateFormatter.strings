@@ -1,0 +1,304 @@
+﻿/* List separator */
+" " = " ";
+
+/* No comment provided by engineer. */
+"&" = "&";
+
+/* Coordinate format */
+"(%@, %@)" = "(%1$@, %2$@)";
+
+/* List delimiter */
+"," = ",";
+
+/* Approximate Qualifier Format */
+"about %@" = "περίπου %@";
+
+/* Past Deictic Expression */
+"ago" = "πριν";
+
+/* List conjunction */
+"and" = "και";
+
+/* Bit Unit */
+"bits" = "bits";
+
+/* Byte Unit */
+"bytes" = "bytes";
+
+/* Error converting to NSArray */
+"Couldn’t convert to NSArray" = "Couldn’t convert to NSArray";
+
+/* Day Unit (Singular) */
+"day" = "μέρα";
+
+/* Day Unit (Plural) */
+"days" = "μέρες";
+
+/* Day Unit (Singular, Abbreviated) */
+"d" = "μέρα";
+
+/* Day Unit (Plural, Abbreviated) */
+"ds" = "μέρες";
+
+/* Deictic Expression Format (#{Time} #{Ago/From Now} */
+"Deictic Expression Format String" = "%1$@ %2$@";
+
+/* #{Dimensional Quantity} #{Direction} */
+"Dimension Format String" = "%1$@ %2$@";
+
+/* #{Distance} #{Unit} */
+"Distance Format String" = "%1$@ %2$@";
+
+/* East Direction Abbreviation */
+"E" = "Α";
+
+/* East Direction */
+"East" = "Ανατολικά";
+
+/* Exabyte Unit */
+"EB" = "EB";
+
+/* Exbibyte Unit */
+"EiB" = "EiB";
+
+/* Future Deictic Expression */
+"from now" = "από τώρα";
+
+/* Feet Unit */
+"ft" = "πόδια";
+
+/* Feet Per Second Unit */
+"ft/s" = "πόδια/δευ.";
+
+/* Gigabyte Unit */
+"GB" = "GB";
+
+/* Gigabit Unit */
+"Gbit" = "Gbit";
+
+/* Gibibyte Unit */
+"GiB" = "GiB";
+
+/* Gibibit Unit */
+"Gibit" = "Gibit";
+
+/* Hour Unit (Singular) */
+"hour" = "ώρα";
+
+/* Hour Unit (Plural) */
+"hours" = "ώρες";
+
+/* Hour Unit (Singular, Abbreviated) */
+"hr" = "ώρ.";
+
+/* Hour Unit (Plural, Abbreviated) */
+"hrs" = "ώρ.";
+
+/* Present Deictic Expression */
+"just now" = "μόλις τώρα";
+
+/* Kilobyte Unit */
+"KB" = "KB";
+
+/* Kilobit Unit */
+"kbit" = "kbit";
+
+/* Kibibyte Unit */
+"KiB" = "KiB";
+
+/* Kibibit Unit */
+"Kibit" = "Kibit";
+
+/* Kilometer Unit */
+"km" = "χλμ";
+
+/* Kilometers Per Hour Unit */
+"km/h" = "χλμ/ώ";
+
+/* No comment provided by engineer. */
+"last month" = "τελευταίο μήνα";
+
+/* No comment provided by engineer. */
+"last week" = "τελευταία εβδομάδα";
+
+/* No comment provided by engineer. */
+"last year" = "τελευταίο έτος";
+
+/* Meter Unit */
+"m" = "μ";
+
+/* Meters Per Second Unit */
+"m/s" = "μ/δ";
+
+/* Megabyte Unit */
+"MB" = "MB";
+
+/* Megabit Unit */
+"Mbit" = "Mbit";
+
+/* No comment provided by engineer. */
+"Method Not Implemented" = "Μη υλοποιημένη μέθοδος";
+
+/* Mebibyte Unit */
+"MiB" = "MiB";
+
+/* Mebibit Unit */
+"Mibit" = "Mibit";
+
+/* Mile Unit (Singular) */
+"mile" = "μίλι";
+
+/* Mile Unit (Plural) */
+"miles" = "μίλια";
+
+/* Minute Unit (Singular, Abbreviated) */
+"min" = "λεπ.";
+
+/* Minute Unit (Plural, Abbreviated) */
+"mins" = "λεπ.";
+
+/* Minute Unit (Singular) */
+"minute" = "λεπτό";
+
+/* Minute Unit (Plural) */
+"minutes" = "λεπτά";
+
+/* Month Unit (Singular, Abbreviated) */
+"mo" = "μην.";
+
+/* Month Unit (Singular) */
+"month" = "μήνας";
+
+/* Month Unit (Plural) */
+"months" = "μήνες";
+
+/* Month Unit (Plural, Abbreviated) */
+"mos" = "μην.";
+
+/* Miles Per Hour Unit */
+"mph" = "mph";
+
+/* North Direction Abbreviation */
+"N" = "Β";
+
+/* Northeast Direction Abbreviation */
+"NE" = "ΒΑ";
+
+/* No comment provided by engineer. */
+"next month" = "επόμενο μήνα";
+
+/* No comment provided by engineer. */
+"next week" = "επόμενη εβδομάδα";
+
+/* No comment provided by engineer. */
+"next year" = "επόμενο έτος";
+
+/* North Direction */
+"North" = "Βορράς";
+
+/* Northeast Direction */
+"Northeast" = "Βορειοανατολικά";
+
+/* Northwest Direction */
+"Northwest" = "Βορειοδυτικά";
+
+/* Northwest Direction Abbreviation */
+"NW" = "ΒΔ";
+
+/* Petabyte Unit */
+"PB" = "PB";
+
+/* Petabit Unit */
+"Pbit" = "Pbit";
+
+/* Pebibyte Unit */
+"PiB" = "PiB";
+
+/* Pebibit Unit */
+"Pibit" = "Pibit";
+
+/* South Direction Abbreviation */
+"S" = "Ν";
+
+/* Second Unit (Plural, Abbreviated)
+   Second Unit (Singular, Abbreviated) */
+"s" = "δευτ.";
+
+/* Southeast Direction Abbreviation */
+"SE" = "ΝΑ";
+
+/* Second Unit (Singular) */
+"second" = "δευτερόλεπτο";
+
+/* Second Unit (Plural) */
+"seconds" = "δευτερόλεπτα";
+
+/* South Direction */
+"South" = "Νότια";
+
+/* Southeast Direction */
+"Southeast" = "Νοτιοανατολικά";
+
+/* Southwest Direction */
+"Southwest" = "Νοτιοδυτικά";
+
+/* #{Speed} #{Unit} */
+"Speed Format String" = "%1$@ %2$@";
+
+/* Southwest Direction Abbreviation */
+"SW" = "ΝΔ";
+
+/* Terabyte Unit */
+"TB" = "TB";
+
+/* Terabit Unit */
+"Tbit" = "Tbit";
+
+/* Tebibyte Unit */
+"TiB" = "TiB";
+
+/* Tebibit Unit */
+"Tibit" = "Tibit";
+
+/* No comment provided by engineer. */
+"tomorrow" = "αύριο";
+
+/* #{Value} #{Unit} */
+"Unit of Information Format String" = "%1$@ %2$@";
+
+/* West Direction Abbreviation */
+"W" = "Δ";
+
+/* Week Unit (Singular) */
+"week" = "εβδομάδα";
+
+/* Week Unit (Plural) */
+"weeks" = "εβδομάδες";
+
+/* West Direction */
+"West" = "Δυτικά";
+
+/* Week Unit (Singular, Abbreviated) */
+"wk" = "εβδ.";
+
+/* Week Unit (Plural, Abbreviated) */
+"wks" = "εβδ.";
+
+/* Yard Unit */
+"yds" = "γιάρδες";
+
+/* Year Unit (Singular) */
+"year" = "έτος";
+
+/* Year Unit (Plural) */
+"years" = "έτη";
+
+/* No comment provided by engineer. */
+"yesterday" = "χθες";
+
+/* Year Unit (Singular, Abbreviated) */
+"yr" = "χρ.";
+
+/* Year Unit (Plural, Abbreviated) */
+"yrs" = "χρ.";
+
