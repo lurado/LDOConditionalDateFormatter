@@ -37,8 +37,8 @@
 @property (readonly, copy) NSDate *referenceDate;
 
 @property (readonly) NSTimeInterval timeIntervalSinceReferenceDate;
-@property (readonly) BOOL isInPast;
-@property (readonly) BOOL isInFuture;
+@property (readonly, getter=isInPast) BOOL inPast;
+@property (readonly, getter=isInFuture) BOOL inFuture;
 
 @property (readonly) NSInteger daysDifference;
 @property (readonly) NSInteger weeksDifference;
@@ -141,9 +141,10 @@
 @end
 
 
-static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b)
+static NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUnit a, NSCalendarUnit b)
 {
-    if ((a == SLCalendarUnitWeek) ^ (b == SLCalendarUnitWeek)) {
+    if ((a == SLCalendarUnitWeek && b != SLCalendarUnitWeek) ||
+        (a != SLCalendarUnitWeek && b == SLCalendarUnitWeek)) {
         if (b == SLCalendarUnitWeek) {
             switch (a) {
                 case SLCalendarUnitYear:
@@ -268,7 +269,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 
 - (NSString *)defaultFormat
 {
-    return [defaultFormat[@"foramt"] copy];
+    return [defaultFormat[@"format"] copy];
 }
 
 - (void)setDefaultFormat:(NSString *)format
@@ -276,12 +277,12 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     FormatCondition check = ^BOOL(SLDateRelationship *relationship) {
         return YES;
     };
-    defaultFormat = format == nil ? nil : @{@"format": [format copy], @"condtion": check};
+    defaultFormat = format == nil ? nil : @{@"format": [format copy], @"condition": check};
 }
 
 - (void)addFormat:(NSString *)format condition:(FormatCondition)condition
 {
-    [rules addObject:@{@"format": format, @"condtion": condition}];
+    [rules addObject:@{@"format": format, @"condition": condition}];
 }
 
 - (void)addFormat:(NSString *)format forTimeInterval:(NSTimeInterval)timeInterval
@@ -314,15 +315,22 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
             case SLTimeUnitLastWeek:
             case SLTimeUnitPreviousWeek:
                 return relationship.previousWeek;
-            case SLTimeUnitNextWeek: return relationship.nextWeek;
+            case SLTimeUnitNextWeek:
+                return relationship.nextWeek;
             
-            case SLTimeUnitThisMonth: return relationship.sameMonth;
-            case SLTimeUnitLastMonth: return relationship.previousMonth;
-            case SLTimeUnitNextMonth: return relationship.nextMonth;
+            case SLTimeUnitThisMonth:
+                return relationship.sameMonth;
+            case SLTimeUnitLastMonth:
+                return relationship.previousMonth;
+            case SLTimeUnitNextMonth:
+                return relationship.nextMonth;
             
-            case SLTimeUnitThisYear: return relationship.sameYear;
-            case SLTimeUnitLastYear: return relationship.previousYear;
-            case SLTimeUnitNextYear: return relationship.nextYear;
+            case SLTimeUnitThisYear:
+                return relationship.sameYear;
+            case SLTimeUnitLastYear:
+                return relationship.previousYear;
+            case SLTimeUnitNextYear:
+                return relationship.nextYear;
             default:
                 break;
         }
@@ -353,10 +361,14 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 {
     FormatCondition check = ^BOOL(SLDateRelationship *relationship) {
         switch (unit) {
-            case SLTimeUnitDays: return relationship.daysDifference >= 0 && relationship.daysDifference <= count;
-            case SLTimeUnitWeeks: return relationship.weeksDifference >= 0 && relationship.weeksDifference <= count;
-            case SLTimeUnitMonths: return relationship.monthsDifference >= 0 && relationship.monthsDifference <= count;
-            case SLTimeUnitYears: return relationship.yearsDifference >= 0 && relationship.yearsDifference <= count;
+            case SLTimeUnitDays:
+                return relationship.daysDifference >= 0 && relationship.daysDifference <= count;
+            case SLTimeUnitWeeks:
+                return relationship.weeksDifference >= 0 && relationship.weeksDifference <= count;
+            case SLTimeUnitMonths:
+                return relationship.monthsDifference >= 0 && relationship.monthsDifference <= count;
+            case SLTimeUnitYears:
+                return relationship.yearsDifference >= 0 && relationship.yearsDifference <= count;
             default:
                 break;
         }
@@ -370,7 +382,8 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 
 - (NSString *)stringForTimeInterval:(NSTimeInterval)seconds
 {
-    NSDate *now = [NSDate date];    // use for offset calculation _and_ reference to ensure no second wrap occurs between two [NSDate date] calls
+    // use for offset calculation _and_ reference to ensure no second wrap occurs between two [NSDate date] calls
+    NSDate *now = [NSDate date];
     return [self stringForTimeIntervalFromDate:[now dateByAddingTimeInterval:seconds] toReferenceDate:now];
 }
 
@@ -384,8 +397,9 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     SLDateRelationship *dateRelationship = [[SLDateRelationship alloc] initWithDate:date referenceDate:referenceDate calendar:self.calendar];
     
     NSArray *applicableRules = defaultFormat ? [rules arrayByAddingObject:defaultFormat] : rules;
+    
     for (NSDictionary *rule in applicableRules ) {
-        FormatCondition check = rule[@"condtion"];
+        FormatCondition check = rule[@"condition"];
         if (!check(dateRelationship)) {
             continue;
         }
@@ -398,9 +412,9 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     return nil;
 }
 
-#pragma mark Helper
+#pragma mark Helpers
 
-- (NSString *)boundaryCharacterWrappedPattern:(NSString *)pattern
++ (NSString *)boundaryCharacterWrappedPattern:(NSString *)pattern
 {
     NSString *boundaryCharacters = @"\\s,\\.";
     return [NSString stringWithFormat:@"(?:^|[%@])(%@)(?:$|[%@])", boundaryCharacters, pattern, boundaryCharacters];
@@ -414,7 +428,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     
     NSString *result = [format copy];
     
-    result = [self replaceMatchesOfRegex:[self boundaryCharacterWrappedPattern:@"(~?)(R{1,7})"] inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
+    result = [self.class replaceMatchesOfRegex:[self.class boundaryCharacterWrappedPattern:@"(~?)(R{1,7})"] inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
         BOOL approximate = [match rangeAtIndex:2].length == 1;
         NSString *replacement = [self relativeExpressionForDateRelationship:relationship numberOfSignificantUnits:[match rangeAtIndex:3].length approximate:approximate];
         if (replacement) {
@@ -423,7 +437,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         return input;
     }];
     
-    result = [self replaceMatchesOfRegex:[self boundaryCharacterWrappedPattern:@"I"] inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
+    result = [self.class replaceMatchesOfRegex:[self.class boundaryCharacterWrappedPattern:@"I"] inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
         NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:relationship];
         if (replacement) {
             input = [input stringByReplacingCharactersInRange:[match rangeAtIndex:1] withString:replacement];
@@ -431,7 +445,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         return input;
     }];
     
-    result = [self replaceMatchesOfRegex:@"\\{([cdeghjklmqrsuvwxyzADEFGHJKLMOQSUVWXYZ]*?)\\}" inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
+    result = [self.class replaceMatchesOfRegex:@"\\{([cdeghjklmqrsuvwxyzADEFGHJKLMOQSUVWXYZ]*?)\\}" inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
         NSRange templateRange = [match rangeAtIndex:1];
         NSString *template = [input substringWithRange:templateRange];
         NSString *replacement = [NSDateFormatter dateFormatFromTemplate:template options:0 locale:self.locale];
@@ -441,7 +455,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         return input;
     }];
     
-    result = [self replaceMatchesOfRegex:@"\\{(.*?)\\}" inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
+    result = [self.class replaceMatchesOfRegex:@"\\{(.*?)\\}" inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
         dateFormatter.dateFormat = [input substringWithRange:[match rangeAtIndex:1]];
         NSString *replacement = [dateFormatter stringFromDate:relationship.date];
         if (replacement) {
@@ -453,7 +467,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     return [result isEqualToString:format] ? nil : result;
 }
 
-- (NSString *)replaceMatchesOfRegex:(NSString *)pattern inString:(NSString *)string usingBlock:(NSString* (^)(NSString *input, NSTextCheckingResult* match))block {
++ (NSString *)replaceMatchesOfRegex:(NSString *)pattern inString:(NSString *)string usingBlock:(NSString* (^)(NSString *input, NSTextCheckingResult* match))block {
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
     NSArray *matches = [regex matchesInString:string options:0 range:NSMakeRange(0, string.length)];
     for (NSTextCheckingResult *match in [matches reverseObjectEnumerator]) {
@@ -493,7 +507,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     }
     
     if (string) {
-        if (relationship.isInPast) {
+        if (relationship.inPast) {
             if ([self.pastDeicticExpression length]) {
                 string = [NSString stringWithFormat:self.deicticExpressionFormat, string, self.pastDeicticExpression];
             }
@@ -729,6 +743,9 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
+    if (!self) {
+        return nil;
+    }
     
     self.locale = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(locale))];
     self.pastDeicticExpression = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(pastDeicticExpression))];
