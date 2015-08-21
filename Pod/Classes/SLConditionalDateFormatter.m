@@ -190,15 +190,11 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     }
     
     rules = [NSMutableArray array];
-    _locale = [NSLocale currentLocale];
-    _timeZone = [NSTimeZone localTimeZone];
     _calendar = [NSCalendar currentCalendar];
-    _calendar.locale = _locale;
-    _calendar.timeZone = _timeZone;
     dateFormatter = [NSDateFormatter new];
     dateFormatter.calendar = _calendar;
-    dateFormatter.locale = _locale;
-    dateFormatter.timeZone = _timeZone;
+    dateFormatter.locale = _calendar.locale;
+    dateFormatter.timeZone = _calendar.timeZone;
     
     _pastDeicticExpression = NSLocalizedStringFromTable(@"ago", @"FormatterKit", @"Past Deictic Expression");
     _presentDeicticExpression = NSLocalizedStringFromTable(@"just now", @"FormatterKit", @"Present Deictic Expression");
@@ -216,26 +212,12 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     return self;
 }
 
-- (void)setTimeZone:(NSTimeZone *)timeZone
-{
-    _timeZone = [timeZone copy];
-    dateFormatter.timeZone = _timeZone;
-    self.calendar.timeZone = _timeZone;
-}
-
-- (void)setLocale:(NSLocale *)locale
-{
-    _locale = [locale copy];
-    dateFormatter.locale = locale;
-    self.calendar.locale = locale;
-}
-
 - (void)setCalendar:(NSCalendar *)calendar
 {
     _calendar = [calendar copy];
-    _calendar.timeZone = self.timeZone;
-    _calendar.locale = self.locale;
     dateFormatter.calendar = _calendar;
+    dateFormatter.timeZone = _calendar.timeZone;
+    dateFormatter.locale = _calendar.locale;
 }
 
 - (NSInteger)extractComponent:(NSCalendarUnit)unit from:(NSDateComponents *)components
@@ -448,7 +430,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     result = [self.class replaceMatchesOfRegex:@"\\{([cdeghjklmqrsuvwxyzADEFGHJKLMOQSUVWXYZ]*?)\\}" inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
         NSRange templateRange = [match rangeAtIndex:1];
         NSString *template = [input substringWithRange:templateRange];
-        NSString *replacement = [NSDateFormatter dateFormatFromTemplate:template options:0 locale:self.locale];
+        NSString *replacement = [NSDateFormatter dateFormatFromTemplate:template options:0 locale:self.calendar.locale];
         if (replacement) {
             input = [input stringByReplacingCharactersInRange:templateRange withString:replacement];
         }
@@ -726,7 +708,6 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 {
     SLConditionalDateFormatter *formatter = [[[self class] allocWithZone:zone] init];
     
-    formatter.locale = [self.locale copyWithZone:zone];
     formatter.pastDeicticExpression = [self.pastDeicticExpression copyWithZone:zone];
     formatter.presentDeicticExpression = [self.presentDeicticExpression copyWithZone:zone];
     formatter.futureDeicticExpression = [self.futureDeicticExpression copyWithZone:zone];
@@ -747,7 +728,6 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         return nil;
     }
     
-    self.locale = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(locale))];
     self.pastDeicticExpression = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(pastDeicticExpression))];
     self.presentDeicticExpression = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(presentDeicticExpression))];
     self.futureDeicticExpression = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(futureDeicticExpression))];
@@ -763,7 +743,6 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 {
     [super encodeWithCoder:aCoder];
     
-    [aCoder encodeObject:self.locale forKey:NSStringFromSelector(@selector(locale))];
     [aCoder encodeObject:self.pastDeicticExpression forKey:NSStringFromSelector(@selector(pastDeicticExpression))];
     [aCoder encodeObject:self.presentDeicticExpression forKey:NSStringFromSelector(@selector(presentDeicticExpression))];
     [aCoder encodeObject:self.futureDeicticExpression forKey:NSStringFromSelector(@selector(futureDeicticExpression))];

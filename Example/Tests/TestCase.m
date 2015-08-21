@@ -20,8 +20,10 @@
     parser.dateFormat = @"yyyy-MM-dd HH:mm:ss Z";
     
     self.formatter = [SLConditionalDateFormatter new];
-    self.formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    self.formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
+    NSCalendar *calendar = self.formatter.calendar;
+    calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    calendar.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
+    self.formatter.calendar = calendar;
 }
 
 - (NSDate *)parseDate:(NSString *)string
