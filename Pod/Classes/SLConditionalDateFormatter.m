@@ -198,6 +198,11 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     dateFormatter.locale = _calendar.locale;
 }
 
+- (void)setRules:(NSArray *)newRules
+{
+    rules = [newRules copy];
+}
+
 - (NSInteger)extractComponent:(NSCalendarUnit)unit from:(NSDateComponents *)components
 {
     switch (unit) {
@@ -686,13 +691,20 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 {
     SLConditionalDateFormatter *formatter = [[[self class] allocWithZone:zone] init];
     
+    formatter.calendar = [self.calendar copyWithZone:zone];
     formatter.pastDeicticExpression = [self.pastDeicticExpression copyWithZone:zone];
     formatter.presentDeicticExpression = [self.presentDeicticExpression copyWithZone:zone];
     formatter.futureDeicticExpression = [self.futureDeicticExpression copyWithZone:zone];
     formatter.deicticExpressionFormat = [self.deicticExpressionFormat copyWithZone:zone];
-    formatter.approximateQualifierFormat = [self.approximateQualifierFormat copyWithZone:zone];
+    formatter.suffixExpressionFormat = [self.suffixExpressionFormat copyWithZone:zone];
     formatter.presentTimeIntervalMargin = self.presentTimeIntervalMargin;
+    formatter.approximateQualifierFormat = [self.approximateQualifierFormat copyWithZone:zone];
+    formatter.significantUnits = self.significantUnits;
+    formatter.leastSignificantUnit = self.leastSignificantUnit;
     formatter.usesAbbreviatedCalendarUnits = self.usesAbbreviatedCalendarUnits;
+    formatter.defaultFormat = [self.defaultFormat copyWithZone:zone];
+    
+    [formatter setRules:[rules copyWithZone:zone]];
     
     return formatter;
 }
@@ -706,13 +718,26 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         return nil;
     }
     
+    dateFormatter = [NSDateFormatter new];
+    
+    self.calendar = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(calendar))];
     self.pastDeicticExpression = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(pastDeicticExpression))];
     self.presentDeicticExpression = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(presentDeicticExpression))];
     self.futureDeicticExpression = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(futureDeicticExpression))];
+    
     self.deicticExpressionFormat = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(deicticExpressionFormat))];
-    self.approximateQualifierFormat = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(approximateQualifierFormat))];
+    self.suffixExpressionFormat = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(suffixExpressionFormat))];
+    
     self.presentTimeIntervalMargin = [aDecoder decodeDoubleForKey:NSStringFromSelector(@selector(presentTimeIntervalMargin))];
+    self.approximateQualifierFormat = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(approximateQualifierFormat))];
+    
+    self.significantUnits = [aDecoder decodeIntForKey:NSStringFromSelector(@selector(significantUnits))];
+    self.leastSignificantUnit = [aDecoder decodeIntForKey:NSStringFromSelector(@selector(leastSignificantUnit))];
+    
     self.usesAbbreviatedCalendarUnits = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(usesAbbreviatedCalendarUnits))];
+    self.defaultFormat = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(defaultFormat))];
+    
+    rules = [aDecoder decodeObjectForKey:@"rules"];
     
     return self;
 }
@@ -721,13 +746,23 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 {
     [super encodeWithCoder:aCoder];
     
+    [aCoder encodeObject:self.calendar forKey:NSStringFromSelector(@selector(calendar))];
     [aCoder encodeObject:self.pastDeicticExpression forKey:NSStringFromSelector(@selector(pastDeicticExpression))];
     [aCoder encodeObject:self.presentDeicticExpression forKey:NSStringFromSelector(@selector(presentDeicticExpression))];
     [aCoder encodeObject:self.futureDeicticExpression forKey:NSStringFromSelector(@selector(futureDeicticExpression))];
     [aCoder encodeObject:self.deicticExpressionFormat forKey:NSStringFromSelector(@selector(deicticExpressionFormat))];
+    
+    [aCoder encodeObject:self.suffixExpressionFormat forKey:NSStringFromSelector(@selector(suffixExpressionFormat))];
+    [aCoder encodeDouble:self.presentTimeIntervalMargin forKey:NSStringFromSelector(@selector(suffixExpressionFormat))];
     [aCoder encodeObject:self.approximateQualifierFormat forKey:NSStringFromSelector(@selector(approximateQualifierFormat))];
-    [aCoder encodeDouble:self.presentTimeIntervalMargin forKey:NSStringFromSelector(@selector(presentTimeIntervalMargin))];
+    
+    [aCoder encodeInt:self.significantUnits forKey:NSStringFromSelector(@selector(significantUnits))];
+    [aCoder encodeInt:self.leastSignificantUnit forKey:NSStringFromSelector(@selector(leastSignificantUnit))];
+    
     [aCoder encodeBool:self.usesAbbreviatedCalendarUnits forKey:NSStringFromSelector(@selector(usesAbbreviatedCalendarUnits))];
+    [aCoder encodeObject:self.defaultFormat forKey:NSStringFromSelector(@selector(defaultFormat))];
+    
+    [aCoder encodeObject:rules forKey:@"rules"];
 }
 
 @end
