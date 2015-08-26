@@ -190,6 +190,28 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     return self;
 }
 
+- (NSLocale *)locale
+{
+    return _calendar.locale;
+}
+
+- (void)setLocale:(NSLocale *)locale
+{
+    _calendar.locale = locale;
+    dateFormatter.locale = locale;
+}
+
+- (NSTimeZone *)timeZone
+{
+    return _calendar.timeZone;
+}
+
+- (void)setTimeZone:(NSTimeZone *)timeZone
+{
+    _calendar.timeZone = timeZone;
+    dateFormatter.timeZone = timeZone;
+}
+
 - (void)setCalendar:(NSCalendar *)calendar
 {
     _calendar = [calendar copy];

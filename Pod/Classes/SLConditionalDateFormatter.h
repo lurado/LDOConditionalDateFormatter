@@ -39,6 +39,18 @@ typedef enum : NSUInteger {
 @interface SLConditionalDateFormatter : NSFormatter
 
 /**
+ Specifies the locale used to format strings.
+ This is just a convenience proxy method to access the locale of the `calendar`.
+ */
+@property (copy, nonatomic) NSLocale *locale;
+
+/**
+ Specifies the time zone used to format strings.
+ This is just a convenience proxy method to access the time zone of the `calendar`.
+ */
+@property (copy, nonatomic) NSTimeZone *timeZone;
+
+/**
  Specifies the calendar used in date calculation. Defaults to the current system calendar.
  The calendar also specifies the time zone and locale that will be used to format strings.
  */
