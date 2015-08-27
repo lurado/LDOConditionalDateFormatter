@@ -12,7 +12,7 @@
 #define WEEKS * 7 * 24 * 60 * 60
 
 @import XCTest;
-@import SLConditionalDateFormatter;
+#include <SLConditionalDateFormatter.h>
 
 @interface TestCase : XCTestCase
 

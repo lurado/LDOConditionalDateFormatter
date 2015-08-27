@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16FEF89E7CB35893000624F3 /* Pods_SLConditionalDateFormatter_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A3D43E60837B1E0A15634D /* Pods_SLConditionalDateFormatter_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		022CE69353CFC765AED6E212 /* libPods-SLConditionalDateFormatter_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 799E1D01F166959A1D823ED2 /* libPods-SLConditionalDateFormatter_Tests.a */; };
+		5D511549F06B6D0273520517 /* libPods-SLConditionalDateFormatter_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D742DB77F8985D8646A72CE /* libPods-SLConditionalDateFormatter_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -26,7 +27,6 @@
 		9E806E831B6BE13B0051DE06 /* FormatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E821B6BE13B0051DE06 /* FormatTests.m */; };
 		9E806E881B6BE1C90051DE06 /* TestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E871B6BE1C90051DE06 /* TestCase.m */; };
 		9E806E8A1B6BE5360051DE06 /* RelativeExpressionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E891B6BE5360051DE06 /* RelativeExpressionsTests.m */; };
-		A0A670BBDD6B652CBBD74059 /* Pods_SLConditionalDateFormatter_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E281E07F9CCFCA704139CFE /* Pods_SLConditionalDateFormatter_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D742DB77F8985D8646A72CE /* libPods-SLConditionalDateFormatter_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SLConditionalDateFormatter_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F67EC442120272ABE2F46DC /* Pods-SLConditionalDateFormatter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLConditionalDateFormatter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLConditionalDateFormatter_Example/Pods-SLConditionalDateFormatter_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		3E281E07F9CCFCA704139CFE /* Pods_SLConditionalDateFormatter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLConditionalDateFormatter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4759113E68CB4F219FA77B1F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		52F62CCFE96C55E8D127A823 /* SLConditionalDateFormatter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SLConditionalDateFormatter.podspec; path = ../SLConditionalDateFormatter.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SLConditionalDateFormatter_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLConditionalDateFormatter_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +64,7 @@
 		6003F5BB195388D20070C39A /* IdiomaticExpressionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdiomaticExpressionTests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6B6F3BDB8B393EDB9E2AFC90 /* Pods-SLConditionalDateFormatter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLConditionalDateFormatter_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLConditionalDateFormatter_Tests/Pods-SLConditionalDateFormatter_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		77A3D43E60837B1E0A15634D /* Pods_SLConditionalDateFormatter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLConditionalDateFormatter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		799E1D01F166959A1D823ED2 /* libPods-SLConditionalDateFormatter_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SLConditionalDateFormatter_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9E2D9EBE1B86044C000F0C33 /* ReadmeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadmeTests.m; sourceTree = "<group>"; };
 		9E806E821B6BE13B0051DE06 /* FormatTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatTests.m; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				A0A670BBDD6B652CBBD74059 /* Pods_SLConditionalDateFormatter_Example.framework in Frameworks */,
+				5D511549F06B6D0273520517 /* libPods-SLConditionalDateFormatter_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				16FEF89E7CB35893000624F3 /* Pods_SLConditionalDateFormatter_Tests.framework in Frameworks */,
+				022CE69353CFC765AED6E212 /* libPods-SLConditionalDateFormatter_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,8 +130,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				3E281E07F9CCFCA704139CFE /* Pods_SLConditionalDateFormatter_Example.framework */,
-				77A3D43E60837B1E0A15634D /* Pods_SLConditionalDateFormatter_Tests.framework */,
+				0D742DB77F8985D8646A72CE /* libPods-SLConditionalDateFormatter_Example.a */,
+				799E1D01F166959A1D823ED2 /* libPods-SLConditionalDateFormatter_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,7 +218,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				4E950D18686E0A39F3C71317 /* Embed Pods Frameworks */,
 				CB8E8C1F0BAEE53C1F8B2EEA /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -238,7 +237,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				A2B81ED41024F0E0A2087B40 /* Embed Pods Frameworks */,
 				A4EF8B090AD9DAE5E43F1D30 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -322,21 +320,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4E950D18686E0A39F3C71317 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SLConditionalDateFormatter_Example/Pods-SLConditionalDateFormatter_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8025250BE229A7C2416C4F6D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,21 +333,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A2B81ED41024F0E0A2087B40 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SLConditionalDateFormatter_Tests/Pods-SLConditionalDateFormatter_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A4EF8B090AD9DAE5E43F1D30 /* Copy Pods Resources */ = {

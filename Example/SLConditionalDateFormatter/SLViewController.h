@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@import SLConditionalDateFormatter;
+#include <SLConditionalDateFormatter.h>
 
 @interface SLViewController : UIViewController
 
