@@ -30,6 +30,14 @@ formatter.defaultFormat = @"{yMd}";
 // = 2/11/2015
 ```
 
+## Installation
+
+SLConditionalDateFormatter is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+```ruby
+pod "SLConditionalDateFormatter"
+```
+
 ## String generation
 
 - `(NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate`
@@ -79,23 +87,30 @@ The formats are checked in the same order they are added. If two formats satisfy
 
 If no format matches the condition for a given date, a default format will be used (if specified).
 
+## Localization
+
+The library provides localization for [many languages](https://github.com/sebastianludwig/SLConditionalDateFormatter/tree/master/Pod/Assets). If you want to customize a string, simply add it to your own localization and it will be used instead of the bundled translation.
+
+However that does not mean the localizations are perfect yet. Please check how to [contribute](#contribute)
 
 ## Examples
 
 The pod contains a bunch of unit tests trying to prove things work as they should. They are also good to illustrate the usage. To run them, clone the repo, and run `pod install` from the Example directory first.
 
-## Installation
-
-SLConditionalDateFormatter is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "SLConditionalDateFormatter"
-```
-
 ## Alternatives
 
 Based on @mattt's work on [FormatterKit](https://github.com/mattt/FormatterKit) and everybody who contributed there. Go check it out, maybe it better suits your needs.
+
+## Contribute
+
+Issues and pull requests are always welcome! The localizations probably need improvements the most. So please check, correct and provide translations. The following keys are still missing for most languages:
+
+- today
+- this week
+- this month
+- this year
+
+[twine](https://github.com/mobiata/twine) is used to manage translations in a single `strings.txt` file. If you want to regenerate the `.strings` files youself, use the following command from the `Assets` folder: `twine generate-all-string-files strings.txt ./ --format apple --file-name SLConditionalDateFormatter.strings --create-folders --developer-language en --include-untranslated`
 
 ## Author
 
