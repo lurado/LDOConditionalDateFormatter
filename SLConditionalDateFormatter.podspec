@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'SLConditionalDateFormatter' => ['Pod/Assets/*.png']
+    'SLConditionalDateFormatter' => ['Pod/Assets/*.lproj']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
