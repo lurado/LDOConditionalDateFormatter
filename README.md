@@ -123,7 +123,7 @@ Issues and pull requests are always welcome! The localizations probably need imp
 - this month
 - this year
 
-[twine](https://github.com/mobiata/twine) is used to manage translations in a single `strings.txt` file. If you want to regenerate the `.strings` files youself, use the following command from the `Assets` folder: `twine generate-all-string-files strings.txt ./ --format apple --file-name SLConditionalDateFormatter.strings --create-folders --developer-language en --include-untranslated`
+[twine](https://github.com/mobiata/twine) is used to manage all translations in a single [strings.txt](https://github.com/sebastianludwig/SLConditionalDateFormatter/tree/master/Pod/Assets/strings.txt) file. If you want to regenerate the `.strings` files youself, use the following command from inside the `Assets` folder: `twine generate-all-string-files strings.txt ./ --format apple --file-name SLConditionalDateFormatter.strings --create-folders --developer-language en --include-untranslated`
 
 ## Author
 
