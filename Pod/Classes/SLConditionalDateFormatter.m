@@ -162,14 +162,17 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
 
 + (NSString *)localizedString:(NSString *)key
 {
+    static NSString *notFound = @"--localizationKeyNotFound--";
     static NSBundle *assetsBundle = nil;
     if (assetsBundle == nil) {
         NSURL *resourcesURL = [[NSBundle bundleForClass:self] URLForResource:@"SLConditionalDateFormatter" withExtension:@"bundle"];
         assetsBundle = [NSBundle bundleWithURL:resourcesURL];
     }
-    NSString *defaultString = [assetsBundle localizedStringForKey:key value:nil table:@"SLConditionalDateFormatter"];
+    NSString *defaultString = [assetsBundle localizedStringForKey:key value:notFound table:@"SLConditionalDateFormatter"];
     
-    return [[NSBundle mainBundle] localizedStringForKey:key value:defaultString table:nil];
+    NSString *result = [[NSBundle mainBundle] localizedStringForKey:key value:defaultString table:nil];
+    
+    return [result isEqualToString:notFound] ? nil : result;
 }
 
 - (id)init
