@@ -160,6 +160,18 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     NSDictionary *defaultFormat;
 }
 
++ (NSString *)localizedString:(NSString *)key
+{
+    static NSBundle *assetsBundle = nil;
+    if (assetsBundle == nil) {
+        NSURL *resourcesURL = [[NSBundle bundleForClass:self] URLForResource:@"SLConditionalDateFormatter" withExtension:@"bundle"];
+        assetsBundle = [NSBundle bundleWithURL:resourcesURL];
+    }
+    NSString *defaultString = [assetsBundle localizedStringForKey:key value:nil table:@"SLConditionalDateFormatter"];
+    
+    return [[NSBundle mainBundle] localizedStringForKey:key value:defaultString table:nil];
+}
+
 - (id)init
 {
     self = [super init];
@@ -174,13 +186,13 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     dateFormatter.locale = _calendar.locale;
     dateFormatter.timeZone = _calendar.timeZone;
     
-    _pastDeicticExpression = NSLocalizedStringFromTable(@"ago", @"FormatterKit", @"Past Deictic Expression");
-    _presentDeicticExpression = NSLocalizedStringFromTable(@"just now", @"FormatterKit", @"Present Deictic Expression");
-    _futureDeicticExpression = NSLocalizedStringFromTable(@"from now", @"FormatterKit", @"Future Deictic Expression");
+    _pastDeicticExpression = [self.class localizedString:@"ago"];
+    _presentDeicticExpression = [self.class localizedString:@"just now"];
+    _futureDeicticExpression = [self.class localizedString:@"from now"];
     
-    _deicticExpressionFormat = NSLocalizedStringWithDefaultValue(@"Deictic Expression Format String", @"FormatterKit", [NSBundle mainBundle], @"%@ %@", @"Deictic Expression Format (#{Time} #{Ago/From Now}");
-    _approximateQualifierFormat = NSLocalizedStringFromTable(@"about %@", @"FormatterKit", @"Approximate Qualifier Format");
-    _suffixExpressionFormat = NSLocalizedStringWithDefaultValue(@"Suffix Expression Format String", @"FormatterKit", [NSBundle mainBundle], @"%@ %@", @"Suffix Expression Format (#{Time} #{Unit})");
+    _deicticExpressionFormat = [self.class localizedString:@"Deictic Expression Format String"];
+    _approximateQualifierFormat = [self.class localizedString:@"about %@"];
+    _suffixExpressionFormat = [self.class localizedString:@"Suffix Expression Format String"];
     
     _presentTimeIntervalMargin = 1;
     
@@ -519,38 +531,38 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     if (self.usesAbbreviatedCalendarUnits) {
         switch (unit) {
             case NSCalendarUnitYear:
-                return singular ? NSLocalizedStringFromTable(@"yr", @"FormatterKit", @"Year Unit (Singular, Abbreviated)") : NSLocalizedStringFromTable(@"yrs", @"FormatterKit", @"Year Unit (Plural, Abbreviated)");
+                return singular ? [self.class localizedString:@"yr"] : [self.class localizedString:@"yrs"];
             case NSCalendarUnitMonth:
-                return singular ? NSLocalizedStringFromTable(@"mo", @"FormatterKit", @"Month Unit (Singular, Abbreviated)") : NSLocalizedStringFromTable(@"mos", @"FormatterKit", @"Month Unit (Plural, Abbreviated)");
+                return singular ? [self.class localizedString:@"mo"] : [self.class localizedString:@"mos"];
             case NSCalendarUnitWeekOfYear:
-                return singular ? NSLocalizedStringFromTable(@"wk", @"FormatterKit", @"Week Unit (Singular, Abbreviated)") : NSLocalizedStringFromTable(@"wks", @"FormatterKit", @"Week Unit (Plural, Abbreviated)");
+                return singular ? [self.class localizedString:@"wk"] : [self.class localizedString:@"wks"];
             case NSCalendarUnitDay:
-                return singular ? NSLocalizedStringFromTable(@"d", @"FormatterKit", @"Day Unit (Singular, Abbreviated)") : NSLocalizedStringFromTable(@"ds", @"FormatterKit", @"Day Unit (Plural, Abbreviated)");
+                return singular ? [self.class localizedString:@"d"] : [self.class localizedString:@"ds"];
             case NSCalendarUnitHour:
-                return singular ? NSLocalizedStringFromTable(@"hr", @"FormatterKit", @"Hour Unit (Singular, Abbreviated)") : NSLocalizedStringFromTable(@"hrs", @"FormatterKit", @"Hour Unit (Plural, Abbreviated)");
+                return singular ? [self.class localizedString:@"hr"] : [self.class localizedString:@"hrs"];
             case NSCalendarUnitMinute:
-                return singular ? NSLocalizedStringFromTable(@"min", @"FormatterKit", @"Minute Unit (Singular, Abbreviated)") : NSLocalizedStringFromTable(@"mins", @"FormatterKit", @"Minute Unit (Plural, Abbreviated)");
+                return singular ? [self.class localizedString:@"min"] : [self.class localizedString:@"mins"];
             case NSCalendarUnitSecond:
-                return singular ? NSLocalizedStringFromTable(@"s", @"FormatterKit", @"Second Unit (Singular, Abbreviated)") : NSLocalizedStringFromTable(@"s", @"FormatterKit", @"Second Unit (Plural, Abbreviated)");
+                return singular ? [self.class localizedString:@"s"] : [self.class localizedString:@"s"];
             default:
                 return nil;
         }
     } else {
         switch (unit) {
             case NSCalendarUnitYear:
-                return singular ? NSLocalizedStringFromTable(@"year", @"FormatterKit", @"Year Unit (Singular)") : NSLocalizedStringFromTable(@"years", @"FormatterKit", @"Year Unit (Plural)");
+                return singular ? [self.class localizedString:@"year"] : [self.class localizedString:@"years"];
             case NSCalendarUnitMonth:
-                return singular ? NSLocalizedStringFromTable(@"month", @"FormatterKit", @"Month Unit (Singular)") : NSLocalizedStringFromTable(@"months", @"FormatterKit", @"Month Unit (Plural)");
+                return singular ? [self.class localizedString:@"month"] : [self.class localizedString:@"months"];
             case NSCalendarUnitWeekOfYear:
-                return singular ? NSLocalizedStringFromTable(@"week", @"FormatterKit", @"Week Unit (Singular)") : NSLocalizedStringFromTable(@"weeks", @"FormatterKit", @"Week Unit (Plural)");
+                return singular ? [self.class localizedString:@"week"] : [self.class localizedString:@"weeks"];
             case NSCalendarUnitDay:
-                return singular ? NSLocalizedStringFromTable(@"day", @"FormatterKit", @"Day Unit (Singular)") : NSLocalizedStringFromTable(@"days", @"FormatterKit", @"Day Unit (Plural)");
+                return singular ? [self.class localizedString:@"day"] : [self.class localizedString:@"days"];
             case NSCalendarUnitHour:
-                return singular ? NSLocalizedStringFromTable(@"hour", @"FormatterKit", @"Hour Unit (Singular)") : NSLocalizedStringFromTable(@"hours", @"FormatterKit", @"Hour Unit (Plural)");
+                return singular ? [self.class localizedString:@"hour"] : [self.class localizedString:@"hours"];
             case NSCalendarUnitMinute:
-                return singular ? NSLocalizedStringFromTable(@"minute", @"FormatterKit", @"Minute Unit (Singular)") : NSLocalizedStringFromTable(@"minutes", @"FormatterKit", @"Minute Unit (Plural)");
+                return singular ? [self.class localizedString:@"minute"] : [self.class localizedString:@"minutes"];
             case NSCalendarUnitSecond:
-                return singular ? NSLocalizedStringFromTable(@"second", @"FormatterKit", @"Second Unit (Singular)") : NSLocalizedStringFromTable(@"seconds", @"FormatterKit", @"Second Unit (Plural)");
+                return singular ? [self.class localizedString:@"second"] : [self.class localizedString:@"seconds"];
             default:
                 return nil;
         }
@@ -566,43 +578,43 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
     }
 
     if ([self shouldUseUnit:NSCalendarUnitDay] && relationship.sameDay) {
-        return NSLocalizedStringFromTable(@"today", @"FormatterKit", @"today");
+        return [self.class localizedString:@"today"];
     }
     if ([self shouldUseUnit:NSCalendarUnitDay] && relationship.previousDay) {
-        return NSLocalizedStringFromTable(@"yesterday", @"FormatterKit", @"yesterday");
+        return [self.class localizedString:@"yesterday"];
     }
     if ([self shouldUseUnit:NSCalendarUnitDay] && relationship.nextDay) {
-        return NSLocalizedStringFromTable(@"tomorrow", @"FormatterKit", @"tomorrow");
+        return [self.class localizedString:@"tomorrow"];
     }
     
     if ([self shouldUseUnit:NSCalendarUnitWeekOfYear] && relationship.sameWeek) {
-        return NSLocalizedStringFromTable(@"this week", @"FormatterKit", @"this week");
+        return [self.class localizedString:@"this week"];
     }
     if ([self shouldUseUnit:NSCalendarUnitWeekOfYear] && relationship.previousWeek) {
-        return NSLocalizedStringFromTable(@"last week", @"FormatterKit", @"last week");
+        return [self.class localizedString:@"last week"];
     }
     if ([self shouldUseUnit:NSCalendarUnitWeekOfYear] && relationship.nextWeek) {
-        return NSLocalizedStringFromTable(@"next week", @"FormatterKit", @"next week");
+        return [self.class localizedString:@"next week"];
     }
     
     if ([self shouldUseUnit:NSCalendarUnitMonth] && relationship.sameMonth) {
-        return NSLocalizedStringFromTable(@"this month", @"FormatterKit", @"this month");
+        return [self.class localizedString:@"this month"];
     }
     if ([self shouldUseUnit:NSCalendarUnitMonth] && relationship.previousMonth) {
-        return NSLocalizedStringFromTable(@"last month", @"FormatterKit", @"last month");
+        return [self.class localizedString:@"last month"];
     }
     if ([self shouldUseUnit:NSCalendarUnitMonth] && relationship.nextMonth) {
-        return NSLocalizedStringFromTable(@"next month", @"FormatterKit", @"next month");
+        return [self.class localizedString:@"next month"];
     }
     
     if ([self shouldUseUnit:NSCalendarUnitYear] && relationship.sameYear) {
-        return NSLocalizedStringFromTable(@"this year", @"FormatterKit", @"this year");
+        return [self.class localizedString:@"this year"];
     }
     if ([self shouldUseUnit:NSCalendarUnitYear] && relationship.previousYear) {
-        return NSLocalizedStringFromTable(@"last year", @"FormatterKit", @"last year");
+        return [self.class localizedString:@"last year"];
     }
     if ([self shouldUseUnit:NSCalendarUnitYear] && relationship.nextYear) {
-        return NSLocalizedStringFromTable(@"next year", @"FormatterKit", @"next year");
+        return [self.class localizedString:@"next year"];
     }
     
     return nil;
@@ -702,7 +714,7 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
              forString:(__unused NSString *)string
       errorDescription:(out NSString *__autoreleasing *)error
 {
-    *error = NSLocalizedStringFromTable(@"Method Not Implemented", @"FormatterKit", nil);
+    *error = [self.class localizedString:@"Method Not Implemented"];
     
     return NO;
 }
