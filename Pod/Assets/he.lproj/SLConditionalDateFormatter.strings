@@ -49,25 +49,25 @@
 /* The day before today */
 "yesterday" = "אתמול";
 
-/* The day before yesterday */
+/* Optional: The day before yesterday */
 "day before yesterday" = "שלשום";
 
 /* The week before the current week */
 "last week" = "שבוע שעבר";
 
-/* The week before last week */
+/* Optional: The week before last week */
 "week before last week" = "לפני שבועיים";
 
 /* The month before the current month */
 "last month" = "חודש שעבר";
 
-/* The month before last month */
+/* Optional: The month before last month */
 "month before last month" = "לפני חודשיים";
 
 /* The year before the current year */
 "last year" = "שנה שעברה";
 
-/* The year before lat year */
+/* Optional: The year before lat year */
 "year before last year" = "לפני שנתיים";
 
 
@@ -76,25 +76,25 @@
 /* The day after today */
 "tomorrow" = "מחר";
 
-/* The day after tomorrow */
+/* Optional: The day after tomorrow */
 "day after tomorrow" = "מחרתיים";
 
 /* The week after the current week */
 "next week" = "שבוע הבא";
 
-/* The week after next week */
+/* Optional: The week after next week */
 "week after next week" = "בעוד שבועיים";
 
 /* The month after the current month */
 "next month" = "חודש הבא";
 
-/* The month after next month */
+/* Optional: The month after next month */
 "month after next month" = "בעוד חודשיים";
 
 /* The year after the current year */
 "next year" = "שנה הבאה";
 
-/* The year after next year */
+/* Optional: The year after next year */
 "year after next year" = "בעוד שנתיים";
 
 

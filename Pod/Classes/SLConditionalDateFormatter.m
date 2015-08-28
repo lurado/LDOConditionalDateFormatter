@@ -590,11 +590,19 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         if (relationship.nextDay) {
             return [self.class localizedString:@"tomorrow"];
         }
+        
+        // optional
         if (relationship.daysDifference == -2) {
-            return [self.class localizedString:@"day before yesterday"];
+            NSString *result = [self.class localizedString:@"day before yesterday"];
+            if (result) {
+                return result;
+            }
         }
         if (relationship.daysDifference == 2) {
-            return [self.class localizedString:@"day after tomorrow"];
+            NSString *result = [self.class localizedString:@"day after tomorrow"];
+            if (result) {
+                return result;
+            }
         }
     }
     
@@ -608,11 +616,19 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         if (relationship.nextWeek) {
             return [self.class localizedString:@"next week"];
         }
+        
+        // optional
         if (relationship.weeksDifference == -2) {
-            return [self.class localizedString:@"week before last week"];
+            NSString *result = [self.class localizedString:@"week before last week"];
+            if (result) {
+                return result;
+            }
         }
         if (relationship.weeksDifference == 2) {
-            return [self.class localizedString:@"week after next week"];
+            NSString *result = [self.class localizedString:@"week after next week"];
+            if (result) {
+                return result;
+            }
         }
     }
 
@@ -626,11 +642,19 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         if (relationship.nextMonth) {
             return [self.class localizedString:@"next month"];
         }
+        
+        // optional
         if (relationship.monthsDifference == -2) {
-            return [self.class localizedString:@"month before last month"];
+            NSString *result = [self.class localizedString:@"month before last month"];
+            if (result) {
+                return result;
+            }
         }
         if (relationship.monthsDifference == 2) {
-            return [self.class localizedString:@"month after next month"];
+            NSString *result = [self.class localizedString:@"month after next month"];
+            if (result) {
+                return result;
+            }
         }
     }
     
@@ -644,11 +668,19 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         if (relationship.nextYear) {
             return [self.class localizedString:@"next year"];
         }
+        
+        // optional
         if (relationship.yearsDifference == -2) {
-            return [self.class localizedString:@"year before last year"];
+            NSString *result = [self.class localizedString:@"year before last year"];
+            if (result) {
+                return result;
+            }
         }
         if (relationship.yearsDifference == 2) {
-            return [self.class localizedString:@"year after next year"];
+            NSString *result = [self.class localizedString:@"year after next year"];
+            if (result) {
+                return result;
+            }
         }
     }
     

@@ -195,7 +195,7 @@
       zh-Hans = 昨天
       zh-Hant = 昨天
     [day before yesterday]
-      comment = The day before yesterday
+      comment = Optional: The day before yesterday
       ca = abans d'ahir
       cs = předevčírem
       de = vorgestern
@@ -229,7 +229,7 @@
       zh-Hans = 上星期
       zh-Hant = 上禮拜
     [week before last week]
-      comment = The week before last week
+      comment = Optional: The week before last week
       he = לפני שבועיים
     [last month]
       en = last month
@@ -258,7 +258,7 @@
       zh-Hans = 上个月
       zh-Hant = 上個月
     [month before last month]
-      comment = The month before last month
+      comment = Optional: The month before last month
       he = לפני חודשיים
     [last year]
       en = last year
@@ -287,7 +287,7 @@
       zh-Hans = 去年
       zh-Hant = 去年
     [year before last year]
-      comment = The year before lat year
+      comment = Optional: The year before lat year
       he = לפני שנתיים
   [[Future]]
     [tomorrow]
@@ -318,7 +318,7 @@
       zh-Hans = 明天
       zh-Hant = 明天
     [day after tomorrow]
-      comment = The day after tomorrow
+      comment = Optional: The day after tomorrow
       ca = passat demà
       cs = pozítří
       de = übermorgen
@@ -352,7 +352,7 @@
       zh-Hans = 下星期
       zh-Hant = 下禮拜
     [week after next week]
-      comment = The week after next week
+      comment = Optional: The week after next week
       he = בעוד שבועיים
     [next month]
       en = next month
@@ -381,7 +381,7 @@
       zh-Hans = 下个月
       zh-Hant = 下個月
     [month after next month]
-      comment = The month after next month
+      comment = Optional: The month after next month
       he = בעוד חודשיים
     [next year]
       en = next year
@@ -410,7 +410,7 @@
       zh-Hans = 明年
       zh-Hant = 明年
     [year after next year]
-      comment = The year after next year
+      comment = Optional: The year after next year
       he = בעוד שנתיים
 
 [[Seconds]]

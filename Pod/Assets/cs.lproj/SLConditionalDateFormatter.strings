@@ -49,7 +49,7 @@
 /* The day before today */
 "yesterday" = "včera";
 
-/* The day before yesterday */
+/* Optional: The day before yesterday */
 "day before yesterday" = "předevčírem";
 
 /* The week before the current week */
@@ -67,7 +67,7 @@
 /* The day after today */
 "tomorrow" = "zítra";
 
-/* The day after tomorrow */
+/* Optional: The day after tomorrow */
 "day after tomorrow" = "pozítří";
 
 /* The week after the current week */
