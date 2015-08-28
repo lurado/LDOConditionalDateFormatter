@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SLConditionalDateFormatter: 17b13b662d5eb9c51edf912f79f2a16106ca91b1
+  SLConditionalDateFormatter: 7cd03171ab7ceee10da317b4439323cdd0380656
 
 COCOAPODS: 0.37.2
