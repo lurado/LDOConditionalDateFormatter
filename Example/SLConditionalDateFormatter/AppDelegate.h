@@ -1,5 +1,5 @@
 //
-//  SLAppDelegate.h
+//  AppDelegate.h
 //  SLConditionalDateFormatter
 //
 //  Created by Sebastian Ludwig on 07/31/2015.
@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface SLAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

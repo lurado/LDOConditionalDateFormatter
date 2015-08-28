@@ -1,15 +1,13 @@
 //
-//  SLViewController.h
+//  AppDelegate.m
 //  SLConditionalDateFormatter
 //
 //  Created by Sebastian Ludwig on 07/31/2015.
 //  Copyright (c) 2015 Sebastian Ludwig. All rights reserved.
 //
 
-@import UIKit;
+#import "AppDelegate.h"
 
-#include <SLConditionalDateFormatter.h>
-
-@interface SLViewController : UIViewController
+@implementation AppDelegate
 
 @end

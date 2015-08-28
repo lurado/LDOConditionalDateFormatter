@@ -1,14 +1,14 @@
 //
-//  SLViewController.m
+//  ViewController.m
 //  SLConditionalDateFormatter
 //
 //  Created by Sebastian Ludwig on 07/31/2015.
 //  Copyright (c) 2015 Sebastian Ludwig. All rights reserved.
 //
 
-#import "SLViewController.h"
+#import "ViewController.h"
 
-@implementation SLViewController
+@implementation ViewController
 {
     IBOutletCollection(UILabel) NSArray *labels;
 }
