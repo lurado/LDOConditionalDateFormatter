@@ -9,20 +9,12 @@
 
 Pod::Spec.new do |s|
   s.name             = "SLConditionalDateFormatter"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of SLConditionalDateFormatter."
-  s.description      = <<-DESC
-                       An optional longer description of SLConditionalDateFormatter
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/SLConditionalDateFormatter"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.version          = "1.0.0"
+  s.summary          = '"today 2 hours ago" and "yesterday at 4 PM" in one formatter'
+  s.homepage         = "https://github.com/sebastianludwig/SLConditionalDateFormatter"
   s.license          = 'MIT'
   s.author           = { "Sebastian Ludwig" => "sebastian@lurado.de" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SLConditionalDateFormatter.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/sebastianludwig/SLConditionalDateFormatter.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -31,8 +23,4 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'SLConditionalDateFormatter' => ['Pod/Assets/*.lproj']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
