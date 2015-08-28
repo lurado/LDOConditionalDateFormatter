@@ -49,6 +49,9 @@
 /* The day before today */
 "yesterday" = "wczoraj";
 
+/* The day before yesterday */
+"day before yesterday" = "przedwczoraj";
+
 /* The week before the current week */
 "last week" = "zeszły tydzień";
 
@@ -63,6 +66,9 @@
 
 /* The day after today */
 "tomorrow" = "jutro";
+
+/* The day after tomorrow */
+"day after tomorrow" = "pojutrze";
 
 /* The week after the current week */
 "next week" = "przyszły tydzień";

@@ -49,6 +49,9 @@
 /* The day before today */
 "yesterday" = "ahir";
 
+/* The day before yesterday */
+"day before yesterday" = "abans d'ahir";
+
 /* The week before the current week */
 "last week" = "setmana passada";
 
@@ -63,6 +66,9 @@
 
 /* The day after today */
 "tomorrow" = "demà";
+
+/* The day after tomorrow */
+"day after tomorrow" = "passat demà";
 
 /* The week after the current week */
 "next week" = "pròxima setmana";

@@ -49,6 +49,9 @@
 /* The day before today */
 "yesterday" = "gisteren";
 
+/* The day before yesterday */
+"day before yesterday" = "eergisteren";
+
 /* The week before the current week */
 "last week" = "vorige week";
 
@@ -63,6 +66,9 @@
 
 /* The day after today */
 "tomorrow" = "morgen";
+
+/* The day after tomorrow */
+"day after tomorrow" = "overmorgen";
 
 /* The week after the current week */
 "next week" = "volgende week";
