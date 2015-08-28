@@ -577,44 +577,52 @@ typedef BOOL (^FormatCondition)(SLDateRelationship *relationship);
         return self.presentDeicticExpression;
     }
 
-    if ([self shouldUseUnit:NSCalendarUnitDay] && relationship.sameDay) {
-        return [self.class localizedString:@"today"];
-    }
-    if ([self shouldUseUnit:NSCalendarUnitDay] && relationship.previousDay) {
-        return [self.class localizedString:@"yesterday"];
-    }
-    if ([self shouldUseUnit:NSCalendarUnitDay] && relationship.nextDay) {
-        return [self.class localizedString:@"tomorrow"];
-    }
-    
-    if ([self shouldUseUnit:NSCalendarUnitWeekOfYear] && relationship.sameWeek) {
-        return [self.class localizedString:@"this week"];
-    }
-    if ([self shouldUseUnit:NSCalendarUnitWeekOfYear] && relationship.previousWeek) {
-        return [self.class localizedString:@"last week"];
-    }
-    if ([self shouldUseUnit:NSCalendarUnitWeekOfYear] && relationship.nextWeek) {
-        return [self.class localizedString:@"next week"];
+    if ([self shouldUseUnit:NSCalendarUnitDay]) {
+        if (relationship.sameDay) {
+            return [self.class localizedString:@"today"];
+        }
+        if (relationship.previousDay) {
+            return [self.class localizedString:@"yesterday"];
+        }
+        if (relationship.nextDay) {
+            return [self.class localizedString:@"tomorrow"];
+        }
     }
     
-    if ([self shouldUseUnit:NSCalendarUnitMonth] && relationship.sameMonth) {
-        return [self.class localizedString:@"this month"];
+    if ([self shouldUseUnit:NSCalendarUnitWeekOfYear]) {
+        if (relationship.sameWeek) {
+            return [self.class localizedString:@"this week"];
+        }
+        if (relationship.previousWeek) {
+            return [self.class localizedString:@"last week"];
+        }
+        if (relationship.nextWeek) {
+            return [self.class localizedString:@"next week"];
+        }
     }
-    if ([self shouldUseUnit:NSCalendarUnitMonth] && relationship.previousMonth) {
-        return [self.class localizedString:@"last month"];
-    }
-    if ([self shouldUseUnit:NSCalendarUnitMonth] && relationship.nextMonth) {
-        return [self.class localizedString:@"next month"];
+
+    if ([self shouldUseUnit:NSCalendarUnitMonth]) {
+        if (relationship.sameMonth) {
+            return [self.class localizedString:@"this month"];
+        }
+        if (relationship.previousMonth) {
+            return [self.class localizedString:@"last month"];
+        }
+        if (relationship.nextMonth) {
+            return [self.class localizedString:@"next month"];
+        }
     }
     
-    if ([self shouldUseUnit:NSCalendarUnitYear] && relationship.sameYear) {
-        return [self.class localizedString:@"this year"];
-    }
-    if ([self shouldUseUnit:NSCalendarUnitYear] && relationship.previousYear) {
-        return [self.class localizedString:@"last year"];
-    }
-    if ([self shouldUseUnit:NSCalendarUnitYear] && relationship.nextYear) {
-        return [self.class localizedString:@"next year"];
+    if ([self shouldUseUnit:NSCalendarUnitYear]) {
+        if (relationship.sameYear) {
+            return [self.class localizedString:@"this year"];
+        }
+        if (relationship.previousYear) {
+            return [self.class localizedString:@"last year"];
+        }
+        if (relationship.nextYear) {
+            return [self.class localizedString:@"next year"];
+        }
     }
     
     return nil;
