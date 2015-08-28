@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +17,64 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHF-mp-V2Q">
+                                <rect key="frame" x="16" y="20" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhk-Ws-18s">
+                                <rect key="frame" x="16" y="49" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxo-3S-BtJ">
+                                <rect key="frame" x="16" y="78" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZf-cL-55t">
+                                <rect key="frame" x="16" y="107" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nh-Mz-d6z">
+                                <rect key="frame" x="16" y="136" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bhk-Ws-18s" firstAttribute="trailing" secondItem="dHF-mp-V2Q" secondAttribute="trailing" id="3H4-92-5oA"/>
+                            <constraint firstItem="dHF-mp-V2Q" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="9vf-qd-2lP"/>
+                            <constraint firstItem="oxo-3S-BtJ" firstAttribute="trailing" secondItem="Bhk-Ws-18s" secondAttribute="trailing" id="Ibz-ED-OBU"/>
+                            <constraint firstItem="Bhk-Ws-18s" firstAttribute="top" secondItem="dHF-mp-V2Q" secondAttribute="bottom" constant="8" id="Q5j-C5-A2j"/>
+                            <constraint firstItem="fZf-cL-55t" firstAttribute="leading" secondItem="6Nh-Mz-d6z" secondAttribute="leading" id="Stw-js-ckK"/>
+                            <constraint firstItem="fZf-cL-55t" firstAttribute="trailing" secondItem="oxo-3S-BtJ" secondAttribute="trailing" id="Ue6-5P-16Q"/>
+                            <constraint firstItem="oxo-3S-BtJ" firstAttribute="top" secondItem="Bhk-Ws-18s" secondAttribute="bottom" constant="8" id="VaP-AA-IX8"/>
+                            <constraint firstItem="dHF-mp-V2Q" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" id="Xmn-R2-oSc"/>
+                            <constraint firstItem="oxo-3S-BtJ" firstAttribute="leading" secondItem="Bhk-Ws-18s" secondAttribute="leading" id="fea-up-XLJ"/>
+                            <constraint firstItem="Bhk-Ws-18s" firstAttribute="leading" secondItem="dHF-mp-V2Q" secondAttribute="leading" id="l9M-0e-KYi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dHF-mp-V2Q" secondAttribute="trailing" id="nn8-aq-kd0"/>
+                            <constraint firstItem="fZf-cL-55t" firstAttribute="trailing" secondItem="6Nh-Mz-d6z" secondAttribute="trailing" id="qTU-NT-CEN"/>
+                            <constraint firstItem="fZf-cL-55t" firstAttribute="leading" secondItem="oxo-3S-BtJ" secondAttribute="leading" id="qr4-0z-lTr"/>
+                            <constraint firstItem="fZf-cL-55t" firstAttribute="top" secondItem="oxo-3S-BtJ" secondAttribute="bottom" constant="8" id="vhn-79-zhJ"/>
+                            <constraint firstItem="6Nh-Mz-d6z" firstAttribute="top" secondItem="fZf-cL-55t" secondAttribute="bottom" constant="8" id="xYh-W3-9Xf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="labels" destination="dHF-mp-V2Q" id="acO-PE-que"/>
+                        <outletCollection property="labels" destination="Bhk-Ws-18s" id="MDA-3t-qpJ"/>
+                        <outletCollection property="labels" destination="oxo-3S-BtJ" id="ABh-mG-V3f"/>
+                        <outletCollection property="labels" destination="fZf-cL-55t" id="2A8-k0-HtI"/>
+                        <outletCollection property="labels" destination="6Nh-Mz-d6z" id="lYP-Zz-8hf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

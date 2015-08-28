@@ -24,6 +24,7 @@
 		6003F5BC195388D20070C39A /* IdiomaticExpressionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* IdiomaticExpressionTests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		9E2D9EBF1B86044C000F0C33 /* ReadmeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D9EBE1B86044C000F0C33 /* ReadmeTests.m */; };
+		9E2D9EC91B905D9B000F0C33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E2D9ECB1B905D9B000F0C33 /* Localizable.strings */; };
 		9E806E831B6BE13B0051DE06 /* FormatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E821B6BE13B0051DE06 /* FormatTests.m */; };
 		9E806E881B6BE1C90051DE06 /* TestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E871B6BE1C90051DE06 /* TestCase.m */; };
 		9E806E8A1B6BE5360051DE06 /* RelativeExpressionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E891B6BE5360051DE06 /* RelativeExpressionsTests.m */; };
@@ -67,6 +68,8 @@
 		799E1D01F166959A1D823ED2 /* libPods-SLConditionalDateFormatter_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SLConditionalDateFormatter_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9E2D9EBE1B86044C000F0C33 /* ReadmeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadmeTests.m; sourceTree = "<group>"; };
+		9E2D9ECA1B905D9B000F0C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9E2D9ECC1B905DFB000F0C33 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9E806E821B6BE13B0051DE06 /* FormatTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatTests.m; sourceTree = "<group>"; };
 		9E806E861B6BE1C90051DE06 /* TestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCase.h; sourceTree = "<group>"; };
 		9E806E871B6BE1C90051DE06 /* TestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCase.m; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
 				6003F59B195388D20070C39A /* SLConditionalDateFormatter-Prefix.pch */,
+				9E2D9ECB1B905D9B000F0C33 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -271,6 +275,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 6003F581195388D10070C39A;
 			productRefGroup = 6003F58B195388D20070C39A /* Products */;
@@ -289,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				9E2D9EC91B905D9B000F0C33 /* Localizable.strings in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -415,6 +421,15 @@
 				6003F5B9195388D20070C39A /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9E2D9ECB1B905D9B000F0C33 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E2D9ECA1B905D9B000F0C33 /* Base */,
+				9E2D9ECC1B905DFB000F0C33 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
