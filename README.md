@@ -14,20 +14,33 @@
 [formatter addFormat:@"R" forLast:7 unit:SLTimeUnitDays];
 formatter.defaultFormat = @"{yMd}";
 
-[self.formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];
+[formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];
 // = 42 minutes ago
 
-[self.formatter stringForTimeIntervalFromDate:earlierToday toReferenceDate:now];
+[formatter stringForTimeIntervalFromDate:earlierToday toReferenceDate:now];
 // = 13:37
 
-[self.formatter stringForTimeIntervalFromDate:yesterday toReferenceDate:now];
+[formatter stringForTimeIntervalFromDate:yesterday toReferenceDate:now];
 // = yesterday
 
-[self.formatter stringForTimeIntervalFromDate:threeDaysAgo toReferenceDate:now];
+[formatter stringForTimeIntervalFromDate:threeDaysAgo toReferenceDate:now];
 // = 3 days ago
 
-[self.formatter stringForTimeIntervalFromDate:longAgo toReferenceDate:now];
+[formatter stringForTimeIntervalFromDate:longAgo toReferenceDate:now];
 // = 2/11/2015
+```
+
+or
+
+```objc
+[formatter addFormat:@"I R" for:SLTimeUnitToday];
+[formatter addFormat:@"I at {h}" for:SLTimeUnitYesterday];
+
+[formatter stringForTimeIntervalFromDate:twoHoursAgo toReferenceDate:now];
+// = today 2 hours ago
+
+[formatter stringForTimeIntervalFromDate:yesterdayAt4pm toReferenceDate:now];
+// = yesterday at 4 PM
 ```
 
 ## Installation
