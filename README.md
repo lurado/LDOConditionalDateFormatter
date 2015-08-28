@@ -8,6 +8,7 @@
 ## Quick Start
 
 ```objc
+SLConditionalDateFormatter *formatter = [SLConditionalDateFormatter new];
 [formatter addFormat:@"R" forTimeInterval:-3600];
 [formatter addFormat:@"{HH:mm}" for:SLTimeUnitToday];
 [formatter addFormat:@"I" for:SLTimeUnitYesterday];
@@ -33,6 +34,7 @@ formatter.defaultFormat = @"{yMd}";
 or
 
 ```objc
+SLConditionalDateFormatter *formatter = [SLConditionalDateFormatter new];
 [formatter addFormat:@"I R" for:SLTimeUnitToday];
 [formatter addFormat:@"I at {h}" for:SLTimeUnitYesterday];
 
