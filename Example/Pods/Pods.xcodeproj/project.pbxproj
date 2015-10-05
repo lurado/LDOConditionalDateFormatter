@@ -7,123 +7,131 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		034FB11DD31028457CD7D6AFAEA5444D /* nb.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AFD55D161B668A13306A874E6CCDA875 /* nb.lproj */; };
-		0475E208881832E7730BAA65D5B2D114 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 19051A47CA1EC7564E3963C60B1F325F /* fr.lproj */; };
-		22C759DF526CEC57A4B7220C58CF0715 /* he.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C8ACF3F7E65CFA23784B38F5EDBDD14A /* he.lproj */; };
-		36C915283823EB814DB2F9CE3429E5AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EB746BD51E27897B8A0525C2ADB1AB /* Foundation.framework */; };
-		3A7BFC06FF5388DB1DAE9D94997A6135 /* LDOConditionalDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A894ABDCDDDC539604A3A3CDE7F22E11 /* LDOConditionalDateFormatter.h */; };
-		3CB4663FC11FD1338855A2E9CD6DAB36 /* da.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AA1EC4CCD54F92242D32A837F77EF346 /* da.lproj */; };
-		404B9AB5001AEA968072274BEC5D0520 /* id.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A346E40316E30F7E1EF41705B4661920 /* id.lproj */; };
+		005AB3DFF6F9986058CF0671452131E4 /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 88CD2F9B5E69E4DE7D5EE3E23EA8E3BE /* pl.lproj */; };
+		00A773E595B752B4EB1227A8E4B3A3B0 /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 12088991E6A34AE79898A19A9C22051F /* zh-Hant.lproj */; };
+		0CDC2D349C95D426FADB69F1EAFDF947 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 09BF4BABE096DF0960217395CA2B984F /* ru.lproj */; };
+		2211353632BB2FD263A10DF12C889706 /* tr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C98B5C60DA006DAB68E196AE708290C9 /* tr.lproj */; };
+		2A8827CE6F5A74F23E19A46E32EEA29E /* LDOConditionalDateFormatter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA76E1141B9F4D4A753DD7FC27379889 /* LDOConditionalDateFormatter-dummy.m */; };
+		2BE190FCC928B8423BB4F9C3A60160BA /* pt_BR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 52963A86B3245FC41362C561C8E6559B /* pt_BR.lproj */; };
+		2CB71CA799FD255EBA7ABBC5FD795951 /* th.lproj in Resources */ = {isa = PBXBuildFile; fileRef = EF6EAFB6B54C990E7E86ABE6701B26FE /* th.lproj */; };
+		2E06D4F0390A2FDC56744A61A1A02C17 /* nn.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 99DBCD798023BB68BFAD3E4916390CEE /* nn.lproj */; };
+		353112F33802D576FBDFD9A5D47349F5 /* ca.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4DFFA65615F60960FE321FFB9AD16F37 /* ca.lproj */; };
+		36C915283823EB814DB2F9CE3429E5AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD94C79676CD1EC15A84D02EE45E9A /* Foundation.framework */; };
+		39F0B7DB3F100073E050FB18C9FF0070 /* da.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 782C3A1CD00C130654B7BF12B9A2C60E /* da.lproj */; };
+		45608E04F01568E29D7B8EB755FEE109 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 70D71B50B4FB8641B21722A4BEE4B845 /* pt.lproj */; };
 		46F7106803792C85441B45230D4453AB /* Pods-LDOConditionalDateFormatter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD97AE5CC19735C14516D58009143 /* Pods-LDOConditionalDateFormatter_Tests-dummy.m */; };
-		484DF4241855E4AE37EFFB12A9D096DC /* nn.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9E14E2AE73C203C9F38401849011582A /* nn.lproj */; };
-		510BAAA8A2103CC0BF7FC459C9EAAE20 /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FBACB71D160C269EC7B4B2EECD02EFC4 /* pl.lproj */; };
-		5F3B9A48E8836E29F7333E61F69FB40A /* th.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F16B1C397346E9C1319B27AD1FC78776 /* th.lproj */; };
-		6FC7298FEA0739F5DD297656F41BB386 /* uk.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 301163352EE07EEA1C10241C6DBADF00 /* uk.lproj */; };
-		7A05254BA7E93E7A21509388E693A955 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B2F762D65B0224A4B1D9F014733A4A9D /* ru.lproj */; };
+		4BD5630F33DDEF980CC2F5491BFDD4B9 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F018EA25E15EDDCEC3FFC0C92870AAB5 /* ja.lproj */; };
+		4DE20D20514821D17A6286A040952917 /* LDOConditionalDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A68C256F65DEA455CCA2E77380449EF3 /* LDOConditionalDateFormatter.h */; };
+		536DFC2A9138DBAD58710ED58B178ACE /* he.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C3227A23AEBA4C3091D38A12E5892D15 /* he.lproj */; };
+		56B2935BAFA33A7DF0F9BF16D7428A7D /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7605D33112B84E945BCE7CB7F00809D2 /* ko.lproj */; };
+		66703894A018BD92654FA963BE3FF0FD /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 215B33928B4BF5DAA5AF0B2D31A157D9 /* it.lproj */; };
+		669BB0EC271E9ED5B1BDC75D6E3EFBB1 /* sv.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F786AD9A373B6A979222DC4306E77A75 /* sv.lproj */; };
+		7384478629B09AAF11A49A8D4879A1F8 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FED9CBBB0CF3F7246CE5E1663AD12E15 /* nl.lproj */; };
+		764C01C982DF14FA2C089DCC1C87F371 /* LDOConditionalDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BCEBD24F543608C1D25DD295884FEB /* LDOConditionalDateFormatter.m */; };
 		7C6BBC7BA7BCB60D2FB4AB8A3DF2C442 /* Pods-LDOConditionalDateFormatter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 873BEAF2435CBDBA2A40049C34EC8B93 /* Pods-LDOConditionalDateFormatter_Example-dummy.m */; };
-		884C3B9102A6559D3ACFAD818E1D1B69 /* cs.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AB2F6D8858589C730318BFBC39524A59 /* cs.lproj */; };
-		89AFBE7F621E3CB07EBE1EB614178873 /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A2BDBF0B3A60E95D241F109E8BC5AF18 /* zh-Hant.lproj */; };
-		93E36A8F5681EC2DBBCCCD9CB1A8DB1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EB746BD51E27897B8A0525C2ADB1AB /* Foundation.framework */; };
-		994687AB81A5D88728361A237257B167 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BD6803E52C590C2B170B3DFFBD7120C7 /* nl.lproj */; };
-		99F4BACDDE366283656FFDAA1CCE74E1 /* LDOConditionalDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41814DC147C07DEB94DB5B5EB3E76545 /* LDOConditionalDateFormatter.m */; };
-		A114E03820640D89B63833B93A5F90DE /* LDOConditionalDateFormatter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F02B12EE9B14B720761D0C52C8FAF /* LDOConditionalDateFormatter-dummy.m */; };
-		A8A8857B93902510069E2A0780B3A26D /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2A525E35ED8CDD6F854ADAD6B1A436BD /* vi.lproj */; };
-		AB6FEDC35E9299A418CEAC2A822A58B0 /* ca.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 602F227306413BAB946D4DEB3A28468B /* ca.lproj */; };
-		AF5B26C909846FF0BE14E1DFD2C053DA /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7C1CA102D42F0EA0A32F8907FC5471B1 /* ja.lproj */; };
-		B6DCCFA17AF76E731D7F0E2F768B8D15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EB746BD51E27897B8A0525C2ADB1AB /* Foundation.framework */; };
-		B879680C2A170ACBC6D7881BC28ECED8 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C1B514F67EB5712707B32584A564C9A5 /* it.lproj */; };
-		C9B83E92E3A6CE40322381BD54B3DB1F /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0D34EC95EC1A2C8AB1BE6CD48E49CFD3 /* de.lproj */; };
-		D375ED69F91EBADB64B544EEA6C3CFD0 /* tr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 62D1582C6D3FDF7E58F4C0C50E7E399E /* tr.lproj */; };
-		DCB7294F9D41B03E134074663E06B023 /* sv.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 03592C15ADF19ED0C6AA75CE40579E31 /* sv.lproj */; };
-		E8DC7A8C89105631A0695CD1C8E89923 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9407BE2281668890ABCA03326BA11819 /* es.lproj */; };
-		EBC1AB8F1A2237FA746959FAC0D5769F /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E2FFBC2638196E61D22ED7D391EE947A /* en.lproj */; };
-		F24F69C602359E9E9F614DA51379B53C /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 958F81C7EF2E4AE3EA0EDC80C90D97FC /* zh-Hans.lproj */; };
-		F42FE2C08D0F95E2CDAE490B123396CB /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 49D14936D5970A4DBCE9D782D03B3F6F /* ko.lproj */; };
-		F47AE0A3D52D700B4C29EF51C8DC17F8 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FC0FFC0810889CAE5AA0A54A61D67503 /* pt.lproj */; };
-		FE69B6A9BAE355127F38B09AEC55D6FC /* el.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A430612CB1002528111EFB87169742BF /* el.lproj */; };
-		FF49A80B618FA7744B02A59E8AC9581C /* pt_BR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7B1993149BF742CD20AA7B8022670C93 /* pt_BR.lproj */; };
+		7E40ED918211D392F20B7AD2F7379B46 /* cs.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F340555B188D9EAD9C022350AFCDC7AB /* cs.lproj */; };
+		91F424F62AC9EAD691D8CBDBC91CEE5C /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 747F5A224142834267B63E416705F055 /* fr.lproj */; };
+		98D7FC05C1144CB86A8BD8E369472A73 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9DC240ECDA11FE34289DA679DEEC1147 /* es.lproj */; };
+		9E13B26EA7521A29E9C9DCE3E829EFB7 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E2F21144669DCA3EB4240D979B2B057F /* de.lproj */; };
+		AFBFE354B995ECFC2A14287FB8FA622B /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 11C5EF3A4DE4033AFBE8166CEDA66DD8 /* en.lproj */; };
+		B1DE6B9BA3032081C369F327692C490B /* el.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8713FFE0AA61FBE249490A576B74BFEE /* el.lproj */; };
+		B6DCCFA17AF76E731D7F0E2F768B8D15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD94C79676CD1EC15A84D02EE45E9A /* Foundation.framework */; };
+		B93F74BB7D33B2F076AB2A7CB0189B4A /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3B1F4289C67BF4D1BADF891B3FB74C31 /* vi.lproj */; };
+		D6DB613F19CBF2D120AD7A23E5646853 /* uk.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 379C96698ED978A1DC8536D35AE6AA35 /* uk.lproj */; };
+		EF6AAABB0270328C7EAD9DEE00C0A7A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD94C79676CD1EC15A84D02EE45E9A /* Foundation.framework */; };
+		FC3BA0E719D98EBDA9D3D80B35E80E10 /* nb.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 5E6285603D8582605EAB514B6A49F006 /* nb.lproj */; };
+		FECA6EF60EF447644C5C59B5CBD4032F /* id.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 06AAE5744ECB5FC688E8C346FDA1E0F9 /* id.lproj */; };
+		FFF732435892FAA0ED1D43D6D9AD99E6 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 056E6E70530D3EDB45490D61EA9BB0C3 /* zh-Hans.lproj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0D41832DAAB4C49C39EC27F3BA18966F /* PBXContainerItemProxy */ = {
+		69B228E012A9CA641114B76CBC00940A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 313A39A6EAE878FF3D05CBE4D0799A0C;
+			remoteGlobalIDString = 52B9A5258A02A7A1CC1080DAE29F447F;
 			remoteInfo = LDOConditionalDateFormatter;
 		};
-		3672BC2298C0E364AA05F9B4947C964C /* PBXContainerItemProxy */ = {
+		77F30E72CD7E309E7FF514DEBE08D44B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 55365EE2A9B3DD77E6EB2C7C35D6AF62;
+			remoteGlobalIDString = 52B9A5258A02A7A1CC1080DAE29F447F;
+			remoteInfo = LDOConditionalDateFormatter;
+		};
+		F996593EB6677CA5E7AA39B4A72FB53C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98D698C06A1BB8A40E149A7C4E39D8D3;
 			remoteInfo = "LDOConditionalDateFormatter-LDOConditionalDateFormatter";
-		};
-		DDF202E11FB860ED6A42CE249BFB4B78 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 313A39A6EAE878FF3D05CBE4D0799A0C;
-			remoteInfo = LDOConditionalDateFormatter;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03592C15ADF19ED0C6AA75CE40579E31 /* sv.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = sv.lproj; sourceTree = "<group>"; };
-		0D34EC95EC1A2C8AB1BE6CD48E49CFD3 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = de.lproj; sourceTree = "<group>"; };
-		19051A47CA1EC7564E3963C60B1F325F /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
-		229A2C916857B0839FCC78BD2298ADA8 /* LDOConditionalDateFormatter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LDOConditionalDateFormatter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A525E35ED8CDD6F854ADAD6B1A436BD /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = vi.lproj; sourceTree = "<group>"; };
-		301163352EE07EEA1C10241C6DBADF00 /* uk.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = uk.lproj; sourceTree = "<group>"; };
-		41814DC147C07DEB94DB5B5EB3E76545 /* LDOConditionalDateFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LDOConditionalDateFormatter.m; sourceTree = "<group>"; };
+		056E6E70530D3EDB45490D61EA9BB0C3 /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
+		06AAE5744ECB5FC688E8C346FDA1E0F9 /* id.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = id.lproj; sourceTree = "<group>"; };
+		09BF4BABE096DF0960217395CA2B984F /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ru.lproj; sourceTree = "<group>"; };
+		11C5EF3A4DE4033AFBE8166CEDA66DD8 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		12088991E6A34AE79898A19A9C22051F /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = "zh-Hant.lproj"; sourceTree = "<group>"; };
+		215B33928B4BF5DAA5AF0B2D31A157D9 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
+		2E2BBA57D7B2F06575B4381F6722A1D6 /* libLDOConditionalDateFormatter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLDOConditionalDateFormatter.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		379C96698ED978A1DC8536D35AE6AA35 /* uk.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = uk.lproj; sourceTree = "<group>"; };
+		3B1F4289C67BF4D1BADF891B3FB74C31 /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = vi.lproj; sourceTree = "<group>"; };
 		48F65B4F598CA50BC609A4125B4B386C /* libPods-LDOConditionalDateFormatter_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LDOConditionalDateFormatter_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		49D14936D5970A4DBCE9D782D03B3F6F /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ko.lproj; sourceTree = "<group>"; };
 		4BB408B5EF1C5ECD9434348EF12119C7 /* Pods-LDOConditionalDateFormatter_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LDOConditionalDateFormatter_Example-resources.sh"; sourceTree = "<group>"; };
+		4DFFA65615F60960FE321FFB9AD16F37 /* ca.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ca.lproj; sourceTree = "<group>"; };
 		500FFCE5BEC50ED4DC4FF84D9354C9A1 /* Pods-LDOConditionalDateFormatter_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LDOConditionalDateFormatter_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		50FD94C79676CD1EC15A84D02EE45E9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		52963A86B3245FC41362C561C8E6559B /* pt_BR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pt_BR.lproj; sourceTree = "<group>"; };
 		55653D343CC7555E4ADE09773E3690D6 /* Pods-LDOConditionalDateFormatter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDOConditionalDateFormatter_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		5895FCCD89F625AEA9B941129653E815 /* libLDOConditionalDateFormatter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLDOConditionalDateFormatter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F722A77E12B42939C03CE71987954E /* LDOConditionalDateFormatter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LDOConditionalDateFormatter.xcconfig; sourceTree = "<group>"; };
-		5DB23FC98DB4177A4CA027449ECE0155 /* LDOConditionalDateFormatter-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "LDOConditionalDateFormatter-Private.xcconfig"; sourceTree = "<group>"; };
-		602F227306413BAB946D4DEB3A28468B /* ca.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ca.lproj; sourceTree = "<group>"; };
-		62D1582C6D3FDF7E58F4C0C50E7E399E /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = tr.lproj; sourceTree = "<group>"; };
-		68EB746BD51E27897B8A0525C2ADB1AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5E6285603D8582605EAB514B6A49F006 /* nb.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nb.lproj; sourceTree = "<group>"; };
+		70D71B50B4FB8641B21722A4BEE4B845 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pt.lproj; sourceTree = "<group>"; };
 		73D0B05EA1394A9F6A262290B7A9863A /* Pods-LDOConditionalDateFormatter_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LDOConditionalDateFormatter_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7425481DDB206DA6005D864A6C2C253D /* Pods-LDOConditionalDateFormatter_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LDOConditionalDateFormatter_Tests-resources.sh"; sourceTree = "<group>"; };
-		7B1993149BF742CD20AA7B8022670C93 /* pt_BR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pt_BR.lproj; sourceTree = "<group>"; };
+		747F5A224142834267B63E416705F055 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
+		7605D33112B84E945BCE7CB7F00809D2 /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ko.lproj; sourceTree = "<group>"; };
+		782C3A1CD00C130654B7BF12B9A2C60E /* da.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = da.lproj; sourceTree = "<group>"; };
 		7B5FF3C70D1D5FD69B45D5AE4A9A3D99 /* Pods-LDOConditionalDateFormatter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LDOConditionalDateFormatter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7C1CA102D42F0EA0A32F8907FC5471B1 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ja.lproj; sourceTree = "<group>"; };
+		8713FFE0AA61FBE249490A576B74BFEE /* el.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = el.lproj; sourceTree = "<group>"; };
 		873BEAF2435CBDBA2A40049C34EC8B93 /* Pods-LDOConditionalDateFormatter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LDOConditionalDateFormatter_Example-dummy.m"; sourceTree = "<group>"; };
+		88CD2F9B5E69E4DE7D5EE3E23EA8E3BE /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pl.lproj; sourceTree = "<group>"; };
 		8F75594BCDB0CAE49882E7D3B5DE0DC1 /* Pods-LDOConditionalDateFormatter_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LDOConditionalDateFormatter_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9407BE2281668890ABCA03326BA11819 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
-		958F81C7EF2E4AE3EA0EDC80C90D97FC /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
+		93F0C3779E56A5A130B0BD033F43A174 /* LDOConditionalDateFormatter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LDOConditionalDateFormatter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		99DBCD798023BB68BFAD3E4916390CEE /* nn.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nn.lproj; sourceTree = "<group>"; };
 		9AF0F8C7F0243C65CAAF37B8F3FE606A /* libPods-LDOConditionalDateFormatter_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LDOConditionalDateFormatter_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E14E2AE73C203C9F38401849011582A /* nn.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nn.lproj; sourceTree = "<group>"; };
-		A2BDBF0B3A60E95D241F109E8BC5AF18 /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = "zh-Hant.lproj"; sourceTree = "<group>"; };
-		A346E40316E30F7E1EF41705B4661920 /* id.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = id.lproj; sourceTree = "<group>"; };
-		A430612CB1002528111EFB87169742BF /* el.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = el.lproj; sourceTree = "<group>"; };
-		A45F02B12EE9B14B720761D0C52C8FAF /* LDOConditionalDateFormatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LDOConditionalDateFormatter-dummy.m"; sourceTree = "<group>"; };
-		A894ABDCDDDC539604A3A3CDE7F22E11 /* LDOConditionalDateFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LDOConditionalDateFormatter.h; sourceTree = "<group>"; };
-		AA1EC4CCD54F92242D32A837F77EF346 /* da.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = da.lproj; sourceTree = "<group>"; };
-		AB2F6D8858589C730318BFBC39524A59 /* cs.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = cs.lproj; sourceTree = "<group>"; };
-		AFD55D161B668A13306A874E6CCDA875 /* nb.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nb.lproj; sourceTree = "<group>"; };
-		B2F762D65B0224A4B1D9F014733A4A9D /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ru.lproj; sourceTree = "<group>"; };
+		9DC240ECDA11FE34289DA679DEEC1147 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
+		A68C256F65DEA455CCA2E77380449EF3 /* LDOConditionalDateFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LDOConditionalDateFormatter.h; sourceTree = "<group>"; };
+		AA76E1141B9F4D4A753DD7FC27379889 /* LDOConditionalDateFormatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LDOConditionalDateFormatter-dummy.m"; sourceTree = "<group>"; };
+		B09A2390B2F8695FA6E89F2EEAE52111 /* LDOConditionalDateFormatter-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "LDOConditionalDateFormatter-Private.xcconfig"; sourceTree = "<group>"; };
 		B50BFEFFC6A7D497E922901020C6AAE6 /* LDOConditionalDateFormatter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LDOConditionalDateFormatter-prefix.pch"; sourceTree = "<group>"; };
+		B7BCEBD24F543608C1D25DD295884FEB /* LDOConditionalDateFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LDOConditionalDateFormatter.m; sourceTree = "<group>"; };
 		B8DE75FA591B3EAD0F902AC46505822F /* Pods-LDOConditionalDateFormatter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDOConditionalDateFormatter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BD6803E52C590C2B170B3DFFBD7120C7 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
-		C1B514F67EB5712707B32584A564C9A5 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
-		C8ACF3F7E65CFA23784B38F5EDBDD14A /* he.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = he.lproj; sourceTree = "<group>"; };
+		C3227A23AEBA4C3091D38A12E5892D15 /* he.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = he.lproj; sourceTree = "<group>"; };
+		C98B5C60DA006DAB68E196AE708290C9 /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = tr.lproj; sourceTree = "<group>"; };
 		D1DFD97AE5CC19735C14516D58009143 /* Pods-LDOConditionalDateFormatter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LDOConditionalDateFormatter_Tests-dummy.m"; sourceTree = "<group>"; };
-		E2FFBC2638196E61D22ED7D391EE947A /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		E2F21144669DCA3EB4240D979B2B057F /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = de.lproj; sourceTree = "<group>"; };
 		E671E049878235FA993EFC5D8756444E /* Pods-LDOConditionalDateFormatter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDOConditionalDateFormatter_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F16B1C397346E9C1319B27AD1FC78776 /* th.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = th.lproj; sourceTree = "<group>"; };
+		EF6EAFB6B54C990E7E86ABE6701B26FE /* th.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = th.lproj; sourceTree = "<group>"; };
+		F018EA25E15EDDCEC3FFC0C92870AAB5 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ja.lproj; sourceTree = "<group>"; };
+		F340555B188D9EAD9C022350AFCDC7AB /* cs.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = cs.lproj; sourceTree = "<group>"; };
+		F786AD9A373B6A979222DC4306E77A75 /* sv.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = sv.lproj; sourceTree = "<group>"; };
 		F8DDDD0136196C603BE9D502AA785052 /* Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FBACB71D160C269EC7B4B2EECD02EFC4 /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pl.lproj; sourceTree = "<group>"; };
-		FC0FFC0810889CAE5AA0A54A61D67503 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pt.lproj; sourceTree = "<group>"; };
+		FED9CBBB0CF3F7246CE5E1663AD12E15 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5A6CFAD41402ECBB318737FD302EB217 /* Frameworks */ = {
+		0756A36A5F44020ACA291B50246C29C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF6AAABB0270328C7EAD9DEE00C0A7A6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD893081465CE7B3BEC7F8DB4CE7B45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,14 +143,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6DCCFA17AF76E731D7F0E2F768B8D15 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4FDA60C008514153281843EBDDE5291 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93E36A8F5681EC2DBBCCCD9CB1A8DB1A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +160,8 @@
 		1671996E1C40C4D2611F3A6BEEDD4F4F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A894ABDCDDDC539604A3A3CDE7F22E11 /* LDOConditionalDateFormatter.h */,
-				41814DC147C07DEB94DB5B5EB3E76545 /* LDOConditionalDateFormatter.m */,
+				A68C256F65DEA455CCA2E77380449EF3 /* LDOConditionalDateFormatter.h */,
+				B7BCEBD24F543608C1D25DD295884FEB /* LDOConditionalDateFormatter.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -185,7 +185,7 @@
 		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				68EB746BD51E27897B8A0525C2ADB1AB /* Foundation.framework */,
+				50FD94C79676CD1EC15A84D02EE45E9A /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -208,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				59F722A77E12B42939C03CE71987954E /* LDOConditionalDateFormatter.xcconfig */,
-				5DB23FC98DB4177A4CA027449ECE0155 /* LDOConditionalDateFormatter-Private.xcconfig */,
-				A45F02B12EE9B14B720761D0C52C8FAF /* LDOConditionalDateFormatter-dummy.m */,
+				B09A2390B2F8695FA6E89F2EEAE52111 /* LDOConditionalDateFormatter-Private.xcconfig */,
+				AA76E1141B9F4D4A753DD7FC27379889 /* LDOConditionalDateFormatter-dummy.m */,
 				B50BFEFFC6A7D497E922901020C6AAE6 /* LDOConditionalDateFormatter-prefix.pch */,
 			);
 			name = "Support Files";
@@ -271,8 +271,8 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				229A2C916857B0839FCC78BD2298ADA8 /* LDOConditionalDateFormatter.bundle */,
-				5895FCCD89F625AEA9B941129653E815 /* libLDOConditionalDateFormatter.a */,
+				93F0C3779E56A5A130B0BD033F43A174 /* LDOConditionalDateFormatter.bundle */,
+				2E2BBA57D7B2F06575B4381F6722A1D6 /* libLDOConditionalDateFormatter.a */,
 				48F65B4F598CA50BC609A4125B4B386C /* libPods-LDOConditionalDateFormatter_Example.a */,
 				9AF0F8C7F0243C65CAAF37B8F3FE606A /* libPods-LDOConditionalDateFormatter_Tests.a */,
 			);
@@ -299,33 +299,33 @@
 		FA377C90DF85A0334FA6A632D842AE5D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				602F227306413BAB946D4DEB3A28468B /* ca.lproj */,
-				AB2F6D8858589C730318BFBC39524A59 /* cs.lproj */,
-				AA1EC4CCD54F92242D32A837F77EF346 /* da.lproj */,
-				0D34EC95EC1A2C8AB1BE6CD48E49CFD3 /* de.lproj */,
-				A430612CB1002528111EFB87169742BF /* el.lproj */,
-				E2FFBC2638196E61D22ED7D391EE947A /* en.lproj */,
-				9407BE2281668890ABCA03326BA11819 /* es.lproj */,
-				19051A47CA1EC7564E3963C60B1F325F /* fr.lproj */,
-				C8ACF3F7E65CFA23784B38F5EDBDD14A /* he.lproj */,
-				A346E40316E30F7E1EF41705B4661920 /* id.lproj */,
-				C1B514F67EB5712707B32584A564C9A5 /* it.lproj */,
-				7C1CA102D42F0EA0A32F8907FC5471B1 /* ja.lproj */,
-				49D14936D5970A4DBCE9D782D03B3F6F /* ko.lproj */,
-				AFD55D161B668A13306A874E6CCDA875 /* nb.lproj */,
-				BD6803E52C590C2B170B3DFFBD7120C7 /* nl.lproj */,
-				9E14E2AE73C203C9F38401849011582A /* nn.lproj */,
-				FBACB71D160C269EC7B4B2EECD02EFC4 /* pl.lproj */,
-				FC0FFC0810889CAE5AA0A54A61D67503 /* pt.lproj */,
-				7B1993149BF742CD20AA7B8022670C93 /* pt_BR.lproj */,
-				B2F762D65B0224A4B1D9F014733A4A9D /* ru.lproj */,
-				03592C15ADF19ED0C6AA75CE40579E31 /* sv.lproj */,
-				F16B1C397346E9C1319B27AD1FC78776 /* th.lproj */,
-				62D1582C6D3FDF7E58F4C0C50E7E399E /* tr.lproj */,
-				301163352EE07EEA1C10241C6DBADF00 /* uk.lproj */,
-				2A525E35ED8CDD6F854ADAD6B1A436BD /* vi.lproj */,
-				958F81C7EF2E4AE3EA0EDC80C90D97FC /* zh-Hans.lproj */,
-				A2BDBF0B3A60E95D241F109E8BC5AF18 /* zh-Hant.lproj */,
+				4DFFA65615F60960FE321FFB9AD16F37 /* ca.lproj */,
+				F340555B188D9EAD9C022350AFCDC7AB /* cs.lproj */,
+				782C3A1CD00C130654B7BF12B9A2C60E /* da.lproj */,
+				E2F21144669DCA3EB4240D979B2B057F /* de.lproj */,
+				8713FFE0AA61FBE249490A576B74BFEE /* el.lproj */,
+				11C5EF3A4DE4033AFBE8166CEDA66DD8 /* en.lproj */,
+				9DC240ECDA11FE34289DA679DEEC1147 /* es.lproj */,
+				747F5A224142834267B63E416705F055 /* fr.lproj */,
+				C3227A23AEBA4C3091D38A12E5892D15 /* he.lproj */,
+				06AAE5744ECB5FC688E8C346FDA1E0F9 /* id.lproj */,
+				215B33928B4BF5DAA5AF0B2D31A157D9 /* it.lproj */,
+				F018EA25E15EDDCEC3FFC0C92870AAB5 /* ja.lproj */,
+				7605D33112B84E945BCE7CB7F00809D2 /* ko.lproj */,
+				5E6285603D8582605EAB514B6A49F006 /* nb.lproj */,
+				FED9CBBB0CF3F7246CE5E1663AD12E15 /* nl.lproj */,
+				99DBCD798023BB68BFAD3E4916390CEE /* nn.lproj */,
+				88CD2F9B5E69E4DE7D5EE3E23EA8E3BE /* pl.lproj */,
+				70D71B50B4FB8641B21722A4BEE4B845 /* pt.lproj */,
+				52963A86B3245FC41362C561C8E6559B /* pt_BR.lproj */,
+				09BF4BABE096DF0960217395CA2B984F /* ru.lproj */,
+				F786AD9A373B6A979222DC4306E77A75 /* sv.lproj */,
+				EF6EAFB6B54C990E7E86ABE6701B26FE /* th.lproj */,
+				C98B5C60DA006DAB68E196AE708290C9 /* tr.lproj */,
+				379C96698ED978A1DC8536D35AE6AA35 /* uk.lproj */,
+				3B1F4289C67BF4D1BADF891B3FB74C31 /* vi.lproj */,
+				056E6E70530D3EDB45490D61EA9BB0C3 /* zh-Hans.lproj */,
+				12088991E6A34AE79898A19A9C22051F /* zh-Hant.lproj */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -333,42 +333,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		364AA20B018959436771BC5B3836D40C /* Headers */ = {
+		C6679E3A2656B60A231471DCA9C97653 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A7BFC06FF5388DB1DAE9D94997A6135 /* LDOConditionalDateFormatter.h in Headers */,
+				4DE20D20514821D17A6286A040952917 /* LDOConditionalDateFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		313A39A6EAE878FF3D05CBE4D0799A0C /* LDOConditionalDateFormatter */ = {
+		52B9A5258A02A7A1CC1080DAE29F447F /* LDOConditionalDateFormatter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC9FDBC05F6FEC11922A9FC9BB56F31A /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter" */;
+			buildConfigurationList = 284E117A3A28F5D2A3D8A2E30E5AA0E4 /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter" */;
 			buildPhases = (
-				889DD9F932A1210BC26733359AE5DA0E /* Sources */,
-				F4FDA60C008514153281843EBDDE5291 /* Frameworks */,
-				364AA20B018959436771BC5B3836D40C /* Headers */,
+				82C24F727782A2D17CC75662AA6A43CE /* Sources */,
+				0756A36A5F44020ACA291B50246C29C7 /* Frameworks */,
+				C6679E3A2656B60A231471DCA9C97653 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B31577AC67E280846CD38E39E027CA13 /* PBXTargetDependency */,
+				624E43C16BF1CA1F92DFC90BCB7FB7EA /* PBXTargetDependency */,
 			);
 			name = LDOConditionalDateFormatter;
 			productName = LDOConditionalDateFormatter;
-			productReference = 5895FCCD89F625AEA9B941129653E815 /* libLDOConditionalDateFormatter.a */;
+			productReference = 2E2BBA57D7B2F06575B4381F6722A1D6 /* libLDOConditionalDateFormatter.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		55365EE2A9B3DD77E6EB2C7C35D6AF62 /* LDOConditionalDateFormatter-LDOConditionalDateFormatter */ = {
+		98D698C06A1BB8A40E149A7C4E39D8D3 /* LDOConditionalDateFormatter-LDOConditionalDateFormatter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 851B6FE9DF6C3FA7040C624C9B490AF5 /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter-LDOConditionalDateFormatter" */;
+			buildConfigurationList = 80670AE08E093CD44BD4453684AC2A54 /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter-LDOConditionalDateFormatter" */;
 			buildPhases = (
-				B42AA023447ED86C7A829F780EB38CA4 /* Sources */,
-				5A6CFAD41402ECBB318737FD302EB217 /* Frameworks */,
-				FCFF76352A222F044F5E379FFD9A634C /* Resources */,
+				B6774DBD55E8A29123FFCA05FC9EA019 /* Sources */,
+				1AD893081465CE7B3BEC7F8DB4CE7B45 /* Frameworks */,
+				58C748F5EC0E3CD2F0C8DA160CAD91F6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -376,7 +376,7 @@
 			);
 			name = "LDOConditionalDateFormatter-LDOConditionalDateFormatter";
 			productName = "LDOConditionalDateFormatter-LDOConditionalDateFormatter";
-			productReference = 229A2C916857B0839FCC78BD2298ADA8 /* LDOConditionalDateFormatter.bundle */;
+			productReference = 93F0C3779E56A5A130B0BD033F43A174 /* LDOConditionalDateFormatter.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		D804ECC2AEE8B2DC051CDD235BC591DA /* Pods-LDOConditionalDateFormatter_Tests */ = {
@@ -389,7 +389,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				EFD06CEB40B1A7AE0B17CE33761EA524 /* PBXTargetDependency */,
+				70EDF58AFB13A5C38242419881AA6525 /* PBXTargetDependency */,
 			);
 			name = "Pods-LDOConditionalDateFormatter_Tests";
 			productName = "Pods-LDOConditionalDateFormatter_Tests";
@@ -406,7 +406,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				236790F31399BB8D8B86A800AB5F9ACE /* PBXTargetDependency */,
+				D0E5344B11769A77FC715803EA7490D9 /* PBXTargetDependency */,
 			);
 			name = "Pods-LDOConditionalDateFormatter_Example";
 			productName = "Pods-LDOConditionalDateFormatter_Example";
@@ -434,8 +434,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				313A39A6EAE878FF3D05CBE4D0799A0C /* LDOConditionalDateFormatter */,
-				55365EE2A9B3DD77E6EB2C7C35D6AF62 /* LDOConditionalDateFormatter-LDOConditionalDateFormatter */,
+				52B9A5258A02A7A1CC1080DAE29F447F /* LDOConditionalDateFormatter */,
+				98D698C06A1BB8A40E149A7C4E39D8D3 /* LDOConditionalDateFormatter-LDOConditionalDateFormatter */,
 				F041BA5C9EFB3ABD78DE585D4DD62B38 /* Pods-LDOConditionalDateFormatter_Example */,
 				D804ECC2AEE8B2DC051CDD235BC591DA /* Pods-LDOConditionalDateFormatter_Tests */,
 			);
@@ -443,37 +443,37 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FCFF76352A222F044F5E379FFD9A634C /* Resources */ = {
+		58C748F5EC0E3CD2F0C8DA160CAD91F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB6FEDC35E9299A418CEAC2A822A58B0 /* ca.lproj in Resources */,
-				884C3B9102A6559D3ACFAD818E1D1B69 /* cs.lproj in Resources */,
-				3CB4663FC11FD1338855A2E9CD6DAB36 /* da.lproj in Resources */,
-				C9B83E92E3A6CE40322381BD54B3DB1F /* de.lproj in Resources */,
-				FE69B6A9BAE355127F38B09AEC55D6FC /* el.lproj in Resources */,
-				EBC1AB8F1A2237FA746959FAC0D5769F /* en.lproj in Resources */,
-				E8DC7A8C89105631A0695CD1C8E89923 /* es.lproj in Resources */,
-				0475E208881832E7730BAA65D5B2D114 /* fr.lproj in Resources */,
-				22C759DF526CEC57A4B7220C58CF0715 /* he.lproj in Resources */,
-				404B9AB5001AEA968072274BEC5D0520 /* id.lproj in Resources */,
-				B879680C2A170ACBC6D7881BC28ECED8 /* it.lproj in Resources */,
-				AF5B26C909846FF0BE14E1DFD2C053DA /* ja.lproj in Resources */,
-				F42FE2C08D0F95E2CDAE490B123396CB /* ko.lproj in Resources */,
-				034FB11DD31028457CD7D6AFAEA5444D /* nb.lproj in Resources */,
-				994687AB81A5D88728361A237257B167 /* nl.lproj in Resources */,
-				484DF4241855E4AE37EFFB12A9D096DC /* nn.lproj in Resources */,
-				510BAAA8A2103CC0BF7FC459C9EAAE20 /* pl.lproj in Resources */,
-				F47AE0A3D52D700B4C29EF51C8DC17F8 /* pt.lproj in Resources */,
-				FF49A80B618FA7744B02A59E8AC9581C /* pt_BR.lproj in Resources */,
-				7A05254BA7E93E7A21509388E693A955 /* ru.lproj in Resources */,
-				DCB7294F9D41B03E134074663E06B023 /* sv.lproj in Resources */,
-				5F3B9A48E8836E29F7333E61F69FB40A /* th.lproj in Resources */,
-				D375ED69F91EBADB64B544EEA6C3CFD0 /* tr.lproj in Resources */,
-				6FC7298FEA0739F5DD297656F41BB386 /* uk.lproj in Resources */,
-				A8A8857B93902510069E2A0780B3A26D /* vi.lproj in Resources */,
-				F24F69C602359E9E9F614DA51379B53C /* zh-Hans.lproj in Resources */,
-				89AFBE7F621E3CB07EBE1EB614178873 /* zh-Hant.lproj in Resources */,
+				353112F33802D576FBDFD9A5D47349F5 /* ca.lproj in Resources */,
+				7E40ED918211D392F20B7AD2F7379B46 /* cs.lproj in Resources */,
+				39F0B7DB3F100073E050FB18C9FF0070 /* da.lproj in Resources */,
+				9E13B26EA7521A29E9C9DCE3E829EFB7 /* de.lproj in Resources */,
+				B1DE6B9BA3032081C369F327692C490B /* el.lproj in Resources */,
+				AFBFE354B995ECFC2A14287FB8FA622B /* en.lproj in Resources */,
+				98D7FC05C1144CB86A8BD8E369472A73 /* es.lproj in Resources */,
+				91F424F62AC9EAD691D8CBDBC91CEE5C /* fr.lproj in Resources */,
+				536DFC2A9138DBAD58710ED58B178ACE /* he.lproj in Resources */,
+				FECA6EF60EF447644C5C59B5CBD4032F /* id.lproj in Resources */,
+				66703894A018BD92654FA963BE3FF0FD /* it.lproj in Resources */,
+				4BD5630F33DDEF980CC2F5491BFDD4B9 /* ja.lproj in Resources */,
+				56B2935BAFA33A7DF0F9BF16D7428A7D /* ko.lproj in Resources */,
+				FC3BA0E719D98EBDA9D3D80B35E80E10 /* nb.lproj in Resources */,
+				7384478629B09AAF11A49A8D4879A1F8 /* nl.lproj in Resources */,
+				2E06D4F0390A2FDC56744A61A1A02C17 /* nn.lproj in Resources */,
+				005AB3DFF6F9986058CF0671452131E4 /* pl.lproj in Resources */,
+				45608E04F01568E29D7B8EB755FEE109 /* pt.lproj in Resources */,
+				2BE190FCC928B8423BB4F9C3A60160BA /* pt_BR.lproj in Resources */,
+				0CDC2D349C95D426FADB69F1EAFDF947 /* ru.lproj in Resources */,
+				669BB0EC271E9ED5B1BDC75D6E3EFBB1 /* sv.lproj in Resources */,
+				2CB71CA799FD255EBA7ABBC5FD795951 /* th.lproj in Resources */,
+				2211353632BB2FD263A10DF12C889706 /* tr.lproj in Resources */,
+				D6DB613F19CBF2D120AD7A23E5646853 /* uk.lproj in Resources */,
+				B93F74BB7D33B2F076AB2A7CB0189B4A /* vi.lproj in Resources */,
+				FFF732435892FAA0ED1D43D6D9AD99E6 /* zh-Hans.lproj in Resources */,
+				00A773E595B752B4EB1227A8E4B3A3B0 /* zh-Hant.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,16 +488,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		889DD9F932A1210BC26733359AE5DA0E /* Sources */ = {
+		82C24F727782A2D17CC75662AA6A43CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A114E03820640D89B63833B93A5F90DE /* LDOConditionalDateFormatter-dummy.m in Sources */,
-				99F4BACDDE366283656FFDAA1CCE74E1 /* LDOConditionalDateFormatter.m in Sources */,
+				2A8827CE6F5A74F23E19A46E32EEA29E /* LDOConditionalDateFormatter-dummy.m in Sources */,
+				764C01C982DF14FA2C089DCC1C87F371 /* LDOConditionalDateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B42AA023447ED86C7A829F780EB38CA4 /* Sources */ = {
+		B6774DBD55E8A29123FFCA05FC9EA019 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -515,23 +515,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		236790F31399BB8D8B86A800AB5F9ACE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LDOConditionalDateFormatter;
-			target = 313A39A6EAE878FF3D05CBE4D0799A0C /* LDOConditionalDateFormatter */;
-			targetProxy = DDF202E11FB860ED6A42CE249BFB4B78 /* PBXContainerItemProxy */;
-		};
-		B31577AC67E280846CD38E39E027CA13 /* PBXTargetDependency */ = {
+		624E43C16BF1CA1F92DFC90BCB7FB7EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "LDOConditionalDateFormatter-LDOConditionalDateFormatter";
-			target = 55365EE2A9B3DD77E6EB2C7C35D6AF62 /* LDOConditionalDateFormatter-LDOConditionalDateFormatter */;
-			targetProxy = 3672BC2298C0E364AA05F9B4947C964C /* PBXContainerItemProxy */;
+			target = 98D698C06A1BB8A40E149A7C4E39D8D3 /* LDOConditionalDateFormatter-LDOConditionalDateFormatter */;
+			targetProxy = F996593EB6677CA5E7AA39B4A72FB53C /* PBXContainerItemProxy */;
 		};
-		EFD06CEB40B1A7AE0B17CE33761EA524 /* PBXTargetDependency */ = {
+		70EDF58AFB13A5C38242419881AA6525 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LDOConditionalDateFormatter;
-			target = 313A39A6EAE878FF3D05CBE4D0799A0C /* LDOConditionalDateFormatter */;
-			targetProxy = 0D41832DAAB4C49C39EC27F3BA18966F /* PBXContainerItemProxy */;
+			target = 52B9A5258A02A7A1CC1080DAE29F447F /* LDOConditionalDateFormatter */;
+			targetProxy = 77F30E72CD7E309E7FF514DEBE08D44B /* PBXContainerItemProxy */;
+		};
+		D0E5344B11769A77FC715803EA7490D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LDOConditionalDateFormatter;
+			target = 52B9A5258A02A7A1CC1080DAE29F447F /* LDOConditionalDateFormatter */;
+			targetProxy = 69B228E012A9CA641114B76CBC00940A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -609,9 +609,9 @@
 			};
 			name = Debug;
 		};
-		5817935CDFAF7208C37EF312FDE7D155 /* Debug */ = {
+		5F5F72DFF28D0B30A82079E9E97B5205 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DB23FC98DB4177A4CA027449ECE0155 /* LDOConditionalDateFormatter-Private.xcconfig */;
+			baseConfigurationReference = B09A2390B2F8695FA6E89F2EEAE52111 /* LDOConditionalDateFormatter-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/LDOConditionalDateFormatter/LDOConditionalDateFormatter-prefix.pch";
@@ -625,15 +625,43 @@
 			};
 			name = Debug;
 		};
-		916F015C32BA1897DB2D14D33E69715A /* Release */ = {
+		974FE09BF959D9B6103EA93E6D5AA668 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DB23FC98DB4177A4CA027449ECE0155 /* LDOConditionalDateFormatter-Private.xcconfig */;
+			baseConfigurationReference = B09A2390B2F8695FA6E89F2EEAE52111 /* LDOConditionalDateFormatter-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = LDOConditionalDateFormatter;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A63EBEC9FAC9B2E411ED9A6B1250200E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B09A2390B2F8695FA6E89F2EEAE52111 /* LDOConditionalDateFormatter-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = LDOConditionalDateFormatter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		B217AB4BF976D7CB9385B81F0CCDE97D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B09A2390B2F8695FA6E89F2EEAE52111 /* LDOConditionalDateFormatter-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LDOConditionalDateFormatter/LDOConditionalDateFormatter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -652,22 +680,6 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
-		};
-		E2A2F15043C7A60D08E165E8B40632E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DB23FC98DB4177A4CA027449ECE0155 /* LDOConditionalDateFormatter-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LDOConditionalDateFormatter/LDOConditionalDateFormatter-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
 		};
 		EC6801846B09F2B6312B285D36676C61 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -701,18 +713,6 @@
 			};
 			name = Debug;
 		};
-		F7A32274CCB718F747F9E7B3BD936647 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DB23FC98DB4177A4CA027449ECE0155 /* LDOConditionalDateFormatter-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = LDOConditionalDateFormatter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		FD21A6E2C11A4E5602D351479D5785F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B8DE75FA591B3EAD0F902AC46505822F /* Pods-LDOConditionalDateFormatter_Example.release.xcconfig */;
@@ -732,6 +732,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		284E117A3A28F5D2A3D8A2E30E5AA0E4 /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5F72DFF28D0B30A82079E9E97B5205 /* Debug */,
+				B217AB4BF976D7CB9385B81F0CCDE97D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -759,20 +768,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		851B6FE9DF6C3FA7040C624C9B490AF5 /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter-LDOConditionalDateFormatter" */ = {
+		80670AE08E093CD44BD4453684AC2A54 /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter-LDOConditionalDateFormatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F7A32274CCB718F747F9E7B3BD936647 /* Debug */,
-				916F015C32BA1897DB2D14D33E69715A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AC9FDBC05F6FEC11922A9FC9BB56F31A /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5817935CDFAF7208C37EF312FDE7D155 /* Debug */,
-				E2A2F15043C7A60D08E165E8B40632E9 /* Release */,
+				974FE09BF959D9B6103EA93E6D5AA668 /* Debug */,
+				A63EBEC9FAC9B2E411ED9A6B1250200E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LDOConditionalDateFormatter: 5a96c3f602b0188cb041357e3ad90258f47eedd6
+  LDOConditionalDateFormatter: 51c3e2e26dcd6cc6b206d70bb978e65366d11fea
 
 COCOAPODS: 0.38.2
