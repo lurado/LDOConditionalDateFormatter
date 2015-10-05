@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SLConditionalDateFormatter"
-  s.version          = "1.0.0"
+  s.version          = "1.0.0.1"
   s.summary          = '"today 2 hours ago" and "yesterday at 4 PM" in one formatter'
   s.homepage         = "https://github.com/sebastianludwig/SLConditionalDateFormatter"
   s.license          = 'MIT'
@@ -18,6 +18,8 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
+
+  s.deprecated_in_favor_of = 'LDOConditionalDateFormatter'
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
