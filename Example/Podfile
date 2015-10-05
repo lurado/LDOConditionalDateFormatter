@@ -1,11 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'SLConditionalDateFormatter_Example', :exclusive => true do
-  pod "SLConditionalDateFormatter", :path => "../"
+target 'LDOConditionalDateFormatter_Example', :exclusive => true do
+  pod "LDOConditionalDateFormatter", :path => "../"
 end
 
-target 'SLConditionalDateFormatter_Tests', :exclusive => true do
-  pod "SLConditionalDateFormatter", :path => "../"
-
-  
+target 'LDOConditionalDateFormatter_Tests', :exclusive => true do
+  pod "LDOConditionalDateFormatter", :path => "../" 
 end

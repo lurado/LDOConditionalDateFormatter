@@ -1,6 +1,6 @@
 //
 //  RelativeExpressionsTests.m
-//  SLConditionalDateFormatter
+//  LDOConditionalDateFormatter
 //
 //  Created by Sebastian Ludwig on 31.07.15.
 //  Copyright (c) 2015 Sebastian Ludwig. All rights reserved.

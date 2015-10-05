@@ -1,14 +1,14 @@
 PODS:
-  - SLConditionalDateFormatter (0.1.0)
+  - LDOConditionalDateFormatter (1.0.0)
 
 DEPENDENCIES:
-  - SLConditionalDateFormatter (from `../`)
+  - LDOConditionalDateFormatter (from `../`)
 
 EXTERNAL SOURCES:
-  SLConditionalDateFormatter:
+  LDOConditionalDateFormatter:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SLConditionalDateFormatter: 7cd03171ab7ceee10da317b4439323cdd0380656
+  LDOConditionalDateFormatter: 5a96c3f602b0188cb041357e3ad90258f47eedd6
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

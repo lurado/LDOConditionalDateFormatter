@@ -1,6 +1,6 @@
 //
 //  ReadmeTests.m
-//  SLConditionalDateFormatter
+//  LDOConditionalDateFormatter
 //
 //  Created by Sebastian Ludwig on 20.08.15.
 //  Copyright (c) 2015 Sebastian Ludwig. All rights reserved.
@@ -16,8 +16,8 @@
 
 - (void)testShortDescription
 {
-    [self.formatter addFormat:@"I R" for:SLTimeUnitToday];
-    [self.formatter addFormat:@"I at {h}" for:SLTimeUnitYesterday];
+    [self.formatter addFormat:@"I R" for:LDOTimeUnitToday];
+    [self.formatter addFormat:@"I at {h}" for:LDOTimeUnitYesterday];
 
     NSDate *now = [self parseDate:@"2015-02-24 10:10:39 +0000"];
     NSDate *twoHoursAgo = [self parseDate:@"2015-02-24 08:00:00 +0000"];
@@ -38,13 +38,13 @@
     NSDate *threeDaysAgo = [self parseDate:@"2015-02-21 15:55:00 +0000"];
     NSDate *longAgo = [self parseDate:@"2015-02-11 15:55:00 +0000"];
     
-    SLConditionalDateFormatter *formatter = self.formatter;
+    LDOConditionalDateFormatter *formatter = self.formatter;
     NSString *result;
     
     [formatter addFormat:@"R" forTimeInterval:-3600];
-    [formatter addFormat:@"{HH:mm}" for:SLTimeUnitToday];
-    [formatter addFormat:@"I" for:SLTimeUnitYesterday];
-    [formatter addFormat:@"R" forLast:7 unit:SLTimeUnitDays];
+    [formatter addFormat:@"{HH:mm}" for:LDOTimeUnitToday];
+    [formatter addFormat:@"I" for:LDOTimeUnitYesterday];
+    [formatter addFormat:@"R" forLast:7 unit:LDOTimeUnitDays];
     formatter.defaultFormat = @"{yMd}";
     
     result = [self.formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];     // 42 minutes ago

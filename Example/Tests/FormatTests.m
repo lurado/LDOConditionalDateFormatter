@@ -1,6 +1,6 @@
 //
 //  FormatTests.m
-//  SLConditionalDateFormatterTests
+//  LDOConditionalDateFormatterTests
 //
 //  Created by Sebastian Ludwig on 31.07.15.
 //  Copyright (c) 2015 Sebastian Ludwig. All rights reserved.
@@ -181,28 +181,28 @@ static inline NSComparisonResult NSCalendarUnitCompareSignificance(NSCalendarUni
 
 - (void)testFormatForToday
 {
-    [self.formatter addFormat:@"R" for:SLTimeUnitToday];
+    [self.formatter addFormat:@"R" for:LDOTimeUnitToday];
     NSString *result = [self.formatter stringForTimeInterval:(-3 HOURS)];
     XCTAssertEqualObjects(result, @"3 hours ago");
 }
 
 - (void)testFormatForYesterday
 {
-    [self.formatter addFormat:@"R" for:SLTimeUnitToday];
-    [self.formatter addFormat:@"I" for:SLTimeUnitYesterday];
+    [self.formatter addFormat:@"R" for:LDOTimeUnitToday];
+    [self.formatter addFormat:@"I" for:LDOTimeUnitYesterday];
     NSString *result = [self.formatter stringForTimeInterval:(-1 DAY)];
     XCTAssertEqualObjects(result, @"yesterday");
 }
 
 - (void)testFormatForLastTwoWeeks {
-    [self.formatter addFormat:@"R" forLast:3 unit:SLTimeUnitWeeks];
+    [self.formatter addFormat:@"R" forLast:3 unit:LDOTimeUnitWeeks];
     NSString *result = [self.formatter stringForTimeInterval:(-2 WEEKS)];
     XCTAssertEqualObjects(result, @"2 weeks ago");
 }
 
 - (void)testFormatForNextTwoWeeks {
-    [self.formatter addFormat:@"I" forLast:2 unit:SLTimeUnitWeeks];
-    [self.formatter addFormat:@"R" forNext:2 unit:SLTimeUnitWeeks];
+    [self.formatter addFormat:@"I" forLast:2 unit:LDOTimeUnitWeeks];
+    [self.formatter addFormat:@"R" forNext:2 unit:LDOTimeUnitWeeks];
     NSString *result = [self.formatter stringForTimeInterval:(2 WEEKS)];
     XCTAssertEqualObjects(result, @"2 weeks from now");
 }

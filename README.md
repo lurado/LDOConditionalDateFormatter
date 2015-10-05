@@ -1,18 +1,18 @@
-# SLConditionalDateFormatter
+# LDOConditionalDateFormatter
 "today 2 hours ago" and "yesterday at 4 PM" in one formatter
 
-[![Version](https://img.shields.io/cocoapods/v/SLConditionalDateFormatter.svg?style=flat)](http://cocoapods.org/pods/SLConditionalDateFormatter)
-[![License](https://img.shields.io/cocoapods/l/SLConditionalDateFormatter.svg?style=flat)](http://cocoapods.org/pods/SLConditionalDateFormatter)
-[![Platform](https://img.shields.io/cocoapods/p/SLConditionalDateFormatter.svg?style=flat)](http://cocoapods.org/pods/SLConditionalDateFormatter)
+[![Version](https://img.shields.io/cocoapods/v/LDOConditionalDateFormatter.svg?style=flat)](http://cocoapods.org/pods/LDOConditionalDateFormatter)
+[![License](https://img.shields.io/cocoapods/l/LDOConditionalDateFormatter.svg?style=flat)](http://cocoapods.org/pods/LDOConditionalDateFormatter)
+[![Platform](https://img.shields.io/cocoapods/p/LDOConditionalDateFormatter.svg?style=flat)](http://cocoapods.org/pods/LDOConditionalDateFormatter)
 
 ## Quick Start
 
 ```objc
-SLConditionalDateFormatter *formatter = [SLConditionalDateFormatter new];
+LDOConditionalDateFormatter *formatter = [LDOConditionalDateFormatter new];
 [formatter addFormat:@"R" forTimeInterval:-3600];
-[formatter addFormat:@"{HH:mm}" for:SLTimeUnitToday];
-[formatter addFormat:@"I" for:SLTimeUnitYesterday];
-[formatter addFormat:@"R" forLast:7 unit:SLTimeUnitDays];
+[formatter addFormat:@"{HH:mm}" for:LDOTimeUnitToday];
+[formatter addFormat:@"I" for:LDOTimeUnitYesterday];
+[formatter addFormat:@"R" forLast:7 unit:LDOTimeUnitDays];
 formatter.defaultFormat = @"{yMd}";
 
 [formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];
@@ -34,9 +34,9 @@ formatter.defaultFormat = @"{yMd}";
 or
 
 ```objc
-SLConditionalDateFormatter *formatter = [SLConditionalDateFormatter new];
-[formatter addFormat:@"I R" for:SLTimeUnitToday];
-[formatter addFormat:@"I at {h}" for:SLTimeUnitYesterday];
+LDOConditionalDateFormatter *formatter = [LDOConditionalDateFormatter new];
+[formatter addFormat:@"I R" for:LDOTimeUnitToday];
+[formatter addFormat:@"I at {h}" for:LDOTimeUnitYesterday];
 
 [formatter stringForTimeIntervalFromDate:twoHoursAgo toReferenceDate:now];
 // = today 2 hours ago
@@ -47,10 +47,10 @@ SLConditionalDateFormatter *formatter = [SLConditionalDateFormatter new];
 
 ## Installation
 
-SLConditionalDateFormatter is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+LDOConditionalDateFormatter is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod "SLConditionalDateFormatter"
+pod "LDOConditionalDateFormatter"
 ```
 
 ## String generation
@@ -85,15 +85,15 @@ Formats can be added using one of four flavours.
 	
 	Adds a format to be used if the difference between a date and the reference date lies in the given time interval.
 
-2. `addFormat:(NSString *)format for:(SLTimeUnit)unit`
+2. `addFormat:(NSString *)format for:(LDOTimeUnit)unit`
 
-	 Adds a format to be used for a specific time unit. The time unit needs to be a relative time unit like `SLTimeUnitToday`, `SLTimeUnitSameWeek` or `SLTimeNextYear`. Check out the header for a complete list.
+	 Adds a format to be used for a specific time unit. The time unit needs to be a relative time unit like `LDOTimeUnitToday`, `LDOTimeUnitSameWeek` or `LDOTimeNextYear`. Check out the header for a complete list.
 
-3. `addFormat:(NSString *)format forLast:(NSUInteger)count unit:(SLTimeUnit)unit`
+3. `addFormat:(NSString *)format forLast:(NSUInteger)count unit:(LDOTimeUnit)unit`
 
-	Adds a format for a relative time span in the past. The time unit should be `SLTimeUnitDays`, `SLTimeUnitWeeks`, `SLTimeUnitMonths` or `SLTimeUnitYears`.
+	Adds a format for a relative time span in the past. The time unit should be `LDOTimeUnitDays`, `LDOTimeUnitWeeks`, `LDOTimeUnitMonths` or `LDOTimeUnitYears`.
 
-4. `addFormat:(NSString *)format forNext:(NSUInteger)count unit:(SLTimeUnit)unit`
+4. `addFormat:(NSString *)format forNext:(NSUInteger)count unit:(LDOTimeUnit)unit`
 
 	Same as 3., but for a time span in the future.
 
@@ -104,7 +104,7 @@ If no format matches the condition for a given date, a default format will be us
 
 ## Localization
 
-The library provides localization for [many languages](https://github.com/sebastianludwig/SLConditionalDateFormatter/tree/master/Pod/Assets). If you want to customize a string, simply add it to your own localization and it will be used instead of the bundled translation.
+The library provides localization for [many languages](https://github.com/lurado/LDOConditionalDateFormatter/tree/master/Pod/Assets). If you want to customize a string, simply add it to your own localization and it will be used instead of the bundled translation.
 
 However that does not mean the localizations are perfect yet. Please check how to [contribute](#contribute)
 
@@ -125,7 +125,7 @@ Issues and pull requests are always welcome! The localizations probably need imp
 - this month
 - this year
 
-[twine](https://github.com/mobiata/twine) is used to manage all translations in a single [strings.txt](https://github.com/sebastianludwig/SLConditionalDateFormatter/tree/master/Pod/Assets/strings.txt) file. If you want to regenerate the `.strings` files youself, use the following command from inside the `Assets` folder: `twine generate-all-string-files strings.txt ./ --format apple --file-name SLConditionalDateFormatter.strings --create-folders --developer-language en --include-untranslated`
+[twine](https://github.com/mobiata/twine) is used to manage all translations in a single [strings.txt](https://github.com/lurado/LDOConditionalDateFormatter/tree/master/Pod/Assets/strings.txt) file. If you want to regenerate the `.strings` files youself, use the following command from inside the `Assets` folder: `twine generate-all-string-files strings.txt ./ --format apple --file-name LDOConditionalDateFormatter.strings --create-folders --developer-language en --include-untranslated`
 
 ## Author
 
@@ -133,4 +133,4 @@ Sebastian Ludwig, sebastian@lurado.de
 
 ## License
 
-SLConditionalDateFormatter is available under the MIT license. See the LICENSE file for more info.
+LDOConditionalDateFormatter is available under the MIT license. See the LICENSE file for more info.

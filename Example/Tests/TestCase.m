@@ -1,6 +1,6 @@
 //
 //  TestCase.m
-//  SLConditionalDateFormatter
+//  LDOConditionalDateFormatter
 //
 //  Created by Sebastian Ludwig on 31.07.15.
 //  Copyright (c) 2015 Sebastian Ludwig. All rights reserved.
@@ -19,7 +19,7 @@
     parser = [[NSDateFormatter alloc] init];
     parser.dateFormat = @"yyyy-MM-dd HH:mm:ss Z";
     
-    self.formatter = [SLConditionalDateFormatter new];
+    self.formatter = [LDOConditionalDateFormatter new];
     NSCalendar *calendar = self.formatter.calendar;
     calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     calendar.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];

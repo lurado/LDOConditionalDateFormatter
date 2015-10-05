@@ -1,6 +1,6 @@
 //
 //  TestCase.h
-//  SLConditionalDateFormatter
+//  LDOConditionalDateFormatter
 //
 //  Created by Sebastian Ludwig on 31.07.15.
 //  Copyright (c) 2015 Sebastian Ludwig. All rights reserved.
@@ -12,11 +12,11 @@
 #define WEEKS * 7 * 24 * 60 * 60
 
 @import XCTest;
-#include <SLConditionalDateFormatter.h>
+#include <LDOConditionalDateFormatter.h>
 
 @interface TestCase : XCTestCase
 
-@property SLConditionalDateFormatter *formatter;
+@property LDOConditionalDateFormatter *formatter;
 
 - (NSDate *)parseDate:(NSString *)string;
 - (NSString *)expressionFromDate:(NSString *)from toReferenceDate:(NSString *)to;

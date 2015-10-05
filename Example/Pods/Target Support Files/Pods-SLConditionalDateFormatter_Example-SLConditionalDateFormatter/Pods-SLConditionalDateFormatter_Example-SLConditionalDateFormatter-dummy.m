@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_SLConditionalDateFormatter_Example_SLConditionalDateFormatter : NSObject
-@end
-@implementation PodsDummy_Pods_SLConditionalDateFormatter_Example_SLConditionalDateFormatter
-@end
