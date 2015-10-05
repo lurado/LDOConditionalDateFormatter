@@ -3,7 +3,7 @@
 //  LDOConditionalDateFormatter
 //
 //  Created by Sebastian Ludwig on 31.07.15.
-//  Copyright (c) 2015 Sebastian Ludwig. All rights reserved.
+//  Copyright (c) 2015 Julian Raschke und Sebastian Ludwig GbR. All rights reserved.
 //
 
 #define HOURS * 60 * 60
