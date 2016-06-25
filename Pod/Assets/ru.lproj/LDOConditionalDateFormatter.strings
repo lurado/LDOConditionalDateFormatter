@@ -32,16 +32,16 @@
 "just now" = "только что";
 
 /* the current day */
-"today" = "today";
+"today" = "сегодня";
 
 /* the current week */
-"this week" = "this week";
+"this week" = "на этой неделе";
 
 /* the current month */
-"this month" = "this month";
+"this month" = "в этом месяце";
 
 /* the current year */
-"this year" = "this year";
+"this year" = "в этом году";
 
 
 /********** Past **********/
