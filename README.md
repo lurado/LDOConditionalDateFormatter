@@ -16,7 +16,7 @@ LDOConditionalDateFormatter *formatter = [LDOConditionalDateFormatter new];
 [formatter addFormat:@"R" forLast:7 unit:LDOTimeUnitDays];
 formatter.defaultFormat = @"{yMd}";
 
-[formatter stringForTimeIntervalFromDate:justNow toReferenceDate:now];
+[formatter stringForTimeIntervalFromDate:secondsAgo toReferenceDate:now];
 // = just now
 
 [formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];

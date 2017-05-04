@@ -32,7 +32,7 @@
 - (void)testQuickStart
 {
     NSDate *now = [self parseDate:@"2015-02-24 16:52:39 +0000"];
-    NSDate *justNow = [self parseDate:@"2015-02-24 16:52:36 +0000"];
+    NSDate *secondsAgo = [self parseDate:@"2015-02-24 16:52:36 +0000"];
     NSDate *minutesAgo = [self parseDate:@"2015-02-24 16:10:39 +0000"];
     NSDate *earlierToday = [self parseDate:@"2015-02-24 13:37:00 +0000"];
     NSDate *yesterday = [self parseDate:@"2015-02-23 10:37:00 +0000"];
@@ -49,7 +49,7 @@
     [formatter addFormat:@"R" forLast:7 unit:LDOTimeUnitDays];
     formatter.defaultFormat = @"{yMd}";
     
-    result = [self.formatter stringForTimeIntervalFromDate:justNow toReferenceDate:now];     // just now
+    result = [self.formatter stringForTimeIntervalFromDate:secondsAgo toReferenceDate:now];     // just now
     XCTAssertEqualObjects(result, @"just now");
     result = [self.formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];     // 42 minutes ago
     XCTAssertEqualObjects(result, @"42 minutes ago");
