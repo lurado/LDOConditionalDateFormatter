@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B79091B234B66546127ABE1 /* libPods-LDOConditionalDateFormatter_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEDE5C7C93999B9937FDF4F /* libPods-LDOConditionalDateFormatter_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -22,12 +21,13 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* IdiomaticExpressionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* IdiomaticExpressionTests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		988E00CB1F8B2B8F8ACBEC45 /* Pods_LDOConditionalDateFormatter_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93566E23B9EBCB59E021BB5B /* Pods_LDOConditionalDateFormatter_Tests.framework */; };
 		9E2D9EBF1B86044C000F0C33 /* ReadmeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D9EBE1B86044C000F0C33 /* ReadmeTests.m */; };
 		9E2D9EC91B905D9B000F0C33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E2D9ECB1B905D9B000F0C33 /* Localizable.strings */; };
 		9E806E831B6BE13B0051DE06 /* FormatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E821B6BE13B0051DE06 /* FormatTests.m */; };
 		9E806E881B6BE1C90051DE06 /* TestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E871B6BE1C90051DE06 /* TestCase.m */; };
 		9E806E8A1B6BE5360051DE06 /* RelativeExpressionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E806E891B6BE5360051DE06 /* RelativeExpressionsTests.m */; };
-		E8D60CA829C0D3899E25A865 /* libPods-LDOConditionalDateFormatter_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCC2221D5D619C9B9DA8C44 /* libPods-LDOConditionalDateFormatter_Tests.a */; };
+		B279D235CBA0BB1B1FC78A5D /* Pods_LDOConditionalDateFormatter_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FC057AA1BC9E6122BE0024 /* Pods_LDOConditionalDateFormatter_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +42,7 @@
 
 /* Begin PBXFileReference section */
 		4759113E68CB4F219FA77B1F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		4CCC2221D5D619C9B9DA8C44 /* libPods-LDOConditionalDateFormatter_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LDOConditionalDateFormatter_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F62CCFE96C55E8D127A823 /* LDOConditionalDateFormatter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LDOConditionalDateFormatter.podspec; path = ../LDOConditionalDateFormatter.podspec; sourceTree = "<group>"; };
-		5FEDE5C7C93999B9937FDF4F /* libPods-LDOConditionalDateFormatter_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LDOConditionalDateFormatter_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FF8D3BADAA7821C43E7AD69 /* Pods-LDOConditionalDateFormatter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOConditionalDateFormatter_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Example/Pods-LDOConditionalDateFormatter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LDOConditionalDateFormatter_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDOConditionalDateFormatter_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,7 +62,9 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* IdiomaticExpressionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdiomaticExpressionTests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		8501B8CBA739F068B7F03FCD /* Pods-LDOConditionalDateFormatter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOConditionalDateFormatter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Example/Pods-LDOConditionalDateFormatter_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		93566E23B9EBCB59E021BB5B /* Pods_LDOConditionalDateFormatter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDOConditionalDateFormatter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E2D9EBE1B86044C000F0C33 /* ReadmeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadmeTests.m; sourceTree = "<group>"; };
 		9E2D9ECA1B905D9B000F0C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9E2D9ECC1B905DFB000F0C33 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -73,10 +72,11 @@
 		9E806E861B6BE1C90051DE06 /* TestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCase.h; sourceTree = "<group>"; };
 		9E806E871B6BE1C90051DE06 /* TestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCase.m; sourceTree = "<group>"; };
 		9E806E891B6BE5360051DE06 /* RelativeExpressionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelativeExpressionsTests.m; sourceTree = "<group>"; };
-		AE77F99BE55AE7DBEE2B2D71 /* Pods-LDOConditionalDateFormatter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOConditionalDateFormatter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Example/Pods-LDOConditionalDateFormatter_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CCD90AD35E6D08F75996621C /* Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Tests/Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D5ED977E37A03BC16981EDE6 /* Pods-LDOConditionalDateFormatter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOConditionalDateFormatter_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Tests/Pods-LDOConditionalDateFormatter_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B0FC057AA1BC9E6122BE0024 /* Pods_LDOConditionalDateFormatter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDOConditionalDateFormatter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCA8F73C563CFD03A85E2E44 /* Pods-LDOConditionalDateFormatter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOConditionalDateFormatter_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Tests/Pods-LDOConditionalDateFormatter_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D649F8DE72A756477C52DEA3 /* Pods-LDOConditionalDateFormatter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOConditionalDateFormatter_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Example/Pods-LDOConditionalDateFormatter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EA7921F6CEE56A2012991ECE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FC012BBFE91DF461D0351944 /* Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Tests/Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				2B79091B234B66546127ABE1 /* libPods-LDOConditionalDateFormatter_Example.a in Frameworks */,
+				B279D235CBA0BB1B1FC78A5D /* Pods_LDOConditionalDateFormatter_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				E8D60CA829C0D3899E25A865 /* libPods-LDOConditionalDateFormatter_Tests.a in Frameworks */,
+				988E00CB1F8B2B8F8ACBEC45 /* Pods_LDOConditionalDateFormatter_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				8BE256DBFFCE44887B423C9F /* Pods */,
+				A9C5502A4BB80760289AFCCA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,8 +133,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				5FEDE5C7C93999B9937FDF4F /* libPods-LDOConditionalDateFormatter_Example.a */,
-				4CCC2221D5D619C9B9DA8C44 /* libPods-LDOConditionalDateFormatter_Tests.a */,
+				B0FC057AA1BC9E6122BE0024 /* Pods_LDOConditionalDateFormatter_Example.framework */,
+				93566E23B9EBCB59E021BB5B /* Pods_LDOConditionalDateFormatter_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,13 +200,13 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		8BE256DBFFCE44887B423C9F /* Pods */ = {
+		A9C5502A4BB80760289AFCCA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AE77F99BE55AE7DBEE2B2D71 /* Pods-LDOConditionalDateFormatter_Example.debug.xcconfig */,
-				5FF8D3BADAA7821C43E7AD69 /* Pods-LDOConditionalDateFormatter_Example.release.xcconfig */,
-				CCD90AD35E6D08F75996621C /* Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig */,
-				D5ED977E37A03BC16981EDE6 /* Pods-LDOConditionalDateFormatter_Tests.release.xcconfig */,
+				8501B8CBA739F068B7F03FCD /* Pods-LDOConditionalDateFormatter_Example.debug.xcconfig */,
+				D649F8DE72A756477C52DEA3 /* Pods-LDOConditionalDateFormatter_Example.release.xcconfig */,
+				FC012BBFE91DF461D0351944 /* Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig */,
+				BCA8F73C563CFD03A85E2E44 /* Pods-LDOConditionalDateFormatter_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -218,11 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter_Example" */;
 			buildPhases = (
-				8025250BE229A7C2416C4F6D /* Check Pods Manifest.lock */,
+				141BD7959B54DC3E2FDC9CAA /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				CB8E8C1F0BAEE53C1F8B2EEA /* Copy Pods Resources */,
+				F6760FFC5999B964F8B08008 /* [CP] Embed Pods Frameworks */,
+				B43B6F2D52EBADF7A575B276 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,11 +238,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOConditionalDateFormatter_Tests" */;
 			buildPhases = (
-				064065DEFD8C75B6B2B5D179 /* Check Pods Manifest.lock */,
+				FBC31637B3BA2D023FD0BF02 /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				A4EF8B090AD9DAE5E43F1D30 /* Copy Pods Resources */,
+				8335D3BB8A6302D2BD34394D /* [CP] Embed Pods Frameworks */,
+				8DC76A413C314F807A15F69A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,7 +262,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = LDO;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Julian Raschke und Sebastian Ludwig GbR";
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
@@ -311,44 +313,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		064065DEFD8C75B6B2B5D179 /* Check Pods Manifest.lock */ = {
+		141BD7959B54DC3E2FDC9CAA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8025250BE229A7C2416C4F6D /* Check Pods Manifest.lock */ = {
+		8335D3BB8A6302D2BD34394D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Tests/Pods-LDOConditionalDateFormatter_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A4EF8B090AD9DAE5E43F1D30 /* Copy Pods Resources */ = {
+		8DC76A413C314F807A15F69A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,19 +358,49 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Tests/Pods-LDOConditionalDateFormatter_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CB8E8C1F0BAEE53C1F8B2EEA /* Copy Pods Resources */ = {
+		B43B6F2D52EBADF7A575B276 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Example/Pods-LDOConditionalDateFormatter_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6760FFC5999B964F8B08008 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOConditionalDateFormatter_Example/Pods-LDOConditionalDateFormatter_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBC31637B3BA2D023FD0BF02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -439,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -448,14 +481,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -468,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -488,20 +527,25 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -510,7 +554,7 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE77F99BE55AE7DBEE2B2D71 /* Pods-LDOConditionalDateFormatter_Example.debug.xcconfig */;
+			baseConfigurationReference = 8501B8CBA739F068B7F03FCD /* Pods-LDOConditionalDateFormatter_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -526,7 +570,7 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FF8D3BADAA7821C43E7AD69 /* Pods-LDOConditionalDateFormatter_Example.release.xcconfig */;
+			baseConfigurationReference = D649F8DE72A756477C52DEA3 /* Pods-LDOConditionalDateFormatter_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -542,7 +586,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCD90AD35E6D08F75996621C /* Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig */;
+			baseConfigurationReference = FC012BBFE91DF461D0351944 /* Pods-LDOConditionalDateFormatter_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -566,7 +610,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5ED977E37A03BC16981EDE6 /* Pods-LDOConditionalDateFormatter_Tests.release.xcconfig */;
+			baseConfigurationReference = BCA8F73C563CFD03A85E2E44 /* Pods-LDOConditionalDateFormatter_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-#include <LDOConditionalDateFormatter.h>
+@import LDOConditionalDateFormatter;
 
 @interface ViewController : UIViewController
 

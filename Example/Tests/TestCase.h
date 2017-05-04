@@ -12,7 +12,7 @@
 #define WEEKS * 7 * 24 * 60 * 60
 
 @import XCTest;
-#include <LDOConditionalDateFormatter.h>
+@import LDOConditionalDateFormatter;
 
 @interface TestCase : XCTestCase
 

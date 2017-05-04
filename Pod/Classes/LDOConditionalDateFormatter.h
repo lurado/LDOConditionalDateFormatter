@@ -196,7 +196,7 @@ typedef enum : NSUInteger {
  
  The current time is used as referece date for relative formats.
  
- @param The date to be formatted.
+ @param date The date to be formatted.
  */
 - (NSString *)stringForTimeIntervalFromDate:(NSDate *)date;
 
