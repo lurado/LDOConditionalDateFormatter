@@ -9,11 +9,15 @@
 
 ```objc
 LDOConditionalDateFormatter *formatter = [LDOConditionalDateFormatter new];
+[formatter addFormat:@"just now" forTimeInterval:-10];
 [formatter addFormat:@"R" forTimeInterval:-3600];
 [formatter addFormat:@"{HH:mm}" for:LDOTimeUnitToday];
 [formatter addFormat:@"I" for:LDOTimeUnitYesterday];
 [formatter addFormat:@"R" forLast:7 unit:LDOTimeUnitDays];
 formatter.defaultFormat = @"{yMd}";
+
+[formatter stringForTimeIntervalFromDate:justNow toReferenceDate:now];
+// = just now
 
 [formatter stringForTimeIntervalFromDate:minutesAgo toReferenceDate:now];
 // = 42 minutes ago

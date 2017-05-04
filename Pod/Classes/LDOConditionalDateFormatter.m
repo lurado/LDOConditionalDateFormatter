@@ -428,9 +428,11 @@ typedef BOOL (^FormatCondition)(LDODateRelationship *relationship);
         return nil;
     }
     
+    __block BOOL patternFound = NO;
     NSString *result = [format copy];
     
     result = [self.class replaceMatchesOfRegex:[self.class boundaryCharacterWrappedPattern:@"(~?)(R{1,7})"] inString:result usingBlock:^NSString *(NSString *input, NSTextCheckingResult *match) {
+        patternFound = YES;
         BOOL approximate = [match rangeAtIndex:2].length == 1;
         NSString *replacement = [self relativeExpressionForDateRelationship:relationship numberOfSignificantUnits:[match rangeAtIndex:3].length approximate:approximate];
         if (replacement) {
@@ -443,6 +445,7 @@ typedef BOOL (^FormatCondition)(LDODateRelationship *relationship);
         NSString *replacement = [self idiomaticDeicticExpressionForDateRelationship:relationship];
         if (replacement) {
             input = [input stringByReplacingCharactersInRange:[match rangeAtIndex:1] withString:replacement];
+            patternFound = YES;
         }
         return input;
     }];
@@ -453,6 +456,7 @@ typedef BOOL (^FormatCondition)(LDODateRelationship *relationship);
         NSString *replacement = [NSDateFormatter dateFormatFromTemplate:template options:0 locale:self.calendar.locale];
         if (replacement) {
             input = [input stringByReplacingCharactersInRange:templateRange withString:replacement];
+            patternFound = YES;
         }
         return input;
     }];
@@ -462,11 +466,12 @@ typedef BOOL (^FormatCondition)(LDODateRelationship *relationship);
         NSString *replacement = [dateFormatter stringFromDate:relationship.date];
         if (replacement) {
             input = [input stringByReplacingCharactersInRange:match.range withString:replacement];
+            patternFound = YES;
         }
         return input;
     }];
     
-    return [result isEqualToString:format] ? nil : result;
+    return patternFound && [result isEqualToString:format] ? nil : result;
 }
 
 + (NSString *)replaceMatchesOfRegex:(NSString *)pattern inString:(NSString *)string usingBlock:(NSString* (^)(NSString *input, NSTextCheckingResult* match))block {
