@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LDOConditionalDateFormatter"
-  s.version          = "1.0.1"
+  s.version          = "1.0.2"
   s.summary          = '"today 2 hours ago" and "yesterday at 4 PM" in one formatter'
   s.homepage         = "https://github.com/lurado/LDOConditionalDateFormatter"
   s.license          = 'MIT'
