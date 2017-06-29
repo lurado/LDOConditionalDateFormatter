@@ -396,6 +396,9 @@ typedef BOOL (^FormatCondition)(LDODateRelationship *relationship);
 
 - (NSString *)stringForTimeIntervalFromDate:(NSDate *)date toReferenceDate:(NSDate *)referenceDate
 {
+    if (date == nil) {
+        return nil;
+    }
     LDODateRelationship *dateRelationship = [[LDODateRelationship alloc] initWithDate:date referenceDate:referenceDate calendar:self.calendar];
     
     NSArray *applicableRules = defaultFormat ? [rules arrayByAddingObject:defaultFormat] : rules;
