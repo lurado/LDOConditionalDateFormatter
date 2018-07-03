@@ -1,15 +1,15 @@
 GIT
   remote: https://github.com/sebastianludwig/twine.git
-  revision: 6e19e89bab4230b8b71578db48f46f10ea159c19
+  revision: b1f629061a4b9a3b094ecbf4050a1a2c6f24f939
   specs:
-    twine (0.8.0)
-      rubyzip (~> 0.9.5)
-      safe_yaml (~> 1.0.3)
+    twine (1.0.4)
+      rubyzip (~> 1.1)
+      safe_yaml (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    rubyzip (0.9.9)
+    rubyzip (1.2.1)
     safe_yaml (1.0.4)
 
 PLATFORMS
@@ -17,3 +17,6 @@ PLATFORMS
 
 DEPENDENCIES
   twine!
+
+BUNDLED WITH
+   1.16.0
