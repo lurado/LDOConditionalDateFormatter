@@ -154,18 +154,22 @@
       en = today
       comment = the current day
       de = heute
+      ru = сегодня
     [this week]
       en = this week
       comment = the current week
       de = diese Woche
+      ru = на этой неделе
     [this month]
       en = this month
       comment = the current month
       de = dieser Monat
+      ru = в этом месяце
     [this year]
       en = this year
       comment = the current year
       de = dieses Jahr
+      ru = в этом году
   [[Past]]
     [yesterday]
       en = yesterday
